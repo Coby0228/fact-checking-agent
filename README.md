@@ -24,7 +24,7 @@ pip install autogen-agentchat~=0.2
 - The self-constructed **GuardEval** dataset has been uploaded to the `dataset` directory.
 - For the **RAWFC** and **LIAR-RAW** datasets, please refer to the GitHub repository: [GitHub Repository](https://github.com/Nicozwy/CofCED)
 
-## Error Cases
+## Failure Case
 Due to space constraints in the paper, we are unable to display the failure case. Therefore, the complete failure case is available on GitHub.
 The failure case analysis revealed certain limitations of the proposed DelphiAgent method when applied to fine-grained labeling tasks. The fine-grained nature of labels such as "Half-True" and "Barely-True" makes it challenging for fact-checkers to reach a consensus.
 In the first round, all fact-checkers agreed that the claim regarding a 50% increase in emergency room visits was not fully supported. While they acknowledged an increase in ER visits following the ACA, the specific figure of 50% was contested. Fact Checker 1 rated the claim as "Half-True," while Fact Checkers 2 and 3 rated it as "Barely-True."
