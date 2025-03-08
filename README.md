@@ -10,7 +10,7 @@ DelphiAgent is implemented through a dual-system framework that integrates two m
 - **Delphi Decision-Making Module**  
   Drawing inspiration from the Delphi method, this module devises multiple LLM-based agents with distinct personalities. Each agent independently makes factuality judgments based on the claim and its verified evidence. Through multiple rounds of feedback and synthesis, the system reaches a consensus.
 
-![DelphiAgent Framework](./path/to/your/image.jpg)
+![DelphiAgent Framework]([])
 
 ## Installation
 
@@ -32,6 +32,6 @@ In the second round, consensus emerged that the 50% increase was exaggerated and
 In the third round, Fact Checkers 1 and 2 rated the claim as "Half-True," acknowledging an increase in emergency room visits but criticizing the 50% figure as exaggerated. Fact Checker 3 rated the claim as "Barely-True," suggesting that the claim was even more misleading than the first two fact-checkers had recognized.
 In the final round, all fact-checkers agreed on the classification of "Half-True," reaching a consensus that the claim was partially correct regarding the increase in emergency room visits, but disagreed on the validity of the 50% increase, which was seen as exaggerated or misleading.
 When comparing the justifications produced by DelphiAgent to the corresponding ground-truth explanations, although DelphiAgent incorrectly predicted the claim as "Half-True," it successfully identified the inaccuracies and misleading aspects within the claim.
-![Faliure case.](./path/to/your/image.jpg)
+![Faliure case.](https://github.com/zjfgh2015/DelphiAgent/blob/main/failure%20case.jpg)
 ## Citation
 If you use our framework or datasets in your research, please cite our work. 
