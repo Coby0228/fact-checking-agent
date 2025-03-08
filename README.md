@@ -10,7 +10,7 @@ DelphiAgent is implemented through a dual-system framework that integrates two m
 - **Delphi Decision-Making Module**  
   Drawing inspiration from the Delphi method, this module devises multiple LLM-based agents with distinct personalities. Each agent independently makes factuality judgments based on the claim and its verified evidence. Through multiple rounds of feedback and synthesis, the system reaches a consensus.
 
-![DelphiAgent Framework]([])
+![DelphiAgent Framework](https://github.com/zjfgh2015/DelphiAgent/blob/main/DelphiAgent%20Framework.jpg)
 
 ## Installation
 
