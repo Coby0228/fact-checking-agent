@@ -238,9 +238,9 @@ def create_reeval_message(meta_message, synthesizer_res_summary, fc_res_summary1
 
     if dataset == 'RAWFC':
         if len(unique_predictions) == 2:
-            dis_msg = f"and work towards reach a consensus between '{unique_predictions[0]}' and '{unique_predictions[1]}'."
+            dis_msg = f"and work towards reaching a consensus between '{unique_predictions[0]}' and '{unique_predictions[1]}'."
         elif len(unique_predictions) == 3:
-            dis_msg = f"and work towards reach a consensus among '{unique_predictions[0]}', '{unique_predictions[1]}', and '{unique_predictions[2]}'."
+            dis_msg = f"and work towards reaching a consensus among '{unique_predictions[0]}', '{unique_predictions[1]}', and '{unique_predictions[2]}'."
         else:
             dis_msg = ''
         message = (
