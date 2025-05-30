@@ -21,7 +21,7 @@ pip install autogen-agentchat~=0.2
 ```
 ## Datasets
 
-- The self-constructed **GuardEval** dataset has been uploaded to the `dataset` directory.
+- The self-constructed **WeiboEval** dataset has been uploaded to the `dataset` directory.
 - For the **RAWFC** and **LIAR-RAW** datasets, please refer to the GitHub repository: [GitHub Repository](https://github.com/Nicozwy/CofCED)
 
 ## Failure Case
