@@ -4,9 +4,6 @@ __pycache__
 
 # Virtual environment directories
 .venv/
-*.lock
-*.toml
-*.python-version
 
 # Data
 dataset/
