@@ -1,6 +1,15 @@
 參考 [**DelphiAgent: Multi-agent verification framework for automated fact verification**](https://github.com/zjfgh2015/DelphiAgent) 的 Multi-agent framework
 
+## TODO
 
+- 找 web search tool 
+  - [Serper](https://serper.dev/) 
+  - [linkup](https://www.linkup.so/)
+  - [exa](https://exa.ai/)
+  - [crawl4ai](https://github.com/unclecode/crawl4ai)
+
+- 怎麼辨別來源是否可信?
+  - 檢查 domain
 
 ## 前置要求
 

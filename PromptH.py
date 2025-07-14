@@ -1,6 +1,5 @@
 import os
 
-
 class PromptHandler:
     def __init__(self):
         self.prompt_directory = self.get_prompt_directory()
@@ -41,13 +40,7 @@ class PromptHandler:
         else:
             return "Invalid prompt name"
 
-
-# Example usage
-# handler = PromptHandler()
-#
-# print(handler.handle_prompt('Atom_Analyst'))
-# print(handler.handle_prompt('Logic_Verifier'))
-# print(handler.handle_prompt('Report_Analyst'))
-# print(handler.handle_prompt('Report_Verifier'))
-# print(handler.handle_prompt('Truth_Analyst'))
-# print(handler.handle_prompt('Truth_Verifier'))
+if __name__ == "__main__":
+    # Example usage
+    handler = PromptHandler()
+    print(handler.handle_prompt('Evidence_Extraction_ch'))
