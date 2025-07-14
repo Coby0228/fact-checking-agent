@@ -7,6 +7,8 @@ class PromptHandler:
         self.prompts = {
             'Evidence_Extraction_ch': self.load_prompt('Evidence_Extraction_ch'),
             'Evidence_Extraction_en': self.load_prompt('Evidence_Extraction_en'),
+            'Evidence_Verifier_ch': self.load_prompt('Evidence_Verifier_ch'),
+            'Evidence_Verifier_en': self.load_prompt('Evidence_Verifier_en'),
             'Finalizer_ch': self.load_prompt('Finalizer_ch'),
             'Finalizer_en': self.load_prompt('Finalizer_en'),
             'Fact_Checker_M_ch': self.load_prompt('Fact_Checker_M_ch'),
@@ -20,9 +22,7 @@ class PromptHandler:
         }
 
     def get_prompt_directory(self):
-        # Get the current script directory
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        # Construct the path to the prompt directory
         prompt_directory = os.path.join(current_dir, 'prompt')
         return prompt_directory
 

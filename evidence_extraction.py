@@ -1,18 +1,14 @@
 import os
-import ast
 from autogen import AssistantAgent, UserProxyAgent, ConversableAgent
-import autogen
-from autogen import initiate_chats
-import pprint
-import random
 from PromptH import PromptHandler
 import argparse
-from config import ModelConfig
 import json
 from pathlib import Path
 import sys
 import re
+from dotenv import load_dotenv
 
+load_dotenv()
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]
 if str(ROOT) not in sys.path:
@@ -64,12 +60,16 @@ def save_data_to_json(data, output_file):
 def setup_agents(model_name, dataset):
     # Initialize the prompt handler
     handler = PromptHandler()
-    model_config = ModelConfig()
-    llm_config = model_config.get_config(model_name)
+    llm_config = {
+        "model": model_name,
+        "api_key": os.getenv('OPENAI_API_KEY', ''),
+        "base_url": 'https://api.openai.com/v1',
+        "cache_seed": 42
+    }
     # Load system messages
     if dataset == "RAWFC":
         evi_ext_sys_message = handler.handle_prompt('Evidence_Extraction_en')
-        name = "Evidence Extractor"
+        name = "Evidence_Extractor"
     else:
         evi_ext_sys_message = handler.handle_prompt('Evidence_Extraction_ch')
         name = "证据提取器"
@@ -185,7 +185,6 @@ def extract_have_evidence(json_string):
     Returns:
         str: The extracted 'have_evidence' value, or None if not found.
     """
-    print(json_string)
     try:
         # Define the regular expression pattern to handle different cases of quotation marks or missing quotation marks
         have_evidence_pattern = r'["\']?have_evidence["\']?\s*:\s*["\']?([^"\',]+)["\']?\s*,\s*["\']?evidence["\']?'
@@ -210,7 +209,6 @@ def extract_evidence(json_string):
     Returns:
         str: The extracted 'evidence' value, or None if not found.
     """
-    print(json_string)
     try:
         # Define the regular expression pattern to handle different cases of quotation marks or missing quotation marks
         evidence_pattern = r'["\']?evidence["\']?\s*:\s*["\']([^"\'}]+)["\']\s*}'
@@ -224,15 +222,6 @@ def extract_evidence(json_string):
 
     return evidence
 
-
-def safe_json_loads(json_string):
-    try:
-        return json.loads(json_string)
-    except Exception as e:
-        print(e)
-        return None
-
-
 def main():
     parser = argparse.ArgumentParser(description="Load different model configurations and set up agents.")
     parser.add_argument('--model_name', type=str, default='gpt-4o-mini',
@@ -241,7 +230,7 @@ def main():
                         help='Directory containing the datasets')
     parser.add_argument('--task', type=str, choices=['train', 'val', 'test'], default='test',
                         help='Task type to load (train/val/test)')
-    parser.add_argument('--dataset', type=str, required=True, choices=['GuardEval', 'RAWFC'],
+    parser.add_argument('--dataset', type=str, required=True, choices=['GuardEval', 'RAWFC'], default='RAWFC',
                         help='Name of the dataset to load')
     parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'evidence_extraction',
                         help='Output JSON file to save the data')

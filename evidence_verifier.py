@@ -1,18 +1,14 @@
 import os
-import ast
 from autogen import AssistantAgent, UserProxyAgent, ConversableAgent
-import autogen
-from autogen import initiate_chats
-import pprint
-import random
 from PromptH import PromptHandler
 import argparse
-from config import ModelConfig
 import json
 from pathlib import Path
 import sys
 import re
+from dotenv import load_dotenv
 
+load_dotenv()
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]
 if str(ROOT) not in sys.path:
@@ -64,12 +60,16 @@ def save_data_to_json(data, output_file):
 def setup_agents(model_name, dataset):
     # Initialize the prompt handler
     handler = PromptHandler()
-    model_config = ModelConfig()
-    llm_config = model_config.get_config(model_name)
+    llm_config = {
+        "model": model_name,
+        "api_key": os.getenv('OPENAI_API_KEY', ''),
+        "base_url": 'https://api.openai.com/v1',
+        "cache_seed": 42
+    }
     # Load system messages
     if dataset == "RAWFC":
         evi_ver_sys_message = handler.handle_prompt('Evidence_Verifier_en')
-        name = "Evidence Verifier"
+        name = "Evidence_Verifier"
     else:
         evi_ver_sys_message = handler.handle_prompt('Evidence_Verifier_ch')
         name = "证据审核员"
@@ -84,25 +84,6 @@ def setup_agents(model_name, dataset):
     user_proxy = UserProxyAgent("user_proxy", code_execution_config=False)
 
     return evidence_verifier, user_proxy
-
-
-def clean_message(message):
-    """
-    Clean the input message by replacing consecutive backslashes with a single backslash
-    and removing specific Unicode characters and escaped quotes.
-
-    Args:
-        message (str): The input message to be cleaned.
-
-    Returns:
-        str: The cleaned message.
-    """
-    # Replace consecutive backslashes with a single backslash
-    message = re.sub(r'\\\\+', r'\\', message)
-    # Remove specific Unicode characters and replace escaped quotes
-    message = message.replace("\u201c", "").replace("\u201d", "").replace('\\"', '"').replace("\u2013", "").replace(
-        "\u2227", "")
-    return message
 
 
 def clean_json_string(json_string):
@@ -179,15 +160,6 @@ def extract_values(json_string):
 
     return evidence
 
-
-def safe_json_loads(json_string):
-    try:
-        return json.loads(json_string)
-    except Exception as e:
-        print(e)
-        return None
-
-
 def create_meta_message(item, dataset):
     if dataset == 'RAWFC':
         evidence_header = "Evidence:\n"
@@ -228,7 +200,7 @@ def main():
                         help='Directory containing the datasets')
     parser.add_argument('--task', type=str, choices=['train', 'val', 'test'], default='test',
                         help='Task type to load (train/val/test)')
-    parser.add_argument('--dataset', type=str, required=True, choices=['GuardEval', 'RAWFC'],
+    parser.add_argument('--dataset', type=str, choices=['GuardEval', 'RAWFC'], default='RAWFC',
                         help='Name of the dataset to load')
     parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'evidence_verify',
                         help='Output JSON file to save the data')
@@ -279,6 +251,7 @@ def main():
         json_name = results_data['event_id'].replace('.json', '')
         output_file = output_dir / f'{json_name}.json'
         save_data_to_json(results_data, output_file)
+
         i += 1
 
 

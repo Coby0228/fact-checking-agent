@@ -1,18 +1,14 @@
 import os
-import ast
 from autogen import AssistantAgent, UserProxyAgent, ConversableAgent
-import autogen
-from autogen import initiate_chats
-import pprint
-import random
 from PromptH import PromptHandler
 import argparse
-from config import ModelConfig
 import json
 from pathlib import Path
 import sys
 import re
+from dotenv import load_dotenv
 
+load_dotenv()
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]
 if str(ROOT) not in sys.path:
@@ -115,7 +111,6 @@ def extract_values(json_string):
 
 
 def extract_prediction(json_string):
-    print(json_string)
     try:
         # Define the regular expression pattern to handle different cases of quotation marks or missing quotation marks
         prediction_pattern = r'["\']?prediction["\']?\s*:\s*["\']?([^"\',]+)["\']?\s*,\s*["\']?justification["\']?'
@@ -134,7 +129,6 @@ def extract_prediction(json_string):
 
 
 def extract_justification(json_string):
-    print(json_string)
     try:
         # Define the regular expression pattern to handle different cases of quotation marks or missing quotation marks
         justification_pattern = r'["\']?justification["\']?\s*:\s*["\']([^"\'}]+)["\']\s*}'
@@ -150,24 +144,6 @@ def extract_justification(json_string):
         justification = None
 
     return justification
-
-
-def safe_json_loads(json_string):
-    try:
-        return json.loads(json_string)
-    except Exception as e:
-        print(e)
-        return None
-
-
-def remove_field_from_json_list(data_list, field_to_remove):
-    """
-    Remove a specific field from each dictionary in the list.
-    """
-    for item in data_list:
-        item.pop(field_to_remove, None)
-    return data_list
-
 
 def create_synthesizer_message(claim, res1_summary, res2_summary, res3_summary, dataset='RAWFC'):
     res1_summary = extract_outermost_json(res1_summary)
@@ -304,7 +280,7 @@ def main():
                         help='Directory containing the datasets')
     parser.add_argument('--task', type=str, choices=['train', 'val', 'test'], default='test',
                         help='Task type to load (train/val/test)')
-    parser.add_argument('--dataset', type=str, required=True, choices=['GuardEval', 'RAWFC'],
+    parser.add_argument('--dataset', type=str, required=True, choices=['GuardEval', 'RAWFC'], default='RAWFC',
                         help='Name of the dataset to load')
     parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'prediction',
                         help='Output JSON file to save the data')
@@ -319,15 +295,19 @@ def main():
     output_dir = args.output_dir / args.dataset / args.task
 
     handler = PromptHandler()
-    model_config = ModelConfig()
-    llm_config = model_config.get_config(args.model_name)
+    llm_config = {
+        "model": args.model_name,
+        "api_key": os.getenv('OPENAI_API_KEY', ''),
+        "base_url": 'https://api.openai.com/v1',
+        "cache_seed": 42
+    }
     if args.dataset == 'RAWFC':
         fact_checker_p_sys_message = handler.handle_prompt('Fact_Checker_P_en')
         fact_checker_m_sys_message = handler.handle_prompt('Fact_Checker_M_en')
         fact_checker_n_sys_message = handler.handle_prompt('Fact_Checker_N_en')
         synthesizer_sys_message = handler.handle_prompt('Synthesizer_en')
         finalizer_sys_message = handler.handle_prompt('Finalizer_en')
-        fact_checker_names = ["Fact Checker 1", "Fact Checker 2", "Fact Checker 3"]
+        fact_checker_names = ["Fact_Checker_1", "Fact_Checker_2", "Fact_Checker_3"]
         synthesizer_name = "Synthesizer"
         finalizer_name = "Finalizer"
         fact_check_prompt = (
@@ -483,7 +463,7 @@ def main():
         output_file = output_dir / f'{json_name}.json'
         save_data_to_json(results_data, output_file)
         i += 1
-        print(f"{i}'s claim is evaluated")
+        print(f"claim {i} is evaluated")
 
 
 if __name__ == "__main__":
