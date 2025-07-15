@@ -2,11 +2,13 @@
 
 ## TODO
 
-- 找 web search tool 
+- SERP 
   - [Serper](https://serper.dev/) 
+- crawler
   - [linkup](https://www.linkup.so/)
   - [exa](https://exa.ai/)
-  - [crawl4ai](https://github.com/unclecode/crawl4ai)
+  - [crawl4ai](https://github.com/unclecode/crawl4ai): 太多 link 雜訊
+  - [~~trafilatura~~](https://trafilatura.readthedocs.io/en/latest/index.html): 太不穩定
 
 - 怎麼辨別來源是否可信?
   - 檢查 domain
