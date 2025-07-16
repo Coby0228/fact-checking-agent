@@ -5,10 +5,13 @@
 - SERP 
   - [Serper](https://serper.dev/) 
 - crawler
-  - [linkup](https://www.linkup.so/)
-  - [exa](https://exa.ai/)
+  - [linkup](https://www.linkup.so/): 要錢，兩個都有
+  - [exa](https://exa.ai/): 強，但要錢
+- 開源套件
   - [crawl4ai](https://github.com/unclecode/crawl4ai): 太多 link 雜訊
-  - [~~trafilatura~~](https://trafilatura.readthedocs.io/en/latest/index.html): 太不穩定
+  - [trafilatura](https://trafilatura.readthedocs.io/en/latest/index.html): 太不穩定
+  - [crawl4ai + mistune](https://github.com/lepture/mistune): 搭 crawl4ai 沒啥用
+  - readability-lxml + bs4: 測試中
 
 - 怎麼辨別來源是否可信?
   - 檢查 domain
