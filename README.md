@@ -3,6 +3,7 @@
 ## 心得
 
 - 作者沒去實作 web search，找到的資料其實就決定了有沒有可能回答 claim，感覺加個 reasoning model 做 plan 要去甚麼網站找甚麼資料
+- 這樣還不用處理 SERP 之後的爬蟲問題 na...
 
 ## TODO
 
