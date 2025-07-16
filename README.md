@@ -5,6 +5,11 @@
 - 作者沒去實作 web search，找到的資料其實就決定了有沒有可能回答 claim，感覺加個 reasoning model 做 plan 要去甚麼網站找甚麼資料
 - 這樣還不用處理 SERP 之後的爬蟲問題 na...
 
+## 實作
+
+- 以 web search MCP 讓 LLM 到 planner agent 的網站中自己找證據 (不用自己寫爬蟲)
+- 後面先接原本流程，實驗可以把資料集的 report 拔掉，但要想一下其他方法怎麼實作，應該也是原本的 model 加上 MCP 
+
 ## TODO
 
 - SERP 
