@@ -34,7 +34,6 @@ def extract_outermost_json(text):
         return None
     return None
 
-
 def load_data(data_dir, dataset, task):
     data_dir = data_dir / dataset / task
     data_list = []
@@ -48,14 +47,12 @@ def load_data(data_dir, dataset, task):
 
     return data_list
 
-
 def save_data_to_json(data, output_file):
     # Create directory if it doesn't exist
     os.makedirs(output_file.parent, exist_ok=True)
     with open(output_file, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
     print('Save completed\n')
-
 
 def setup_agents(model_name, dataset):
     # Initialize the prompt handler
@@ -84,7 +81,6 @@ def setup_agents(model_name, dataset):
     user_proxy = UserProxyAgent("user_proxy", code_execution_config=False)
 
     return evidence_extractor, user_proxy
-
 
 def clean_message(message):
     """
@@ -174,7 +170,6 @@ def extract_values(json_string):
 
     return have_evidence, evidence
 
-
 def extract_have_evidence(json_string):
     """
     Extract the 'have_evidence' value from the JSON string using a regular expression.
@@ -197,7 +192,6 @@ def extract_have_evidence(json_string):
         have_evidence = None
 
     return have_evidence
-
 
 def extract_evidence(json_string):
     """

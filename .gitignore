@@ -8,6 +8,7 @@ __pycache__
 # Data
 dataset/
 results/
+data/
 
 # Secrets and configuration
 .env
