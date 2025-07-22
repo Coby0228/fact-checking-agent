@@ -9,6 +9,7 @@ __pycache__
 dataset/
 results/
 data/
+serp_logs/
 
 # Secrets and configuration
 .env
