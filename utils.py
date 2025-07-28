@@ -1,6 +1,5 @@
 import os
 from autogen import AssistantAgent, UserProxyAgent, ConversableAgent, register_function
-from PromptH import PromptHandler
 import json
 from pathlib import Path
 import sys
@@ -8,6 +7,7 @@ import re
 from dotenv import load_dotenv
 
 from tools import search_web, fetch_url
+from prompt.PromptH import PromptHandler
 
 
 load_dotenv()

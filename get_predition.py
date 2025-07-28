@@ -1,11 +1,11 @@
 import os
 from autogen import AssistantAgent, UserProxyAgent, ConversableAgent
-from PromptH import PromptHandler
 import argparse
 import json
 import re
 
 from utils import *
+from prompt.PromptH import PromptHandler
 
 
 def extract_values(json_string):
