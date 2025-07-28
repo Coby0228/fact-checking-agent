@@ -1,10 +1,8 @@
 import os
 import json
-import tempfile
-from pathlib import Path
 from tools.client import SerperClient
 
-LOG_PATH = "serp_logs/claim.json"
+LOG_PATH = "logs/serp_logs/claim.json"
 serper_client = SerperClient()
 
 def load_log():
@@ -19,8 +17,17 @@ def save_log(data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 def search_web(query: str, num_results: int = 5, claim: str = None) -> list:
+    """
+    Searches the web for a given query and logs the results, avoiding duplicates for the same claim.
 
-    print(f"🔍 搜尋: {query} (返回數量: {num_results})")
+    Args:
+        query (str): The search keywords to use for the web search.
+        num_results (int): The desired number of search results to return. Defaults to 5.
+        claim (str): The claim being investigated. This is used to group search results and prevent fetching the same URL multiple times for the same claim.
+
+    Returns:
+        list: A list of search result items from the search provider.
+    """
     result = serper_client.run(query, num_results)
     if not result:
         print("⚠️ 無搜尋結果")
@@ -47,7 +54,7 @@ def search_web(query: str, num_results: int = 5, claim: str = None) -> list:
     entry["evidence"].extend(new_evidence)
     save_log(logs)
 
-    return new_evidence
+    return result
 
 if __name__ == "__main__":
 

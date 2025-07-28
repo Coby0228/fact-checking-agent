@@ -6,6 +6,7 @@ class PromptHandler:
         self.prompts = {
             'Evidence_Extraction_ch': self.load_prompt('Evidence_Extraction_ch'),
             'Evidence_Extraction_en': self.load_prompt('Evidence_Extraction_en'),
+            'Evidence_Extraction_Iterative_en': self.load_prompt('Evidence_Extraction_Iterative_en'),
             'Evidence_Verifier_ch': self.load_prompt('Evidence_Verifier_ch'),
             'Evidence_Verifier_en': self.load_prompt('Evidence_Verifier_en'),
             'Finalizer_ch': self.load_prompt('Finalizer_ch'),

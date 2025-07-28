@@ -1,7 +1,22 @@
 import asyncio
+import os
+import json
 from tools.client import MCPFetchClient
 
 mcp_client = MCPFetchClient()
+LOG_PATH = "logs/fetch_logs/claim.json"
+
+
+def load_log():
+    if os.path.exists(LOG_PATH):
+        with open(LOG_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+def save_log(data):
+    os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
+    with open(LOG_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
 
 
 def run_async_fetch(url: str, max_length: int, start_index: int, raw: bool):
@@ -50,7 +65,7 @@ def fetch_url(
     raw: bool = False
 ) -> str:
     """
-    使用 MCP fetch server 從網路擷取內容。
+    使用 MCP fetch server 從網路擷取內容，並記錄每次呼叫。
     Args:
         url: 目標網址
         max_length: 最大字元數 (500-50000)
@@ -67,12 +82,26 @@ def fetch_url(
         raw=raw
     )
     
-    # return result
-    return result.content[0].text
+    content_text = result.content[0].text if result.content else ""
+
+    logs = load_log()
+    
+    logs.append({
+        "url": url,
+        "content": content_text,
+        "max_length": max_length,
+        "start_index": start_index,
+        "raw": raw,
+    })
+    
+    save_log(logs)
+
+    return content_text
 
 # 測試
 if __name__ == "__main__":
     print("=== 測試 MCP fetch_url ===")
     result = fetch_url("https://example.com", max_length=1000)
     print(result)
-    print("✅ MCP fetch 工具測試完成")
+    fetch_url("https://example.com", start_index=100) # 測試不同參數
+    print(f"✅ MCP fetch 工具測試完成，請查看 {LOG_PATH} 確認日誌")

@@ -1,182 +1,117 @@
 import argparse
 import json
 from pathlib import Path
+import re
 
 from utils import *
+from PromptH import PromptHandler
 
-def load_evidence_from_json(claim):
-    """從 serp_logs/claim.json 載入證據資料"""
-    evidence_file = Path("serp_logs") / "claim.json"
+def gather_evidence_in_single_session(claim, label, event_id, evidence_extractor, user_proxy, handler, max_reports_target, max_turns_limit):
+    """
+    透過一次性的、長對話的 Agent 互動來搜集所有證據。
+    """
+    # 新的提示，指示 Agent 自行完成所有迭代
+    base_prompt = handler.handle_prompt('Evidence_Extraction_Iterative_en') 
     
-    if not evidence_file.exists():
-        return []
-    
-    try:
-        with open(evidence_file, 'r', encoding='utf-8') as f:
-            evidence_data = json.load(f)
-        
-        for item in evidence_data:
-            print(f"Checking claim: {item.get('claim')}")
-            print(f"Against provided claim: {claim}")
-            if item.get('claim') == claim:
-                return item.get('evidence', [])
-        return []
-        
-    except Exception:
-        return []
-
-def extract_evidence_from_urls(claim, evidence_list, evidence_extractor, user_proxy):
-    """從證據列表中提取每個URL的相關證據"""
-    if not evidence_list:
-        print(f"No evidence found for claim: {claim}")
-        return []
-
-    urls_info = []
-    for idx, evidence_item in enumerate(evidence_list, 1):
-        url = evidence_item.get('link', '')
-        title = evidence_item.get('title', '')
-        snippet = evidence_item.get('snippet', '')
-        urls_info.append(f"URL{idx}: {url}\nTitle: {title}\nSnippet: {snippet}")
-    
-    evidence_message = (
-        f"Extract evidence for claim: {claim}\n\n"
-        f"Sources to analyze:\n" + "\n\n".join(urls_info) + "\n\n"
-        f"Instructions:\n"
-        f"1. For each URL, evaluate if the snippet is relevant to the claim\n"
-        f"2. If relevance is high or medium, use fetch_url(url) to get the full content\n"
-        f"3. Extract relevant evidence from the fetched content\n"
-        f"4. If relevance is low, skip fetching and mark as no evidence\n\n"
-        f"Process all URLs systematically. When finished with all URLs, return final results.\n\n"
-        f"Return JSON format:\n"
-        f"{{\n"
-        f'  "detailed_results": [\n'
-        f'    {{\n'
-        f'      "url": "URL address",\n'
-        f'      "title": "page title",\n'
-        f'      "relevance_score": "high/medium/low",\n'
-        f'      "fetched_content": true/false,\n'
-        f'      "have_evidence": true/false,\n'
-        f'      "evidence": "extracted evidence text or explanation",\n'
-        f'      "confidence_level": "high/medium/low"\n'
-        f'    }}\n'
-        f'  ]\n'
-        f"}}"
+    session_prompt = base_prompt.format(
+        claim=claim,
+        max_reports=max_reports_target
     )
 
-    try:
-        res = user_proxy.initiate_chat(
-            recipient=evidence_extractor,
-            clear_history=True,
-            message=evidence_message,
-            cache=None,
-            summary_method="last_msg",
-            max_turns=len(evidence_list) * 2 + 3
-        )
+    print(f"\n{'='*20} Starting Evidence Gathering Session {'='*20}")
+    print(f"Claim: {claim}")
+    print(f"Agent max_turns set to: {max_turns_limit}")
 
-        final_response = res.chat_history[-1]['content']
-        try:
-            import re
-            json_match = re.search(r'\{.*\}', final_response, re.DOTALL)
-            if json_match:
-                evidence_json = json.loads(json_match.group())
-            else:
-                evidence_json = json.loads(final_response)
-        except Exception:
-            evidence_json = {"detailed_results": []}
-
-        evidence_results = []
-        detailed_results = evidence_json.get('detailed_results', [])
-        
-        for idx, evidence_item in enumerate(evidence_list):
-            if idx < len(detailed_results):
-                result = detailed_results[idx]
-            else:
-                result = {
-                    "url": evidence_item.get('link', ''),
-                    "title": evidence_item.get('title', ''),
-                    "relevance_score": "low",
-                    "fetched_content": False,
-                    "have_evidence": False,
-                    "evidence": "",
-                    "confidence_level": "low"
-                }
-            evidence_results.append(result)
-
-        return evidence_results
-
-    except Exception:
-        return []
-
-def perform_search_for_claim(claim, evidence_extractor, user_proxy):
-    """執行搜尋階段，返回URL列表"""
-    search_message = (
-        f"Please analyze the following claim and use search_web to find relevant sources.\n\n"
-        f"Claim: \"{claim}\"\n\n"
-        f"Generate appropriate search queries and perform up to 3 searches. "
-    )
-
-    user_proxy.initiate_chat(
+    res = user_proxy.initiate_chat(
         recipient=evidence_extractor,
         clear_history=True,
-        message=search_message,
-        cache=None,
-        summary_method="last_msg",
-        max_turns=2
+        message=session_prompt,
+        max_turns=max_turns_limit,
     )
+
+    # 嘗試從最後一條非空的訊息中提取內容
+    final_response = None
+    for msg in reversed(res.chat_history):
+        if msg.get("content") and "{" in msg.get("content"):
+            final_response = msg["content"]
+            break
     
-    return True
+    if not final_response:
+        print("Error: No valid JSON content found in agent response.")
+        # 返回一個空的 dossier 結構以避免後續錯誤
+        return {
+            "event_id": event_id, "claim": claim, "label": label, 
+            "reports": [], "search_history": []
+        }
+
+    try:
+        json_match = re.search(r'\{.*\}', final_response, re.DOTALL)
+        if not json_match:
+            raise json.JSONDecodeError("No JSON object found in the response.", final_response, 0)
+        
+        # Agent 應該回傳完整的 dossier
+        final_dossier = json.loads(json_match.group())
+        
+        # 為了格式統一，手動補上我們已知的資訊
+        final_dossier["event_id"] = event_id
+        final_dossier["claim"] = claim
+        final_dossier["label"] = label
+
+        print(f"\nFinished gathering evidence. Total reports found: {len(final_dossier.get('reports', []))}")
+        return final_dossier
+
+    except (json.JSONDecodeError, KeyError) as e:
+        print(f"Error parsing final agent response: {e}")
+        print(f"Raw response was: {final_response}")
+        return {
+            "event_id": event_id, "claim": claim, "label": label, 
+            "reports": [], "search_history": []
+        }
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Load different model configurations and set up agents.")
+    parser = argparse.ArgumentParser(description="Gather evidence for claims in a single session.")
     parser.add_argument('--model_name', type=str, default='gpt-4o-mini',
-                        help='Name of the model to load (e.g., gpt-4o-mini, llama)')
+                        help='Name of the model to load')
     parser.add_argument('--data_dir', type=str, default=ROOT / 'dataset',
                         help='Directory containing the datasets')
     parser.add_argument('--task', type=str, choices=['train', 'val', 'test'], default='test',
-                        help='Task type to load (train/val/test)')
+                        help='Task type to load')
     parser.add_argument('--dataset', type=str, choices=['GuardEval', 'RAWFC'], default='RAWFC',
                         help='Name of the dataset to load')
-    parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'evidence_extraction',
-                        help='Output JSON file to save the data')
+    parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'evidence_gathering',
+                        help='Output directory to save the gathered evidence')
+    parser.add_argument('--max_reports', type=int, default=3,
+                        help='Target number of evidence reports to ask the agent to find.')
     args = parser.parse_args()
 
     data = load_data(args.data_dir, args.dataset, args.task)
     evidence_extractor, user_proxy = setup_agents('Evidence_Extractor')
+    handler = PromptHandler()
     output_dir = Path(args.output_dir) / args.dataset / args.task
     output_dir.mkdir(parents=True, exist_ok=True)
 
     for item in data:
-        print(f"Claim: {item['claim']}")
         claim = item['claim']
+        label = item.get('label', 'unknown')
+        event_id = item['event_id'].replace('.json', '')    
+        max_turns_for_session = args.max_reports * 5
+
+        final_dossier = gather_evidence_in_single_session(
+            claim=claim,
+            label=label,
+            event_id=event_id,
+            evidence_extractor=evidence_extractor,
+            user_proxy=user_proxy,
+            handler=handler,
+            max_reports_target=args.max_reports,
+            max_turns_limit=max_turns_for_session
+        )
         
-        results_data = {
-            'event_id': item['event_id'],
-            'claim': item['claim'],
-            'label': item['label'],
-            'search_results': [],
-            'evidence_results': []
-        }
-        
-        # 第一階段：搜尋階段
-        search_success = perform_search_for_claim(claim, evidence_extractor, user_proxy)
-        if search_success:
-            # 從JSON檔案載入搜尋結果
-            evidence_list = load_evidence_from_json(claim)
-            results_data['search_results'] = evidence_list
-            
-            if evidence_list:
-                # 第二階段：證據提取階段
-                print('==' * 20)
-                print(f"Step 2: Extracting evidence from URLs for claim: {claim}")
-                print('==' * 20)
-                evidence_results = extract_evidence_from_urls(claim, evidence_list, evidence_extractor, user_proxy)
-                results_data['evidence_results'] = evidence_results
-        
-        # 保存結果
-        json_name = results_data['event_id'].replace('.json', '')
-        output_file = output_dir / f'{json_name}.json'
-        save_data_to_json(results_data, output_file)
+        # 儲存搜集到的所有證據
+        output_file = output_dir / f'{event_id}.json'
+        save_data_to_json(final_dossier, output_file)
+        print(f"✅ Evidence gathering for event {event_id} complete. Results saved to {output_file}")
 
 if __name__ == "__main__":
     main()
