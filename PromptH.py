@@ -4,21 +4,17 @@ class PromptHandler:
     def __init__(self):
         self.prompt_directory = self.get_prompt_directory()
         self.prompts = {
-            'Evidence_Extraction_ch': self.load_prompt('Evidence_Extraction_ch'),
-            'Evidence_Extraction_en': self.load_prompt('Evidence_Extraction_en'),
-            'Evidence_Extraction_Iterative_en': self.load_prompt('Evidence_Extraction_Iterative_en'),
-            'Evidence_Verifier_ch': self.load_prompt('Evidence_Verifier_ch'),
-            'Evidence_Verifier_en': self.load_prompt('Evidence_Verifier_en'),
-            'Finalizer_ch': self.load_prompt('Finalizer_ch'),
+            'Evidence_Extractor_System': self.load_prompt('Evidence_Extractor_System'),
+            'Evidence_Extractor_User': self.load_prompt('Evidence_Extractor_User'),
+            'Evidence_Verifier_System': self.load_prompt('Evidence_Verifier_System'),
+            'Evidence_Verifier_User': self.load_prompt('Evidence_Verifier_User'),
+            
             'Finalizer_en': self.load_prompt('Finalizer_en'),
-            'Fact_Checker_M_ch': self.load_prompt('Fact_Checker_M_ch'),
             'Fact_Checker_M_en': self.load_prompt('Fact_Checker_M_en'),
-            'Fact_Checker_N_ch': self.load_prompt('Fact_Checker_N_ch'),
             'Fact_Checker_N_en': self.load_prompt('Fact_Checker_N_en'),
-            'Fact_Checker_P_ch': self.load_prompt('Fact_Checker_P_ch'),
             'Fact_Checker_P_en': self.load_prompt('Fact_Checker_P_en'),
-            'Synthesizer_ch': self.load_prompt('Synthesizer_ch'),
             'Synthesizer_en': self.load_prompt('Synthesizer_en')
+
         }
 
     def get_prompt_directory(self):
@@ -40,8 +36,3 @@ class PromptHandler:
             return f"{prompt_content}"
         else:
             return "Invalid prompt name"
-
-if __name__ == "__main__":
-    # Example usage
-    handler = PromptHandler()
-    print(handler.handle_prompt('Evidence_Extraction_ch'))

@@ -1,7 +1,6 @@
 import os
 from autogen import AssistantAgent, UserProxyAgent, ConversableAgent, register_function
 from PromptH import PromptHandler
-import argparse
 import json
 from pathlib import Path
 import sys
@@ -73,35 +72,33 @@ def setup_agents(agent_name):
 
     evidence_extractor = AssistantAgent(
         name=agent_name,
-        system_message=handler.handle_prompt('Evidence_Extraction_en'),
+        system_message=handler.handle_prompt(agent_name + '_System'),
         llm_config=llm_config,
-        is_termination_msg=lambda msg: (msg.get("content") or "").strip().endswith("TERMINATE")
     )
 
     user_proxy = UserProxyAgent(
         name="user_proxy", 
-        code_execution_config={
-            "last_n_messages": 1, 
-        },
+        code_execution_config=False,
         human_input_mode="NEVER",
         is_termination_msg=lambda msg: (msg.get("content") or "").strip().endswith("TERMINATE")
     )
 
-    register_function(
-        search_web,
-        caller=evidence_extractor,  # AssistantAgent 可以調用
-        executor=user_proxy,        # UserProxyAgent 可以執行
-        name="search_web",
-        description="Search for information related to a claim and store results"
-    )
-    
-    register_function(
-        fetch_url,
-        caller=evidence_extractor,
-        executor=user_proxy,
-        name="fetch_url", 
-        description="Fetch content from a URL for evidence extraction"
-    )
+    if agent_name == 'Evidence_Extractor':
+        register_function(
+            search_web,
+            caller=evidence_extractor,  # AssistantAgent 可以調用
+            executor=user_proxy,        # UserProxyAgent 可以執行
+            name="search_web",
+            description="Search for information related to a claim and store results"
+        )
+        
+        register_function(
+            fetch_url,
+            caller=evidence_extractor,
+            executor=user_proxy,
+            name="fetch_url", 
+            description="Fetch content from a URL for evidence extraction"
+        )
 
     return evidence_extractor, user_proxy
 
@@ -177,17 +174,12 @@ def extract_values(json_string):
 
     return evidence
 
-def create_meta_message(item, dataset):
-    if dataset == 'RAWFC':
-        evidence_header = "Evidence:\n"
-        no_evidence_text = "No evidence provided\n\n"
-        prompt = "Please analyze and verify the accuracy and completeness of the provided evidence in relation to the given claim.\n\n"
-        claim_prefix = "Claim:"
-    else:
-        evidence_header = "证据:\n"
-        no_evidence_text = "没有提供证据\n\n"
-        prompt = "请分析并验证所提供的证据与给定主张相关的准确性和完整性。\n\n"
-        claim_prefix = "主张:"
+def create_meta_message(item):
+    
+    evidence_header = "Evidence:\n"
+    no_evidence_text = "No evidence provided\n\n"
+    prompt = "Please analyze and verify the accuracy and completeness of the provided evidence in relation to the given claim.\n\n"
+    claim_prefix = "Claim:"
 
     evidence = evidence_header
     for report in item['reports']:
