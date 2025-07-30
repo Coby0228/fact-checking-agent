@@ -36,16 +36,58 @@ def extract_outermost_json(text):
         return None
     return None
 
-def load_data(data_dir, dataset, task):
-    data_dir = data_dir / dataset / task
+def load_data(data_dir, dataset, task=None):
+    """
+    根據是否提供 task 參數，從目錄或單一檔案載入資料。
+
+    - 如果提供了 task，則從 data_dir/dataset/task/ 目錄載入所有 JSON 檔案。
+    - 如果未提供 task，則從 data_dir/dataset/{dataset}_data_with_labels.json 載入單一檔案。
+
+    Args:
+        data_dir (str or Path): 包含資料集的根目錄。
+        dataset (str): 資料集名稱 (例如 'RAWFC', 'TFC')。
+        task (str, optional): 任務類型 (例如 'train', 'test')。預設為 None。
+
+    Returns:
+        list: 載入的資料列表。如果路徑不存在或發生錯誤，則回傳空列表。
+    """
+    base_path = Path(data_dir) / dataset
     data_list = []
 
-    for file_name in os.listdir(data_dir):
-        if file_name.endswith('.json'):
-            file_path = os.path.join(data_dir, file_name)
+    if dataset == 'TFC':
+        # --- 邏輯一：處理多檔案目錄 ---
+        task_dir = base_path / task
+        if not task_dir.is_dir():
+            print(f"Error: Directory not found: {task_dir}")
+            return []
+        
+        print(f"Loading data from directory: {task_dir}")
+        for file_name in os.listdir(task_dir):
+            if len(data_list) >= 100:
+                break  # Stop after loading 100 items
+            if file_name.endswith('.json'):
+                file_path = task_dir / file_name
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as file:
+                        data = json.load(file)
+                        data_list.append(data)
+                except json.JSONDecodeError:
+                    print(f"Warning: Could not decode JSON from {file_path}")
+
+    else:
+        # --- 邏輯二：處理單一彙總檔案 ---
+        file_path = base_path / f"{dataset}_data_with_labels.json"
+        if not file_path.exists():
+            print(f"Error: File not found: {file_path}")
+            return []
+
+        print(f"Loading data from single file: {file_path}")
+        try:
             with open(file_path, 'r', encoding='utf-8') as file:
-                data = json.load(file)
-                data_list.append(data)  # Assuming each file has a key 'claim'
+                full_data_list = json.load(file)
+                data_list = full_data_list[:100]  # Only take the first 100 items
+        except json.JSONDecodeError:
+            print(f"Error: Could not decode JSON from {file_path}")
 
     return data_list
 

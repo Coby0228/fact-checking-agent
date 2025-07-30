@@ -288,9 +288,9 @@ def main():
                         help='base model(e.g., gpt-4o-mini, llama)')
     parser.add_argument('--data_dir', type=str, default=ROOT / 'results' / 'evidence_verify',
                         help='Directory containing the datasets')
-    parser.add_argument('--task', type=str, choices=['train', 'val', 'test'], default='test',
+    parser.add_argument('--task', type=str, choices=['train', 'val', 'test', ''], default='test',
                         help='Task type to load (train/val/test)')
-    parser.add_argument('--dataset', type=str, choices=['GuardEval', 'RAWFC'], default='RAWFC',
+    parser.add_argument('--dataset', type=str, choices=['GuardEval', 'RAWFC', 'TFC'], default='RAWFC',
                         help='Name of the dataset to load')
     parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'prediction',
                         help='Output JSON file to save the data')

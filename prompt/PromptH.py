@@ -14,13 +14,10 @@ class PromptHandler:
             'Fact_Checker_N_en': self.load_prompt('Fact_Checker_N_en'),
             'Fact_Checker_P_en': self.load_prompt('Fact_Checker_P_en'),
             'Synthesizer_en': self.load_prompt('Synthesizer_en')
-
         }
 
     def get_prompt_directory(self):
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        prompt_directory = os.path.join(current_dir, 'prompt')
-        return prompt_directory
+        return os.path.dirname(os.path.abspath(__file__))
 
     def load_prompt(self, prompt_name):
         file_path = os.path.join(self.prompt_directory, prompt_name)

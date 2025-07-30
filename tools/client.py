@@ -8,6 +8,17 @@ from mcp.client.stdio import stdio_client
 
 load_dotenv()
 
+def load_log(LOG_PATH):
+    if os.path.exists(LOG_PATH):
+        with open(LOG_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+def save_log(data, LOG_PATH):
+    os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
+    with open(LOG_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
 class SerperClient:
     def __init__(self, api_key=None):
         self.url = "https://google.serper.dev/search"
@@ -45,7 +56,6 @@ class SerperClient:
                 })
 
         return results
-
 
 
 class MCPFetchClient:

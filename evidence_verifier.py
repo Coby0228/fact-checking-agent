@@ -43,9 +43,9 @@ def main():
                         help='Name of the model to load (e.g., gpt-4o-mini, llama)')
     parser.add_argument('--data_dir', type=str, default=ROOT / 'results' / 'evidence_extraction',
                         help='Directory containing the datasets with extracted evidence')
-    parser.add_argument('--task', type=str, choices=['train', 'val', 'test'], default='test',
+    parser.add_argument('--task', type=str, choices=['train', 'val', 'test', ''], default='test',
                         help='Task type to load (train/val/test)')
-    parser.add_argument('--dataset', type=str, choices=['GuardEval', 'RAWFC'], default='RAWFC',
+    parser.add_argument('--dataset', type=str, choices=['GuardEval', 'RAWFC', 'TFC'], default='RAWFC',
                         help='Name of the dataset to load')
     parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'evidence_verify',
                         help='Output directory to save the verified evidence')

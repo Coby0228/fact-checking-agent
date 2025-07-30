@@ -1,20 +1,9 @@
-import os
-import json
-from tools.client import SerperClient
+from tools.client import SerperClient, load_log, save_log
+
 
 LOG_PATH = "logs/serp_logs/claim.json"
 serper_client = SerperClient()
 
-def load_log():
-    if os.path.exists(LOG_PATH):
-        with open(LOG_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return []
-
-def save_log(data):
-    os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
-    with open(LOG_PATH, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
 
 def search_web(query: str, num_results: int = 5, claim: str = None) -> list:
     """
@@ -33,7 +22,7 @@ def search_web(query: str, num_results: int = 5, claim: str = None) -> list:
         print("⚠️ 無搜尋結果")
         return []
 
-    logs = load_log()
+    logs = load_log(LOG_PATH)
 
     # 尋找 claim entry
     for entry in logs:
@@ -52,15 +41,6 @@ def search_web(query: str, num_results: int = 5, claim: str = None) -> list:
     ]
 
     entry["evidence"].extend(new_evidence)
-    save_log(logs)
+    save_log(logs, LOG_PATH)
 
     return result
-
-if __name__ == "__main__":
-
-    claim = "OpenAI 是由誰創辦的？"
-
-    search_web("OpenAI company founders", num_results=3, claim=claim)
-    search_web("Who started OpenAI", num_results=3, claim=claim)
-
-    print(f"✅ 測試完成，請查看 {LOG_PATH}")

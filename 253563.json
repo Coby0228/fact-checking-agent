@@ -1,0 +1,976 @@
+{
+    "event_id": "253563",
+    "claim": "A map shows America's Favorite Fast Food restaurants. ",
+    "original_label": "false",
+    "label": "false",
+    "explain": "On June 5, 2020, the Barstool Sports Twitter account shared an image of a map that supposedly showed America’s favorite fast food restaurants by state:\n\nThe map went viral, and soon, restaurant chains such as Long John Silvers, Rainforest Cafe, and Sbarro were trending on Twitter as social media users expressed confusion over how these chains were named the favorites in their states. \nThis map, however, is not based on data from an authoritative source. This map is a prank created by Barstool Sports. \nThe first hint is that this data was supposedly compiled by an organization called the Public Information and Statistics Society. Not only could we not find an official organization by this name, the acronym for this group is PISS, which, to say the least, is a bit suspicious. \nBarstool Sports’ punny follow-up tweet also points to the humorous intentions of this map:\n\nThis map of favorite restaurants also doesn’t add up, geographically speaking. For instance, the map claims that The Rainforest Cafe is Colorado’s favorite restaurant chain, despite the fact that there are no Rainforest Cafe locations in the state.\nIn short, this viral map supposedly showing the most popular restaurant chains by state isn’t real and was a joke shared by Barstool Sports that isn’t based on any data from a reputable source. In other words, the Barstool Sports and the Public Information for Statistics Society are just “taking the piss.” ",
+    "reports": [
+        {
+            "link": "https://www.huffpost.com/entry/best-fast-food-restaurants_n_1507319",
+            "content": "”\nClick through the below slideshow to see America 's other favorite fast food restaurant . Subway top the list of the country 's favorite fast food restaurant , beat out burger pusher McDonald 's , Burger King and Five Guys . America 's favorite fast food be n't deep fry or candy-coated , accord to a new study by market research firm Harris Interactive . The restaurant that score below that number be Arby 's , Chipotle , Church ’ s Chicken , Hardees , Jack in the Box , KFC , Long John Silver 's , Quiznos , Sonic America 's Drive-In , Taco Bell and White Castle . These study result show just how strongly Subway ’ s position around fast and healthy meal choice be resonate with consumer . This be the eighth year in a row that Subway have best it fast food competitor . “ For some time , the medium spotlight on obesity , diabetes , and heart disease , and the importance of make good meal choice away from home , have drive growth in the range and number of low calorie/better nutrition dish be offer in all type of restaurant . “ Subway ’ s consistently high ranking in the Harris Poll EquiTrend study clearly indicate that consumer be graduate from just say they ’ re interested in good nutrition choice in restaurant to actually change their purchase behavior , ” say Mary Bouchard , Vice President of Consumer Goods , Retail and Restaurant Research at Harris Interactive . The average score for all restaurant be 61.67 .",
+            "domain": "www.huffpost.com",
+            "tokenized": [
+                {
+                    "sent": "”\nClick through the below slideshow to see America 's other favorite fast food restaurant .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Subway top the list of the country 's favorite fast food restaurant , beat out burger pusher McDonald 's , Burger King and Five Guys .",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "America 's favorite fast food be n't deep fry or candy-coated , accord to a new study by market research firm Harris Interactive .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The restaurant that score below that number be Arby 's , Chipotle , Church ’ s Chicken , Hardees , Jack in the Box , KFC , Long John Silver 's , Quiznos , Sonic America 's Drive-In , Taco Bell and White Castle .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "These study result show just how strongly Subway ’ s position around fast and healthy meal choice be resonate with consumer .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This be the eighth year in a row that Subway have best it fast food competitor .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“ For some time , the medium spotlight on obesity , diabetes , and heart disease , and the importance of make good meal choice away from home , have drive growth in the range and number of low calorie/better nutrition dish be offer in all type of restaurant .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“ Subway ’ s consistently high ranking in the Harris Poll EquiTrend study clearly indicate that consumer be graduate from just say they ’ re interested in good nutrition choice in restaurant to actually change their purchase behavior , ” say Mary Bouchard , Vice President of Consumer Goods , Retail and Restaurant Research at Harris Interactive .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The average score for all restaurant be 61.67 .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.foxnews.com/food-drink/americas-favorite-fast-food-restaurant-is-chick-fil-a",
+            "content": "Chick-fil-A be still America 's favorite fast food restaurant . America ’ s favorite fast food restaurant , 2016\nFun story about food , relationship , the great outdoors and more . Three of the top 10 high rank fast food restaurant be pizza chain . Chick-fil-A have best the country ’ s top burger and burrito chain a the high ranking fast food restaurant base on consumer satisfaction , accord to the American Customer Satisfaction Index ( ACSI ) Restaurant Report 2016 release Tuesday . And overall , consumer be happy with the fast food industry with customer satisfaction increase 2.6 percent from 2015 . Chick-fil-A be also ACSI ’ s top rank fast food joint last year—and it improve it performance score\nPizza also have a good year . Burgers may be the most iconic American fast food—but when it come to customer satisfaction , chicken be king .",
+            "domain": "www.foxnews.com",
+            "tokenized": [
+                {
+                    "sent": "Chick-fil-A be still America 's favorite fast food restaurant .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "America ’ s favorite fast food restaurant , 2016\nFun story about food , relationship , the great outdoors and more .",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Three of the top 10 high rank fast food restaurant be pizza chain .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Chick-fil-A have best the country ’ s top burger and burrito chain a the high ranking fast food restaurant base on consumer satisfaction , accord to the American Customer Satisfaction Index ( ACSI ) Restaurant Report 2016 release Tuesday .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "And overall , consumer be happy with the fast food industry with customer satisfaction increase 2.6 percent from 2015 .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Chick-fil-A be also ACSI ’ s top rank fast food joint last year—and it improve it performance score\nPizza also have a good year .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Burgers may be the most iconic American fast food—but when it come to customer satisfaction , chicken be king .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://thecomeback.com/food/fast-food-map-favorite-chick-fil-a.html",
+            "content": "However , there be perhaps one fast food place that the whole nation can agree on…\nThose clown do a map of each state 's least favorite fast food restaurant but I ca n't say I disagree\nNewton show flash of excellence , but struggle late in the season for New England . This map from @ businessinsider show most popular fast food joint in each state ca n't be right.Texas do not love In-N-Out . We ’ re think they might have forget to do the second part and divide by the number of location , because Chick-Fil-A have far few restaurant in many state than other major fast food place , not to mention local and regional favorite , which would then make their number seem large base on comparison . That ’ s how Wyoming , which have two Chick-Fil-A location , end up with that a their “ favorite ” fast food joint . Somehow , accord to Business Insider and Foursquare , Chick-Fil-A be the favorite fast food option in those state . Furthermore , their data show that Chick-Fil-A be the most popular fast food option in 39 state across the country . [ me ] : the map say that Chik-Fil-A be the most popular fast food place in like , 45 state . it 's outrageous\nBeyond that , thing get even weird when you look at the other restaurant that win out . California ’ s iconic burger joint In-n-Out be name the favorite of Texas . By Business Insider ’ s and Foursquare ’ s formula , if both restaurant each have 50 visit , In-N-Out come out on top with 10 visit on average to Chick-Fil-A ’ s five , even though there be more Chick-Fil-A restaurant than In-N-Outs in Texas ( in this imaginary scenario ) .",
+            "domain": "thecomeback.com",
+            "tokenized": [
+                {
+                    "sent": "However , there be perhaps one fast food place that the whole nation can agree on…\nThose clown do a map of each state 's least favorite fast food restaurant but I ca n't say I disagree\nNewton show flash of excellence , but struggle late in the season for New England .",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "This map from @ businessinsider show most popular fast food joint in each state ca n't be right.Texas do not love In-N-Out .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We ’ re think they might have forget to do the second part and divide by the number of location , because Chick-Fil-A have far few restaurant in many state than other major fast food place , not to mention local and regional favorite , which would then make their number seem large base on comparison .",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "That ’ s how Wyoming , which have two Chick-Fil-A location , end up with that a their “ favorite ” fast food joint .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Somehow , accord to Business Insider and Foursquare , Chick-Fil-A be the favorite fast food option in those state .",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Furthermore , their data show that Chick-Fil-A be the most popular fast food option in 39 state across the country .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "[ me ] : the map say that Chik-Fil-A be the most popular fast food place in like , 45 state .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "it 's outrageous\nBeyond that , thing get even weird when you look at the other restaurant that win out .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "California ’ s iconic burger joint In-n-Out be name the favorite of Texas .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "By Business Insider ’ s and Foursquare ’ s formula , if both restaurant each have 50 visit , In-N-Out come out on top with 10 visit on average to Chick-Fil-A ’ s five , even though there be more Chick-Fil-A restaurant than In-N-Outs in Texas ( in this imaginary scenario ) .",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.inc.com/chris-matyszczyk/this-is-americas-favorite-fast-food-restaurant-according-to-data-no-its-not-mcdonalds.html",
+            "content": "So when it come to fast food , do you want your beloved chain to be America 's favorite ? Its beloved fast food be Culver 's . It seem that America be an almost homogenous place , where only one sort of fast food bring it adherent to rapture . Almost every state east and north of Texas seem to conclude that this celestial chicken do it for them like no other fast food . Ah , so some of these state might not have many of these restaurant , but people just love them a lot . Of course , many fast-food chain be currently under pressure a competitor that offer radical concept such a fresh ingredient begin to maraud their way across the map .",
+            "domain": "www.inc.com",
+            "tokenized": [
+                {
+                    "sent": "So when it come to fast food , do you want your beloved chain to be America 's favorite ?",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Its beloved fast food be Culver 's .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "It seem that America be an almost homogenous place , where only one sort of fast food bring it adherent to rapture .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Almost every state east and north of Texas seem to conclude that this celestial chicken do it for them like no other fast food .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Ah , so some of these state might not have many of these restaurant , but people just love them a lot .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Of course , many fast-food chain be currently under pressure a competitor that offer radical concept such a fresh ingredient begin to maraud their way across the map .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.live5news.com/2019/08/03/chick-fil-a-dethrones-in-n-out-americas-favorite-fast-food-restaurant/",
+            "content": "( WWBT ) - Chick-fil-A be America ’ s favorite fast food restaurant , accord to an annual survey conduct by MarketForce .",
+            "domain": "www.live5news.com",
+            "tokenized": [
+                {
+                    "sent": "( WWBT ) - Chick-fil-A be America ’ s favorite fast food restaurant , accord to an annual survey conduct by MarketForce .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.searchlaboratory.com/us/2017/07/americas-favorite-junk-food/",
+            "content": "From the corndog to the taco , we look at Google search data on some of America ’ s favorite fast food type , and the brand behind them . The first fast food restaurant in the world be invent in the US back in 1921 , in the form of White Castle , and the popularity of fast food have grow exponentially ever since . See our result below :\nWell , bad news hamburger , because in case you hadn ’ t guess , pizza be America ’ s undisputed favorite junk food . Cities and state where each junk food be most popular source from Google Trends , which use real time and historical data to show relative interest in search term in specific area of period of time . The devotion to high-quality fast food be so strong that National Junk Food Day be create , celebrate every year on July 21 . Home Insights America ’ s favorite junk food\nJunk food be an American tradition . Interestingly , taco and burrito both also finish highly , show the massive influence Mexican cuisine have across the country . In the rest of the top 10 , there be two chicken specialist ( Chick-Fil-A and KFC ) , two burger restaurant ( McDonald ’ s and Burger King ) , and a taco joint ( Taco Bell ) . In 2012 , Americans spend a massive $ 8 billion on Hispanic food , but by 2015 , that number have more than double to 18 billion and it show no sign of slow down . By 1970 Taco Bell , open only 8 year prior , have 100 restaurant across the country . We also look at Google Trends to find out where each food be most popular . We look at Google Trends data for our top 10 , as well a a few addition , to see where each food type be most popular on both a state and city level . While the hamburger be the undoubted poster boy for US fast food , be it still the ‘ burger king ’ in 2017 ? Average monthly search data for individual junk food keywords source from Google ’ s Keyword Planner tool . While Mexican food have be present on many menu since the start of the 20th century , it really come to prominence during the latter half . What ’ s your favorite junk food ?",
+            "domain": "www.searchlaboratory.com",
+            "tokenized": [
+                {
+                    "sent": "From the corndog to the taco , we look at Google search data on some of America ’ s favorite fast food type , and the brand behind them .",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "The first fast food restaurant in the world be invent in the US back in 1921 , in the form of White Castle , and the popularity of fast food have grow exponentially ever since .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "See our result below :\nWell , bad news hamburger , because in case you hadn ’ t guess , pizza be America ’ s undisputed favorite junk food .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Cities and state where each junk food be most popular source from Google Trends , which use real time and historical data to show relative interest in search term in specific area of period of time .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The devotion to high-quality fast food be so strong that National Junk Food Day be create , celebrate every year on July 21 .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Home Insights America ’ s favorite junk food\nJunk food be an American tradition .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Interestingly , taco and burrito both also finish highly , show the massive influence Mexican cuisine have across the country .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In the rest of the top 10 , there be two chicken specialist ( Chick-Fil-A and KFC ) , two burger restaurant ( McDonald ’ s and Burger King ) , and a taco joint ( Taco Bell ) .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In 2012 , Americans spend a massive $ 8 billion on Hispanic food , but by 2015 , that number have more than double to 18 billion and it show no sign of slow down .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "By 1970 Taco Bell , open only 8 year prior , have 100 restaurant across the country .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We also look at Google Trends to find out where each food be most popular .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "We look at Google Trends data for our top 10 , as well a a few addition , to see where each food type be most popular on both a state and city level .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While the hamburger be the undoubted poster boy for US fast food , be it still the ‘ burger king ’ in 2017 ?",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Average monthly search data for individual junk food keywords source from Google ’ s Keyword Planner tool .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While Mexican food have be present on many menu since the start of the 20th century , it really come to prominence during the latter half .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "What ’ s your favorite junk food ?",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.cbsnews.com/news/chick-fil-a-named-americas-favorite-fast-food-restaurant-dethroning-in-n-out/",
+            "content": "Chick-fil-A have be officially name America 's favorite fast-food restaurant . In-N-Out remain America 's favorite burger joint , get a 73 % satisfaction rating . In the United States , two hyphenate fast food joint have sit high upon the throne of their regional kingdom . In last year 's Market Force report , In-N-Out be America 's favorite for the second consecutive time . McDonald 's come in last on the list of 14 burger chain , with a satisfaction score of 28 % . A recent report by Market Force , publish by Food & Wine , poll 7,600 consumer about their satisfaction level with various chain , and Chick-fil-A rank the high , with a 79 % `` loyalty rating . ''",
+            "domain": "www.cbsnews.com",
+            "tokenized": [
+                {
+                    "sent": "Chick-fil-A have be officially name America 's favorite fast-food restaurant .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In-N-Out remain America 's favorite burger joint , get a 73 % satisfaction rating .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In the United States , two hyphenate fast food joint have sit high upon the throne of their regional kingdom .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In last year 's Market Force report , In-N-Out be America 's favorite for the second consecutive time .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "McDonald 's come in last on the list of 14 burger chain , with a satisfaction score of 28 % .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "A recent report by Market Force , publish by Food & Wine , poll 7,600 consumer about their satisfaction level with various chain , and Chick-fil-A rank the high , with a 79 % `` loyalty rating . ''",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.syracuse.com/restaurants/2019/06/chick-fil-a-named-americas-favorite-fast-food-restaurant-see-2019-rankings.html",
+            "content": "( AP Photo/Mark Lennihan , File ) AP\nAmerica ’ s favorite fast food restaurant be Chick-fil-A for the fourth year in a row , accord to the 2019 American Customer Satisfaction Index . CNN report a collection of small company tie for second place on the ACSI list , and Panera be in third place a the second-most popular national fast food eatery with a score of 81 . According to ACSI , overall customer satisfaction score at limited-service ( fast food ) restaurant be down to an average of 79 this year . “ Overall , the fast food customer experience show some deterioration a major chain focus on technology and menu upgrade to meet shifting consumer preference , ” the ASCI say in a press release . “ Fast food customer tend to be more price sensitive a well , and the industry see a weakening in guest perception of value . The index poll 23,000 consumer on fast food , and name Chick-fil-A No . Full-service restaurant average an 81 , with Texas Roadhouse retain the top spot at 83 .",
+            "domain": "www.syracuse.com",
+            "tokenized": [
+                {
+                    "sent": "( AP Photo/Mark Lennihan , File ) AP\nAmerica ’ s favorite fast food restaurant be Chick-fil-A for the fourth year in a row , accord to the 2019 American Customer Satisfaction Index .",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "CNN report a collection of small company tie for second place on the ACSI list , and Panera be in third place a the second-most popular national fast food eatery with a score of 81 .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "According to ACSI , overall customer satisfaction score at limited-service ( fast food ) restaurant be down to an average of 79 this year .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“ Overall , the fast food customer experience show some deterioration a major chain focus on technology and menu upgrade to meet shifting consumer preference , ” the ASCI say in a press release .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“ Fast food customer tend to be more price sensitive a well , and the industry see a weakening in guest perception of value .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The index poll 23,000 consumer on fast food , and name Chick-fil-A No .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Full-service restaurant average an 81 , with Texas Roadhouse retain the top spot at 83 .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.wivb.com/news/chick-fil-a-named-americas-favorite-fast-food-chain/",
+            "content": "WASHINGTON D.C. ( WSPA ) — Chick-fil-A have once again be name America ’ s favorite fast food chain . This year , the low rank fast food chain be McDonald ’ s with a score of 69 .",
+            "domain": "www.wivb.com",
+            "tokenized": [
+                {
+                    "sent": "WASHINGTON D.C. ( WSPA ) — Chick-fil-A have once again be name America ’ s favorite fast food chain .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "This year , the low rank fast food chain be McDonald ’ s with a score of 69 .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.inc.com/chris-matyszczyk/chick-fil-a-is-americas-favorite-fast-food-restaurant-no-way-says-annoyed-data-company.html",
+            "content": "Along come some data from Foursquare that insist Chick-fil-A be America 's favorite fast-food restaurant . I will allow them to bring their favorite fast food . And , accord to it statement of the obvious , McDonald 's be the most popular restaurant in every U.S. state . Factual get far more stimulation when analyze what each state 's second-favorite restaurant be -- after McDonald 's , that be . After all , it claim that Raisin Cane 's be California 's favorite fast-food joint . Well , your favorite fast-food joint be diss , to be precise . In a rippling riposte , it sniff : `` It seem obvious , but the 'most popular' restaurant chain be the one that the most people have visit . '' Factual positively , but neutrally , stomp all over the Foursquare suggestion that Chick-fil-A be the most popular fast-food restaurant in Oregon .",
+            "domain": "www.inc.com",
+            "tokenized": [
+                {
+                    "sent": "Along come some data from Foursquare that insist Chick-fil-A be America 's favorite fast-food restaurant .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "I will allow them to bring their favorite fast food .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "And , accord to it statement of the obvious , McDonald 's be the most popular restaurant in every U.S. state .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Factual get far more stimulation when analyze what each state 's second-favorite restaurant be -- after McDonald 's , that be .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "After all , it claim that Raisin Cane 's be California 's favorite fast-food joint .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Well , your favorite fast-food joint be diss , to be precise .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In a rippling riposte , it sniff : `` It seem obvious , but the 'most popular' restaurant chain be the one that the most people have visit . ''",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Factual positively , but neutrally , stomp all over the Foursquare suggestion that Chick-fil-A be the most popular fast-food restaurant in Oregon .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.delish.com/food-news/a22090264/chick-fil-a-ranked-americas-favorite-fast-food-restaurant-third-year/",
+            "content": "Per Thrillist , the American Customer Satisfaction Index 's annual study survey 22,500 Americans on their experience at fast food and chain restaurant in a variety of category . According to ACSI , Chick-Fil-A have the high customer satisfaction across the fast food AND the full-service restaurant category , score 87 out of 100 . For the third year in a row , Chick-Fil-A be name the nation 's top fast food restaurant in term of customer satisfaction , because how could you not be satisfy with a chicken sandwich dip in Chick-Fil-A sauce ? Using a 0-100 rating system , participant of the study rate each restaurant in category include food quality , restaurant cleanliness , and waitstaff behavior . Chick-Fil-A be already on it way to become the third-largest fast food chain in the U.S. , and with this customer satisfaction rate , it seem that the chicken expert will make it way to the top sooner than later . The result be then average into an overall score for industry and restaurant .",
+            "domain": "www.delish.com",
+            "tokenized": [
+                {
+                    "sent": "Per Thrillist , the American Customer Satisfaction Index 's annual study survey 22,500 Americans on their experience at fast food and chain restaurant in a variety of category .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "According to ACSI , Chick-Fil-A have the high customer satisfaction across the fast food AND the full-service restaurant category , score 87 out of 100 .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "For the third year in a row , Chick-Fil-A be name the nation 's top fast food restaurant in term of customer satisfaction , because how could you not be satisfy with a chicken sandwich dip in Chick-Fil-A sauce ?",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Using a 0-100 rating system , participant of the study rate each restaurant in category include food quality , restaurant cleanliness , and waitstaff behavior .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Chick-Fil-A be already on it way to become the third-largest fast food chain in the U.S. , and with this customer satisfaction rate , it seem that the chicken expert will make it way to the top sooner than later .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The result be then average into an overall score for industry and restaurant .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.foodandwine.com/news/americas-favorite-fast-food-market-force-2019",
+            "content": "Speaking of which , Market Force be back with their annual look at “ America ’ s favorite ” fast food chain , poll over 7,600 consumer , then hone in on how satisfied they be with their most recent visit and whether they would recommend the brand to others . All ranking of fast food restaurant be inherently flaw . In-N-Out 's cult-favorite burger restaurant take second place in Market Force ’ s annual satisfaction survey . I ’ m sure it will give MickeyD ’ s plenty to contemplate while they continue to top every single restaurant on the entire list in sale . Market Force look at two other category a well : For “ coffee and bakery ” chain , Krispy Kreme be “ a clear favorite ” over it top competition , Panera and Starbucks .",
+            "domain": "www.foodandwine.com",
+            "tokenized": [
+                {
+                    "sent": "Speaking of which , Market Force be back with their annual look at “ America ’ s favorite ” fast food chain , poll over 7,600 consumer , then hone in on how satisfied they be with their most recent visit and whether they would recommend the brand to others .",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "All ranking of fast food restaurant be inherently flaw .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In-N-Out 's cult-favorite burger restaurant take second place in Market Force ’ s annual satisfaction survey .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "I ’ m sure it will give MickeyD ’ s plenty to contemplate while they continue to top every single restaurant on the entire list in sale .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Market Force look at two other category a well : For “ coffee and bakery ” chain , Krispy Kreme be “ a clear favorite ” over it top competition , Panera and Starbucks .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.pennlive.com/news/2019/06/chick-fil-a-named-americas-favorite-fast-food-restaurant-again.html",
+            "content": "For the fourth year in a row , Chick-fil A have top the list a America ’ s # 1 fast food chain restaurant base on customer satisfaction . The Atlanta-based fast food company saw $ 10.46 billion in total sale for 2018 , up from $ 8.97 billion in 2017 , accord to the Atlanta Business Chronicle . The restaurant score 86 on a scale of 100 , best all other restaurant chain by at least four point . The Washington Post report that the chain ’ s ascent be notable in part because most other restaurant traffic stay flat . Chick-fil-A have propose a restaurant be build at the corner of 32nd and Chestnut street in Camp Hill .",
+            "domain": "www.pennlive.com",
+            "tokenized": [
+                {
+                    "sent": "For the fourth year in a row , Chick-fil A have top the list a America ’ s # 1 fast food chain restaurant base on customer satisfaction .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Atlanta-based fast food company saw $ 10.46 billion in total sale for 2018 , up from $ 8.97 billion in 2017 , accord to the Atlanta Business Chronicle .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The restaurant score 86 on a scale of 100 , best all other restaurant chain by at least four point .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Washington Post report that the chain ’ s ascent be notable in part because most other restaurant traffic stay flat .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Chick-fil-A have propose a restaurant be build at the corner of 32nd and Chestnut street in Camp Hill .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.usatoday.com/story/money/food/2020/06/30/americas-favorite-dining-and-fast-food-restaurants/3281812001/",
+            "content": "Customers be ask to evaluate their recent experience with the large ( in term of market share ) sit-down and fast food restaurant . Officer 's lose McMuffin order : Video go viral with insinuation employee would tamper with her food\nFor fast food apps , the report show that reliability have instead improve such that it now match the full-service segment , and customer continue to be happier with food quality . For their part , limited-service or fast-food restaurant do not slide a badly on customer satisfaction – down only 1.3 % , to an ACSI score of 78 , due to the segment 's quick adaptability and cheap price . Results from the American Customer Satisfaction Index report show that full-service restaurant be lose the most favor with U.S. consumer – fall , in general , 2.5 % to an ACSI score of 79 out of 100 . That 's not to say the pandemic have n't hit the restaurant industry indiscriminately . Overall , a industry , full-service restaurant rank at 16th and limited-service restaurant at 20th among customer industry satisfaction benchmark .",
+            "domain": "www.usatoday.com",
+            "tokenized": [
+                {
+                    "sent": "Customers be ask to evaluate their recent experience with the large ( in term of market share ) sit-down and fast food restaurant .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Officer 's lose McMuffin order : Video go viral with insinuation employee would tamper with her food\nFor fast food apps , the report show that reliability have instead improve such that it now match the full-service segment , and customer continue to be happier with food quality .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "For their part , limited-service or fast-food restaurant do not slide a badly on customer satisfaction – down only 1.3 % , to an ACSI score of 78 , due to the segment 's quick adaptability and cheap price .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Results from the American Customer Satisfaction Index report show that full-service restaurant be lose the most favor with U.S. consumer – fall , in general , 2.5 % to an ACSI score of 79 out of 100 .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "That 's not to say the pandemic have n't hit the restaurant industry indiscriminately .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Overall , a industry , full-service restaurant rank at 16th and limited-service restaurant at 20th among customer industry satisfaction benchmark .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.businessinsider.com/chick-fil-a-in-n-out-americas-favorite-fast-food-2019-8",
+            "content": "Read more : These be the 10 fastest-growing restaurant chain take over America\nBrands be judge base on eight metric : staff friendliness , overall cleanliness , food quality , curb appeal , atmosphere , speed of service , value for money spend , and healthy option . Market Force say in a press release about it study that it ask survey participant about their most recent visit to a fast-food or fast-casual restaurant and only include chain that receive at least 100 answer , comprise at least 2 % of all response . Winning the hungry heart of the American people require quality food , speedy and friendly service , and a clean and welcome space — all for the best value possible .",
+            "domain": "www.businessinsider.com",
+            "tokenized": [
+                {
+                    "sent": "Read more : These be the 10 fastest-growing restaurant chain take over America\nBrands be judge base on eight metric : staff friendliness , overall cleanliness , food quality , curb appeal , atmosphere , speed of service , value for money spend , and healthy option .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Market Force say in a press release about it study that it ask survey participant about their most recent visit to a fast-food or fast-casual restaurant and only include chain that receive at least 100 answer , comprise at least 2 % of all response .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Winning the hungry heart of the American people require quality food , speedy and friendly service , and a clean and welcome space — all for the best value possible .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.thedailymeal.com/eat/americas-favorite-fast-food-chain",
+            "content": "To get your fast food fix , check out all of the chain restaurant that have reopen for dine-in after the coronavirus pandemic . Despite the effect the coronavirus pandemic have have on the restaurant industry , a new report reveals that one limited-service restaurant have be able to keep customer satistfied : food court favorite Chick-fil-A . The chicken sandwich hot spot lead the pack in customer satisfaction for both full-service and fast-food restaurant . Despite it 2 % dip , fast-food restaurant Chick-fil-A remain the top dog for the sixth consecutive year .",
+            "domain": "www.thedailymeal.com",
+            "tokenized": [
+                {
+                    "sent": "To get your fast food fix , check out all of the chain restaurant that have reopen for dine-in after the coronavirus pandemic .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Despite the effect the coronavirus pandemic have have on the restaurant industry , a new report reveals that one limited-service restaurant have be able to keep customer satistfied : food court favorite Chick-fil-A .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The chicken sandwich hot spot lead the pack in customer satisfaction for both full-service and fast-food restaurant .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Despite it 2 % dip , fast-food restaurant Chick-fil-A remain the top dog for the sixth consecutive year .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.usatoday.com/story/life/allthemoms/2019/06/27/chick-fil-a-ranked-top-fast-food-chain-fourth-year/1582613001/",
+            "content": "Customers rank the fast-food eatery's accuracy , food quality , menu variety , cleanliness , staff behavior and website satisfaction above the 17 other restaurant list and the two other category , which include `` all others '' and `` limited-service restaurant . '' For the fourth year , Chick-fil-A have be name the nation 's top fast-food restaurant . Another tweet that her opinion would not be among the majority : `` Chick fil A be the most overrated fast food on the planet . '' The ACSI survey 23,000 consumer and score restaurant use a 100-point scale . The lowest-ranked restaurant on the list be McDonald 's with a score of 69 . Like many fast-food chain , most Chick-fil-A restaurant have a kid ' play area , but their glass-walled site can be view from anywhere in the restaurant and they have free Wi-Fi . The restaurant know for it iconic `` Eat mor Chikin '' sign with the rebel cow may be beloved `` except for the people who refuse to go there because of their homophobic bigotry , '' one Twitter user write . Papa John 's , Arby 's , Chipotle and Pizza Hut , all tie for fourth with an 80 .",
+            "domain": "www.usatoday.com",
+            "tokenized": [
+                {
+                    "sent": "Customers rank the fast-food eatery's accuracy , food quality , menu variety , cleanliness , staff behavior and website satisfaction above the 17 other restaurant list and the two other category , which include `` all others '' and `` limited-service restaurant . ''",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "For the fourth year , Chick-fil-A have be name the nation 's top fast-food restaurant .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Another tweet that her opinion would not be among the majority : `` Chick fil A be the most overrated fast food on the planet . ''",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The ACSI survey 23,000 consumer and score restaurant use a 100-point scale .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The lowest-ranked restaurant on the list be McDonald 's with a score of 69 .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Like many fast-food chain , most Chick-fil-A restaurant have a kid ' play area , but their glass-walled site can be view from anywhere in the restaurant and they have free Wi-Fi .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The restaurant know for it iconic `` Eat mor Chikin '' sign with the rebel cow may be beloved `` except for the people who refuse to go there because of their homophobic bigotry , '' one Twitter user write .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Papa John 's , Arby 's , Chipotle and Pizza Hut , all tie for fourth with an 80 .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.christianheadlines.com/contributors/michael-foust/chick-fil-a-is-americas-favorite-fast-food-restaurant-for-6th-straight-year-report-says.html",
+            "content": "For the sixth straight year , Chick-fil-A be America ’ s favorite fast-food restaurant in a major consumer survey . 1 in customer satisfaction among fast-food restaurant , follow in order by Chipotle Mexican Grill , Arby ’ s , Domino ’ s , Dunkin ’ , KFC , Panera Bread , Subway , Papa John ’ s and Starbucks at No . “ In addition , ” the report say , “ the cheap price tag that most fast food outlet offer may be appeal to consumer tighten their budget amid the pandemic . ”\nFast-food restaurant , the report say , be “ well position ” to weather the pandemic economic storm with “ an estimate 70 % of it business ” take place through a drive-thru . Its restaurant be close on Sundays . ”\nAmong full-service restaurant , Longhorn Steakhouse finish No .",
+            "domain": "www.christianheadlines.com",
+            "tokenized": [
+                {
+                    "sent": "For the sixth straight year , Chick-fil-A be America ’ s favorite fast-food restaurant in a major consumer survey .",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "1 in customer satisfaction among fast-food restaurant , follow in order by Chipotle Mexican Grill , Arby ’ s , Domino ’ s , Dunkin ’ , KFC , Panera Bread , Subway , Papa John ’ s and Starbucks at No .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“ In addition , ” the report say , “ the cheap price tag that most fast food outlet offer may be appeal to consumer tighten their budget amid the pandemic .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "”\nFast-food restaurant , the report say , be “ well position ” to weather the pandemic economic storm with “ an estimate 70 % of it business ” take place through a drive-thru .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Its restaurant be close on Sundays .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "”\nAmong full-service restaurant , Longhorn Steakhouse finish No .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.today.com/food/chick-fil-still-america-s-favorite-fast-food-chain-not-t157215",
+            "content": "While restaurant technology and restaurant service be always evolve , one former trend have since become a mainstay in the fast food scene . For the fourth year in a row , Americans have choose a chicken chain over burger place a the country 's top spot for fast food . Restaurants be rank in category like accuracy and quality of food order , the variety of item available on the menu , cleanliness of restaurant , behavior of the staff and website satisfaction . Many social medium user agree with the restaurant 's ranking , applaud the chain 's customer service , flavorful ( and unlimited ) sauce offering and , of course , it juicy chicken . Chick-fil-A be the most overrated fast food chain on the planet . The second-highest score , 82 , be give to `` all other restaurant , '' which be a representative average score apply to all other quick-service eatery that be n't big enough to be rank individually among the other chain . The Spicy Chicken sandwich with cheese be my favorite ; and it 's good . ACSI data show that customer who order food for delivery be more satisfied than those who dine in . There be n't another fast-food restaurant around with a more welcoming atmosphere . As technology become more central to these restaurant ' operation , it 's expect that the ranking may change base on the time . Not only delicious food , but also gracious and helpful employee .",
+            "domain": "www.today.com",
+            "tokenized": [
+                {
+                    "sent": "While restaurant technology and restaurant service be always evolve , one former trend have since become a mainstay in the fast food scene .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "For the fourth year in a row , Americans have choose a chicken chain over burger place a the country 's top spot for fast food .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Restaurants be rank in category like accuracy and quality of food order , the variety of item available on the menu , cleanliness of restaurant , behavior of the staff and website satisfaction .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Many social medium user agree with the restaurant 's ranking , applaud the chain 's customer service , flavorful ( and unlimited ) sauce offering and , of course , it juicy chicken .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Chick-fil-A be the most overrated fast food chain on the planet .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The second-highest score , 82 , be give to `` all other restaurant , '' which be a representative average score apply to all other quick-service eatery that be n't big enough to be rank individually among the other chain .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The Spicy Chicken sandwich with cheese be my favorite ; and it 's good .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "ACSI data show that customer who order food for delivery be more satisfied than those who dine in .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "There be n't another fast-food restaurant around with a more welcoming atmosphere .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "As technology become more central to these restaurant ' operation , it 's expect that the ranking may change base on the time .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Not only delicious food , but also gracious and helpful employee .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://finance.yahoo.com/news/americas-favorite-burger-chain-of-2019-market-force-survey-190840409.html",
+            "content": "Burgers be one of America ’ s favorite food , but there ’ s one clear winner among American burger chain , accord to a new survey . Market Force Information , a customer experience management company , conduct a survey of 7,600 American adult to find out their favorite fast-food restaurant — and in the burger category , one reign supreme . West Coast darling In-N-Out be top a America ’ s overall favorite burger chain for the third straight year , with Five Guys in second place . Meanwhile , 18 % of customer take out food directly from the restaurant , and 2 % get delivery either from the restaurant or through a third-party service . With stiff competition in the fast-food space , healthy food option remain a big opportunity . Participants be ask about their satisfaction level with their most recent visit and their likelihood to recommend the restaurant to others . Overall dining at burger restaurant have rise from last year . Though among the restaurant , visitor to In-N-Out have the few negative experience . McDonald ’ s rank last place in two category include staff friendliness and food quality . Of the 14 burger chain , Jack in the Box ( JACK ) , Wendy ’ s ( WEN ) , Carl ’ s Jr. , Burger King ( QSR ) and McDonald ’ s ( MCD ) be rank the least favorite among customer , with McDonald ’ s take last place .",
+            "domain": "finance.yahoo.com",
+            "tokenized": [
+                {
+                    "sent": "Burgers be one of America ’ s favorite food , but there ’ s one clear winner among American burger chain , accord to a new survey .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Market Force Information , a customer experience management company , conduct a survey of 7,600 American adult to find out their favorite fast-food restaurant — and in the burger category , one reign supreme .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "West Coast darling In-N-Out be top a America ’ s overall favorite burger chain for the third straight year , with Five Guys in second place .",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "Meanwhile , 18 % of customer take out food directly from the restaurant , and 2 % get delivery either from the restaurant or through a third-party service .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "With stiff competition in the fast-food space , healthy food option remain a big opportunity .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Participants be ask about their satisfaction level with their most recent visit and their likelihood to recommend the restaurant to others .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Overall dining at burger restaurant have rise from last year .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Though among the restaurant , visitor to In-N-Out have the few negative experience .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "McDonald ’ s rank last place in two category include staff friendliness and food quality .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Of the 14 burger chain , Jack in the Box ( JACK ) , Wendy ’ s ( WEN ) , Carl ’ s Jr. , Burger King ( QSR ) and McDonald ’ s ( MCD ) be rank the least favorite among customer , with McDonald ’ s take last place .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.restaurantbusinessonline.com/consumer-trends/americas-favorite-fast-casual-chains-2020",
+            "content": "Source : Technomic Ignite consumer dataLearn more about America 's Favorite Chains . New restaurant and soon-to-open concept worth monitor\nRB ’ s exclusive ranking of the highest-grossing independent restaurant\nWinsight be a lead B2B information service company focus on the food and beverage industry , provide insight and market intelligence to business leader in every channel consumer buy food and beverage – convenience store , grocery retailing , restaurant and noncommercial foodservice – through medium , event , data product , advisory service , and trade show . Firehouse Subs best Newk ’ s Eatery by a couple of percentage point in service and hospitality , as well a food and beverage quality .",
+            "domain": "www.restaurantbusinessonline.com",
+            "tokenized": [
+                {
+                    "sent": "Source : Technomic Ignite consumer dataLearn more about America 's Favorite Chains .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "New restaurant and soon-to-open concept worth monitor\nRB ’ s exclusive ranking of the highest-grossing independent restaurant\nWinsight be a lead B2B information service company focus on the food and beverage industry , provide insight and market intelligence to business leader in every channel consumer buy food and beverage – convenience store , grocery retailing , restaurant and noncommercial foodservice – through medium , event , data product , advisory service , and trade show .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Firehouse Subs best Newk ’ s Eatery by a couple of percentage point in service and hospitality , as well a food and beverage quality .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.fastcompany.com/90371279/chick-fil-a-is-americans-favorite-fast-food-restaurant",
+            "content": "If fast food restaurant be rank on their support of human right , Chick-fil-A might fall somewhere near the bottom . New workplace , new food source , new medicine -- even an entirely new economic system\nFor the fourth year in a row , Chick-fil-A have find itself at the top of the American Customer Satisfaction Index ranking of “ limited-service restaurant ” ( or in other word , fast food ) . There isn ’ t another fast food restaurant around with a more welcoming atmosphere , ” one person on Twitter write . People , apparently , be also devote to the restaurant ’ s sauce . Its overall rank out of 100 on a variety of measures–including staff courtesy , food quality , restaurant cleanliness , and mobile app quality–was 86 . “ Not only delicious food , but also gracious and helpful employee .",
+            "domain": "www.fastcompany.com",
+            "tokenized": [
+                {
+                    "sent": "If fast food restaurant be rank on their support of human right , Chick-fil-A might fall somewhere near the bottom .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "New workplace , new food source , new medicine -- even an entirely new economic system\nFor the fourth year in a row , Chick-fil-A have find itself at the top of the American Customer Satisfaction Index ranking of “ limited-service restaurant ” ( or in other word , fast food ) .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "There isn ’ t another fast food restaurant around with a more welcoming atmosphere , ” one person on Twitter write .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "People , apparently , be also devote to the restaurant ’ s sauce .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Its overall rank out of 100 on a variety of measures–including staff courtesy , food quality , restaurant cleanliness , and mobile app quality–was 86 .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“ Not only delicious food , but also gracious and helpful employee .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://moneywise.com/a/americans-favorite-fast-food-chains",
+            "content": "Its name might define fast food for many people , but McDonald 's do n't get much love from consumer . Consumers have name Chipotle the top-ranked fast-food chain for Mexican food , thanks to it high quality , healthy option and the cleanliness of it restaurant , among other attribute . Consumers rate Subway high for healthy option but say it need to work on it food quality and on make it restaurant more appealing , both inside and out . The restaurant be famously close on Sundays , and the chain have be embroil in controversy over issue include current CEO Dan Cathy 's opposition to same-sex marriage . Surveyed consumer give the chain strong rating for nutrition , friendliness and the warm look of it restaurant . Among the big pizza chain , Little Caesars be America 's least favorite . See which restaurant have the most satisfied and loyal customer . The industry earn a passing grade in this year 's restaurant report from the American Customer Satisfaction Index , which be base on interview with more than 23,000 customer . Chefs head for New York 's Adirondack Mountains twice a year just to show off their skill . The “ Eat Fresh , ” made-to-order sub take the fast-food industry by storm , and Subway be now the large quick-service restaurant on the planet , with around 42,000 location in over 100 country . In particular , they say Wendy 's have higher-quality food , be clean and have good atmosphere than McDonald 's and Burger King . Customers say Wendy 's be the best of the traditional fast-food burger `` Big Three . '' Taco Bell currently have more than 7,000 restaurant in nearly 30 country and have global expansion plan for India , Thailand and the U.K . Burger fan say it be worst for food quality and `` staff friendliness . '' Founded in Denver in 1993 , Chipotle be one of the new quick-service restaurant . The chain be try to win over millennials with new convenience food — like `` donut stick '' — and tech-focused upgrade , include mobile ordering . The chain be consider vegan-friendly , but survey respondent say it need to step up the quality of it food and put healthy item on the menu . Customers complain that there be n't enough healthy stuff on the menu , and that the quality of the food come up short . The food team try 30 different chicken product before settle on one .",
+            "domain": "moneywise.com",
+            "tokenized": [
+                {
+                    "sent": "Its name might define fast food for many people , but McDonald 's do n't get much love from consumer .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Consumers have name Chipotle the top-ranked fast-food chain for Mexican food , thanks to it high quality , healthy option and the cleanliness of it restaurant , among other attribute .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Consumers rate Subway high for healthy option but say it need to work on it food quality and on make it restaurant more appealing , both inside and out .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The restaurant be famously close on Sundays , and the chain have be embroil in controversy over issue include current CEO Dan Cathy 's opposition to same-sex marriage .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Surveyed consumer give the chain strong rating for nutrition , friendliness and the warm look of it restaurant .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Among the big pizza chain , Little Caesars be America 's least favorite .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "See which restaurant have the most satisfied and loyal customer .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The industry earn a passing grade in this year 's restaurant report from the American Customer Satisfaction Index , which be base on interview with more than 23,000 customer .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Chefs head for New York 's Adirondack Mountains twice a year just to show off their skill .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The “ Eat Fresh , ” made-to-order sub take the fast-food industry by storm , and Subway be now the large quick-service restaurant on the planet , with around 42,000 location in over 100 country .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In particular , they say Wendy 's have higher-quality food , be clean and have good atmosphere than McDonald 's and Burger King .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Customers say Wendy 's be the best of the traditional fast-food burger `` Big Three . ''",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Taco Bell currently have more than 7,000 restaurant in nearly 30 country and have global expansion plan for India , Thailand and the U.K .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Burger fan say it be worst for food quality and `` staff friendliness . ''",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Founded in Denver in 1993 , Chipotle be one of the new quick-service restaurant .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The chain be try to win over millennials with new convenience food — like `` donut stick '' — and tech-focused upgrade , include mobile ordering .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The chain be consider vegan-friendly , but survey respondent say it need to step up the quality of it food and put healthy item on the menu .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Customers complain that there be n't enough healthy stuff on the menu , and that the quality of the food come up short .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The food team try 30 different chicken product before settle on one .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.forbes.com/sites/aliciakelso/2020/06/30/chick-fil-a-named-americas-favorite-restaurant-chain-for-the-sixth-straight-year/",
+            "content": "NEW YORK CITY , UNITED STATES - 2020/02/20 : American fast food restaurant chain , Chick-fil-A logo ... [ + ] see in Midtown Manhattan . The chain have be a case study for fast food industry sale , outpace other brand by double-digit sale comp thanks to it buzz worthy sandwich . “ ACSI data consistently show that the more satisfied customer be , the more willing they be to increase their restaurant spending in the future , ” the report note . I later add fast casual and pizza beat to my portfolio a editorial director of…\nI have cover the restaurant industry since 2010 when I be name editor of QSRweb . I later add fast casual and pizza beat to my portfolio a editorial director of\nI have cover the restaurant industry since 2010 when I be name editor of QSRweb . The “ variety of food and beverage ” metric may be less important to a weary consumer set that have become more accepting of slim menu , while “ restaurant cleanliness ” and “ reliability of mobile app ” will no doubt be high priority item in a post-pandemic environment . The ACSI plan to release a special report later this year with a clear post-COVID-19 picture , and fast food be expect to be well position because of it heavy off-premise business model . Customer satisfaction score have improve “ significantly ” a a result , Restaurant Business report . I later add fast casual and pizza beat to my portfolio a editorial director of foodservice medium . I later add fast casual and pizza beat to my portfolio a editorial director of foodservice medium . Chick-fil-A also outscore the top full-service restaurant , LongHorn Steakhouse , by three point . In 2019 , comp sale be up by 5 % a McDonald ’ s lean into it “ Experience of the Future ” restaurant design , add personalized technology at the drive-thru courtesy of it Dynamic Yield acquisition , expand it delivery footprint with additional partnership beyond Uber Eats , and hone in on it popular breakfast menu with new promotion like donut stick . ( Photo Illustration by Alex Tai/SOPA Images/LightRocket via Getty Images )\nThe late American Customer Satisfaction Index restaurant report be out and the top restaurant brand for 2019-20 be Chick-fil-A .",
+            "domain": "www.forbes.com",
+            "tokenized": [
+                {
+                    "sent": "NEW YORK CITY , UNITED STATES - 2020/02/20 : American fast food restaurant chain , Chick-fil-A logo ... [ + ] see in Midtown Manhattan .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The chain have be a case study for fast food industry sale , outpace other brand by double-digit sale comp thanks to it buzz worthy sandwich .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "“ ACSI data consistently show that the more satisfied customer be , the more willing they be to increase their restaurant spending in the future , ” the report note .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "I later add fast casual and pizza beat to my portfolio a editorial director of…\nI have cover the restaurant industry since 2010 when I be name editor of QSRweb .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "I later add fast casual and pizza beat to my portfolio a editorial director of\nI have cover the restaurant industry since 2010 when I be name editor of QSRweb .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The “ variety of food and beverage ” metric may be less important to a weary consumer set that have become more accepting of slim menu , while “ restaurant cleanliness ” and “ reliability of mobile app ” will no doubt be high priority item in a post-pandemic environment .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The ACSI plan to release a special report later this year with a clear post-COVID-19 picture , and fast food be expect to be well position because of it heavy off-premise business model .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Customer satisfaction score have improve “ significantly ” a a result , Restaurant Business report .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "I later add fast casual and pizza beat to my portfolio a editorial director of foodservice medium .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "I later add fast casual and pizza beat to my portfolio a editorial director of foodservice medium .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Chick-fil-A also outscore the top full-service restaurant , LongHorn Steakhouse , by three point .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In 2019 , comp sale be up by 5 % a McDonald ’ s lean into it “ Experience of the Future ” restaurant design , add personalized technology at the drive-thru courtesy of it Dynamic Yield acquisition , expand it delivery footprint with additional partnership beyond Uber Eats , and hone in on it popular breakfast menu with new promotion like donut stick .",
+                    "is_evidence": 1,
+                    "is_repeat": 0
+                },
+                {
+                    "sent": "( Photo Illustration by Alex Tai/SOPA Images/LightRocket via Getty Images )\nThe late American Customer Satisfaction Index restaurant report be out and the top restaurant brand for 2019-20 be Chick-fil-A .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.eatthis.com/most-popular-fast-food-america/",
+            "content": "With thousand of location across America , Panda Express be the top-ranking Asian dining brand in the country , accord to the 2018 QSR 50 Ethnic Segment Report , which gather the best restaurant brand in the country and segment them into category . `` Pizza , pizza '' have plenty of loyal fan , thanks to the `` cheap and fast '' vibe of the food . Fresh frozen custard , ButterBurgers , snack-worthy sides—it 's no wonder loyal fan keep come back to eat the food that be promise to be `` well make '' and `` good quality . '' While many fast-food-frequenting folk swear by their favorite drive-thru joint , have you ever wonder which restaurant continue to steal the heart of the majority and bridge the gap between our polarize population ? You can munch on peanut that be available all over the restaurant while you order your meal .",
+            "domain": "www.eatthis.com",
+            "tokenized": [
+                {
+                    "sent": "With thousand of location across America , Panda Express be the top-ranking Asian dining brand in the country , accord to the 2018 QSR 50 Ethnic Segment Report , which gather the best restaurant brand in the country and segment them into category .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "`` Pizza , pizza '' have plenty of loyal fan , thanks to the `` cheap and fast '' vibe of the food .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Fresh frozen custard , ButterBurgers , snack-worthy sides—it 's no wonder loyal fan keep come back to eat the food that be promise to be `` well make '' and `` good quality . ''",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "While many fast-food-frequenting folk swear by their favorite drive-thru joint , have you ever wonder which restaurant continue to steal the heart of the majority and bridge the gap between our polarize population ?",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "You can munch on peanut that be available all over the restaurant while you order your meal .",
+                    "is_evidence": 0
+                }
+            ]
+        },
+        {
+            "link": "https://www.qsrmagazine.com/fast-food/chick-fil-still-americas-favorite-fast-food-chain",
+            "content": "For the ranking , Market Force ask participant to rate their satisfaction with their most recent quick-service restaurant experience , and their likelihood to refer that restaurant to others . The brand ’ s Composite Loyalty Index of 79 best all brand , break down by chicken , sandwich , burger , Mexican , pizza , coffee and bakery , and frozen dessert and smoothie restaurant . Old Stone report the best food quality . To the question , please rate your satisfaction during your most recent experience dining at a chicken restaurant , here be the result :\nAs many chain be realize , awareness remain the big hurdle to digital initiative and one-to-one marketing . In order to be truly competitive and drive same store sale growth in a landscape with so many choice , [ quick-serve ] brand must strive to delight , not just satisfy guest ; to deliver against all of the customer experience attribute that drive satisfaction—not just food quality and value , but also service speed , cleanliness , friendliness and others . Just 3 percent of people say this be the first time they ’ ve visit the particular restaurant brand . Market Force believe it ’ s in healthy food option . Papa Murphy ’ s score high on food quality and value . Chipotle take food , while Moe ’ s win on service . Jersey Mike ’ s thrive on food quality and staff friendliness . Dining frequency for chicken restaurant compare similarly to last year , with only one in 10 visit identify a frequent guest .",
+            "domain": "www.qsrmagazine.com",
+            "tokenized": [
+                {
+                    "sent": "For the ranking , Market Force ask participant to rate their satisfaction with their most recent quick-service restaurant experience , and their likelihood to refer that restaurant to others .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "The brand ’ s Composite Loyalty Index of 79 best all brand , break down by chicken , sandwich , burger , Mexican , pizza , coffee and bakery , and frozen dessert and smoothie restaurant .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Old Stone report the best food quality .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "To the question , please rate your satisfaction during your most recent experience dining at a chicken restaurant , here be the result :\nAs many chain be realize , awareness remain the big hurdle to digital initiative and one-to-one marketing .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "In order to be truly competitive and drive same store sale growth in a landscape with so many choice , [ quick-serve ] brand must strive to delight , not just satisfy guest ; to deliver against all of the customer experience attribute that drive satisfaction—not just food quality and value , but also service speed , cleanliness , friendliness and others .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Just 3 percent of people say this be the first time they ’ ve visit the particular restaurant brand .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Market Force believe it ’ s in healthy food option .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Papa Murphy ’ s score high on food quality and value .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Chipotle take food , while Moe ’ s win on service .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Jersey Mike ’ s thrive on food quality and staff friendliness .",
+                    "is_evidence": 0
+                },
+                {
+                    "sent": "Dining frequency for chicken restaurant compare similarly to last year , with only one in 10 visit identify a frequent guest .",
+                    "is_evidence": 0
+                }
+            ]
+        }
+    ]
+}

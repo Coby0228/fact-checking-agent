@@ -14,7 +14,6 @@ def gather_evidence_in_single_session(claim, label, event_id, evidence_extractor
     透過一次性的、長對話的 Agent 互動來搜集所有證據。
     """
     base_prompt = handler.handle_prompt(AGENT_NAME + '_User') 
-    
     session_prompt = base_prompt.format(
         claim=claim,
         max_reports=max_reports_target
@@ -28,7 +27,6 @@ def gather_evidence_in_single_session(claim, label, event_id, evidence_extractor
     )
 
     final_response = res.summary.strip()
-
     final_dossier = {
         "event_id": event_id,
         "claim": claim,
@@ -59,13 +57,13 @@ def main():
                         help='Name of the model to load')
     parser.add_argument('--data_dir', type=str, default=ROOT / 'dataset',
                         help='Directory containing the datasets')
-    parser.add_argument('--task', type=str, choices=['train', 'val', 'test'], default='test',
+    parser.add_argument('--task', type=str, choices=['train', 'val', 'test', ''], default='test',
                         help='Task type to load')
-    parser.add_argument('--dataset', type=str, choices=['GuardEval', 'RAWFC'], default='RAWFC',
+    parser.add_argument('--dataset', type=str, choices=['GuardEval', 'RAWFC', 'TFC'], default='RAWFC',
                         help='Name of the dataset to load')
     parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'evidence_extraction',
                         help='Output directory to save the gathered evidence')
-    parser.add_argument('--max_reports', type=int, default=5,
+    parser.add_argument('--max_reports', type=int, default=3,
                         help='Target number of evidence reports to ask the agent to find.')
     args = parser.parse_args()
 
@@ -93,7 +91,6 @@ def main():
             max_turns_limit=max_turns_for_session
         )
         
-        # 儲存搜集到的所有證據
         output_file = output_dir / f'{event_id}.json'
         save_data_to_json(final_dossier, output_file)
         print(f"✅ Evidence gathering for event {event_id} complete. Results saved to {output_file}")

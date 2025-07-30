@@ -1,4 +1,4 @@
-from . import get_tool_functions, fetch_url, search_web
+from . import fetch_url, search_web
 
 if __name__ == "__main__":
     print("=== 測試所有工具 ===")
@@ -12,10 +12,5 @@ if __name__ == "__main__":
     print("\n2. 測試 search_web:")
     result = search_web("AI technology", num_results=2)
     print("成功" if "搜尋" in result else "失敗")
-    
-    # 測試整合
-    print("\n3. 測試工具整合:")
-    tools = get_tool_functions()
-    print(f"可用工具: {list(tools.keys())}")
     
     print("\n✅ 所有測試完成")
