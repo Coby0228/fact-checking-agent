@@ -1,0 +1,16 @@
+default_model: gpt4o_mini
+
+models:
+  gpt4o_mini:
+    config_list:
+      - model: "gpt-4o-mini"
+        api_key: "OPENAI_API_KEY" 
+        base_url: "https://api.openai.com/v1"
+    cache_seed: 42
+
+  qwen3_30b:
+    config_list:
+      - model: "qwen3:30b"
+        api_key: "OLLAMA_API_KEY"
+        base_url: "OLLAMA_BASE_URL"
+    cache_seed: 42

@@ -1,6 +1,7 @@
 import os
-from autogen import AssistantAgent, UserProxyAgent, ConversableAgent, register_function
+from autogen import AssistantAgent, UserProxyAgent, register_function
 import json
+import yaml
 from pathlib import Path
 import sys
 import re
@@ -36,45 +37,12 @@ def extract_outermost_json(text):
         return None
     return None
 
-def load_data(data_dir, dataset, task=None):
-    """
-    根據是否提供 task 參數，從目錄或單一檔案載入資料。
-
-    - 如果提供了 task，則從 data_dir/dataset/task/ 目錄載入所有 JSON 檔案。
-    - 如果未提供 task，則從 data_dir/dataset/{dataset}_data_with_labels.json 載入單一檔案。
-
-    Args:
-        data_dir (str or Path): 包含資料集的根目錄。
-        dataset (str): 資料集名稱 (例如 'RAWFC', 'TFC')。
-        task (str, optional): 任務類型 (例如 'train', 'test')。預設為 None。
-
-    Returns:
-        list: 載入的資料列表。如果路徑不存在或發生錯誤，則回傳空列表。
-    """
+def load_data(data_dir, dataset, task=None, agent_name=None):
     base_path = Path(data_dir) / dataset
     data_list = []
 
-    if dataset == 'TFC':
-        # --- 邏輯一：處理多檔案目錄 ---
-        task_dir = base_path / task
-        if not task_dir.is_dir():
-            print(f"Error: Directory not found: {task_dir}")
-            return []
-        
-        print(f"Loading data from directory: {task_dir}")
-        for file_name in os.listdir(task_dir):
-            if len(data_list) >= 100:
-                break  # Stop after loading 100 items
-            if file_name.endswith('.json'):
-                file_path = task_dir / file_name
-                try:
-                    with open(file_path, 'r', encoding='utf-8') as file:
-                        data = json.load(file)
-                        data_list.append(data)
-                except json.JSONDecodeError:
-                    print(f"Warning: Could not decode JSON from {file_path}")
-
-    else:
+    # 判斷條件：當資料集為 TFC 或 CFEVER 且 agent 為 Evidence_Extractor 時，走單一檔案邏輯
+    if (dataset == 'CFEVER' or dataset == 'TFC') and agent_name == 'Evidence_Extractor':
         # --- 邏輯二：處理單一彙總檔案 ---
         file_path = base_path / f"{dataset}_data_with_labels.json"
         if not file_path.exists():
@@ -85,9 +53,28 @@ def load_data(data_dir, dataset, task=None):
         try:
             with open(file_path, 'r', encoding='utf-8') as file:
                 full_data_list = json.load(file)
-                data_list = full_data_list[:100]  # Only take the first 100 items
+                # 篩選出有 'label' 欄位的資料
+                data_list = [item for item in full_data_list if 'label' in item]
         except json.JSONDecodeError:
             print(f"Error: Could not decode JSON from {file_path}")
+    else:
+        # --- 邏輯一：處理多檔案目錄 ---
+        task_dir = base_path / task
+        if not task_dir.is_dir():
+            print(f"Error: Directory not found: {task_dir}")
+            return []
+        
+        print(f"Loading data from directory: {task_dir}")
+        for file_name in os.listdir(task_dir):
+            if file_name.endswith('.json'):
+                file_path = task_dir / file_name
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as file:
+                        data = json.load(file)
+                        data_list.append(data)
+                except json.JSONDecodeError:
+                    print(f"Warning: Could not decode JSON from {file_path}")
+
 
     return data_list
 
@@ -98,31 +85,56 @@ def save_data_to_json(data, output_file):
         json.dump(data, file, ensure_ascii=False, indent=4)
     print('Save completed\n')
 
-def setup_agents(agent_name):
-    handler = PromptHandler()
+def load_and_process_config(model_name=None):
+    """
+    從 config.yaml 載入並處理指定模型的設定。
     
-    llm_config = {
-        "config_list": [
-            {
-                "model": "gpt-4o-mini",
-                "api_key": os.getenv('OPENAI_API_KEY', ''),
-                "base_url": 'https://api.openai.com/v1',
-            }
-        ],
-        "cache_seed": 42,
-    }
+    Args:
+        model_name (str, optional): 要載入的模型名稱。如果為 None，則使用預設模型。
 
+    Returns:
+        dict: 處理過的模型設定字典，可直接用於 llm_config。
+    """
+    config_path = ROOT / 'config.yaml'
+    with open(config_path, 'r') as f:
+        config = yaml.safe_load(f)
+
+    if model_name not in config['models']:
+        raise ValueError(f"模型 '{model_name}' 在 config.yaml 中找不到。")
+
+    model_config_raw = config['models'][model_name].copy()
+
+    config_list = model_config_raw.get("config_list", [])
+    for cfg in config_list:
+        for key, value in cfg.items():
+            if isinstance(value, str) and value.isupper():
+                env_value = os.getenv(value)
+                if env_value is None:
+                    print(f"Warning: Environment variable '{value}' for key '{key}' not set.")
+                cfg[key] = env_value
+
+    # 否則直接回傳處理過的 OpenAI 設定
+    return model_config_raw
+
+def setup_agents(agent_name, model_name=None):
+    handler = PromptHandler()
+    model_config = load_and_process_config(model_name)
+    if "qwen3" in model_name:
+        system_prompt = handler.handle_prompt(agent_name + '_System_zh')
+    else:
+        system_prompt = handler.handle_prompt(agent_name + '_System')
+    
     evidence_extractor = AssistantAgent(
         name=agent_name,
-        system_message=handler.handle_prompt(agent_name + '_System'),
-        llm_config=llm_config,
+        system_message=system_prompt,
+        llm_config=model_config,
     )
 
     user_proxy = UserProxyAgent(
         name="user_proxy", 
         code_execution_config=False,
         human_input_mode="NEVER",
-        is_termination_msg=lambda msg: (msg.get("content") or "").strip().endswith("TERMINATE")
+        is_termination_msg=lambda msg: (msg.get("content") or "").strip().strip("'\"").endswith("TERMINATE")
     )
 
     if agent_name == 'Evidence_Extractor':

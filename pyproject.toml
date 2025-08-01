@@ -13,4 +13,6 @@ dependencies = [
     "readability-lxml>=0.8.4.1",
     "trafilatura>=2.0.0",
     "autogen>=0.9.6",
+    "autogen-ext[ollama]>=0.6.4",
+    "pyautogen>=0.10.0",
 ]

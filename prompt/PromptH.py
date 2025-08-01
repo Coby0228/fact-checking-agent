@@ -5,7 +5,9 @@ class PromptHandler:
         self.prompt_directory = self.get_prompt_directory()
         self.prompts = {
             'Evidence_Extractor_System': self.load_prompt('Evidence_Extractor_System'),
+            'Evidence_Extractor_System_zh': self.load_prompt('Evidence_Extractor_System_zh'),
             'Evidence_Extractor_User': self.load_prompt('Evidence_Extractor_User'),
+            'Evidence_Extractor_User_zh': self.load_prompt('Evidence_Extractor_User_zh'),
             'Evidence_Verifier_System': self.load_prompt('Evidence_Verifier_System'),
             'Evidence_Verifier_User': self.load_prompt('Evidence_Verifier_User'),
             

@@ -1,5 +1,6 @@
 import argparse
 from pathlib import Path
+import shutil
 
 from utils import *
 
@@ -39,23 +40,25 @@ def verify_evidence(item, evidence_verifier, user_proxy):
 
 def main():
     parser = argparse.ArgumentParser(description="Verify evidence for claims.")
-    parser.add_argument('--model_name', type=str, default='gpt-4o-mini',
-                        help='Name of the model to load (e.g., gpt-4o-mini, llama)')
+    parser.add_argument('--model_name', type=str, default='gpt4o_mini',
+                        help='Name of the model to load (e.g., gpt4o_mini, llama)')
     parser.add_argument('--data_dir', type=str, default=ROOT / 'results' / 'evidence_extraction',
                         help='Directory containing the datasets with extracted evidence')
-    parser.add_argument('--task', type=str, choices=['train', 'val', 'test', ''], default='test',
+    parser.add_argument('--task', type=str, choices=['train', 'val', 'test', ''], default='',
                         help='Task type to load (train/val/test)')
-    parser.add_argument('--dataset', type=str, choices=['GuardEval', 'RAWFC', 'TFC'], default='RAWFC',
+    parser.add_argument('--dataset', type=str, choices=['CFEVER', 'RAWFC', 'TFC'], default='CFEVER',
                         help='Name of the dataset to load')
     parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'evidence_verify',
                         help='Output directory to save the verified evidence')
     args = parser.parse_args()
 
     data = load_data(args.data_dir, args.dataset, args.task)
-    evidence_verifier, user_proxy = setup_agents(AGENT_NAME)
-    
+    evidence_verifier, user_proxy = setup_agents(AGENT_NAME, model_name=args.model_name)
+
     output_dir = Path(args.output_dir) / args.dataset / args.task
-    output_dir.mkdir(parents=True, exist_ok=True)
+    if output_dir.exists():
+        shutil.rmtree(output_dir)
+    output_dir.mkdir(parents=True)
 
     for item in data:
         event_id = item['event_id'].replace('.json', '')

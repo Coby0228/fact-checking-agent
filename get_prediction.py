@@ -3,6 +3,7 @@ from autogen import AssistantAgent, UserProxyAgent, ConversableAgent
 import argparse
 import json
 import re
+import shutil
 
 from utils import *
 from prompt.PromptH import PromptHandler
@@ -250,7 +251,9 @@ def setup_environment_and_agents(args):
     """根據命令列參數設定環境、載入資料並建立所有 Agent。"""
     data = load_data(args.data_dir, args.dataset, args.task)
     output_dir = args.output_dir / args.dataset / args.task
-    output_dir.mkdir(parents=True, exist_ok=True)
+    if output_dir.exists():
+        shutil.rmtree(output_dir)
+    output_dir.mkdir(parents=True)
 
     handler = PromptHandler()
     llm_config = {
@@ -270,16 +273,13 @@ def setup_environment_and_agents(args):
     fact_checker_names = ["Fact_Checker_1", "Fact_Checker_2", "Fact_Checker_3"]
     fact_checker_sys_messages = [fact_checker_p_sys_message, fact_checker_m_sys_message, fact_checker_n_sys_message]
 
-    synthesizer_name = "Synthesizer"
-    finalizer_name = "Finalizer"
-
     # 建立所有 Agent
     user_proxy = UserProxyAgent("user_proxy", code_execution_config=False)
     fact_checkers = [create_agent(name, msg, llm_config) for name, msg in zip(fact_checker_names, fact_checker_sys_messages)]
-    synthesizer = create_agent(synthesizer_name, synthesizer_sys_message, llm_config)
-    finalizer = create_agent(finalizer_name, finalizer_sys_message, llm_config)
+    synthesizer = create_agent("Synthesizer", synthesizer_sys_message, llm_config)
+    finalizer = create_agent("Finalizer", finalizer_sys_message, llm_config)
 
-    return data, output_dir, user_proxy, fact_checkers, synthesizer, finalizer, llm_config, handler
+    return data, output_dir, user_proxy, fact_checkers, synthesizer, finalizer
 
 
 def main():
@@ -288,15 +288,15 @@ def main():
                         help='base model(e.g., gpt-4o-mini, llama)')
     parser.add_argument('--data_dir', type=str, default=ROOT / 'results' / 'evidence_verify',
                         help='Directory containing the datasets')
-    parser.add_argument('--task', type=str, choices=['train', 'val', 'test', ''], default='test',
+    parser.add_argument('--task', type=str, choices=['train', 'val', 'test', ''], default='',
                         help='Task type to load (train/val/test)')
-    parser.add_argument('--dataset', type=str, choices=['GuardEval', 'RAWFC', 'TFC'], default='RAWFC',
+    parser.add_argument('--dataset', type=str, choices=['CFEVER', 'RAWFC', 'TFC'], default='CFEVER',
                         help='Name of the dataset to load')
     parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'prediction',
                         help='Output JSON file to save the data')
     args = parser.parse_args()
 
-    data, output_dir, user_proxy, fact_checkers, synthesizer, finalizer, llm_config, handler = setup_environment_and_agents(args)
+    data, output_dir, user_proxy, fact_checkers, synthesizer, finalizer = setup_environment_and_agents(args)
 
     for i, item in enumerate(data, 1):
         results_data = process_item_with_agents(
