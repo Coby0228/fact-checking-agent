@@ -1,0 +1,62 @@
+{
+    "summary": {
+        "total_files_evaluated": 10,
+        "correct_predictions": 5,
+        "incorrect_predictions": 5,
+        "accuracy": "50.00%"
+    },
+    "class_metrics": {
+        "true": {
+            "precision": "0.00%",
+            "recall": "0.00%",
+            "f1_score": "0.00"
+        },
+        "false": {
+            "precision": "75.00%",
+            "recall": "42.86%",
+            "f1_score": "0.55"
+        },
+        "half": {
+            "precision": "33.33%",
+            "recall": "66.67%",
+            "f1_score": "0.44"
+        }
+    },
+    "details": [
+        {
+            "event_id": "5125",
+            "claim": "網傳影片宣稱「美國職業大兵根本就是殺人機器，舉著聯合國軍招牌，為非作歹，毫無軍紀，濫殺無辜...」？",
+            "justification": "The claim asserts that 'American professional soldiers are essentially killing machines, bearing the banner of United Nations forces, engaging in wrongdoing, lacking military discipline, and indiscriminately killing innocents.' The final consensus among the fact checkers is that the claim is half-true, as there's evidence of misconduct in UN missions, but it does not specifically link American soldiers to the described behavior. The generalization of American soldiers as 'killing machines' is deemed exaggerated and unsupported by the evidence, which highlights allegations of misconduct without providing a clear or direct connection to American personnel.",
+            "label": "false",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "7588",
+            "claim": "網傳「美海軍研究所雜誌《議事錄》5月刊載一篇文章，作者鼓吹大陸收台時，美軍應當對台灣進行轟炸、破壞！讓大陸花錢重建。台灣媒體徹底封鎖這新聞」？",
+            "justification": "The claim is based on an article that lacks verifiable evidence of its existence or the severe claims made within it. Additionally, there is no confirmed information supporting the assertion of complete suppression by Taiwanese media, leading to the classification of the core claims as insufficiently substantiated.",
+            "label": "false",
+            "prediction": "Half-True"
+        },
+        {
+            "event_id": "3654",
+            "claim": "網傳「之前有老虎確診...請小心遠離家中寵物貓狗及豢養的家禽...」？",
+            "justification": "The claim is half-true because it accurately reports the occurrence of a tiger with COVID-19 and its possible means of transmission, but it fails to adequately reflect the CDC's assessment of the low risk of transmission from pets to humans. Thus, while there is an element of truth regarding the infection, the warning to keep pets away overstates the risk based on the evidence provided.",
+            "label": "false",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "6534",
+            "claim": "網傳影像「中國大陸現實拍攝！這軍隊是在準備攻打台灣統一大業嗎？」",
+            "justification": "After reviewing the predictions submitted by the fact checkers, the consensus leans towards classifying the claim as 'half-true.' All three fact checkers arrived at the same conclusion, emphasizing the following points: 1. Existence of Military Drills: There is a substantial basis in reality regarding China's military drills which signal preparation and readiness concerning Taiwan. This reflects the rising tensions and military posturing by China, which is well-documented and reported. 2. Interpretation of Intent: The claim suggests a direct preparation for an attack on Taiwan, which is a more definitive assertion than what the evidence establishes. While it is evident that China exhibits military readiness, none of the fact-checkers could find conclusive support that these exercises are a prelude to an immediate offensive. This suggests that while military drills do exist, equating them to preparations for an attack lacks comprehensive support. 3. Concerns on Rhetoric and Strategy: The language and rhetoric around these military activities create an atmosphere of caution and concern regarding Taiwan's sovereignty. The predictive analysis from each checker acknowledges these concerns but stops short of confirming the claim's suggestion of a deliberate and imminent military action. In summary, the final decision identified the claim as half-true primarily due to a strong consensus among the fact checkers that highlights the tension created by military exercises versus the assumption of an imminent attack. This shows the nuanced understanding required when discussing military posturing in contentious geopolitical situations.",
+            "label": "false",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "10524",
+            "claim": "網傳貼文「淨灘活動開跑，加LINE完成報名領500元獎勵津貼，完成淨灘獎金2000元」？",
+            "justification": "After reviewing the predictions provided by three different fact-checking entities, there is a clear consensus amongst all of them that the claim regarding the beach cleaning activity and the associated monetary rewards is false. All three fact-checkers arrived at the conclusion that the claim is false, emphasizing the absence of credible sources and clear organizational details related to the claimed event. This consistent agreement strengthens the reliability of the conclusion that the claim is fabricated. Furthermore, the lack of a credible organizer, use of known scam tactics, and warnings from the 165 Anti-Scam Hotline indicating exploitation of individuals seeking genuine engagement during environmental activities support the conclusion that this claim is likely fraudulent.",
+            "label": "half",
+            "prediction": "false"
+        }
+    ]
+}

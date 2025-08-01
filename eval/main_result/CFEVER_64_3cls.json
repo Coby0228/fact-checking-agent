@@ -1,0 +1,265 @@
+{
+    "summary": {
+        "total_files_evaluated": 64,
+        "correct_predictions": 30,
+        "incorrect_predictions": 34,
+        "accuracy": "46.88%"
+    },
+    "class_metrics": {
+        "true": {
+            "precision": "83.87%",
+            "recall": "66.67%",
+            "f1_score": "0.74"
+        },
+        "false": {
+            "precision": "57.14%",
+            "recall": "16.00%",
+            "f1_score": "0.25"
+        },
+        "half": {
+            "precision": "0.00%",
+            "recall": "0.00%",
+            "f1_score": "0.00"
+        }
+    },
+    "details": [
+        {
+            "event_id": "30001",
+            "claim": "氟從化學物質分出的過程十分危險，許多實驗者在分離過程中失蹤甚至死亡。",
+            "justification": "The dangers of isolating fluorine are well-documented, making the first part of the claim true. However, the assertion that 'many' experimenters have gone missing or died during this process is not sufficiently supported by the evidence.",
+            "label": "True",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "9442",
+            "claim": "遼朝前身爲契丹國，改名爲「遼」，與英國政權對峙，因此被稱爲「北朝」。",
+            "justification": "The claim accurately reflects the transition from the Khitan state to the Liao dynasty and its categorization as part of the Northern Dynasties in China. However, the assertion of opposition to the British regime is misleading and lacks historical evidence, impacting the overall reliability of the claim.",
+            "label": "False",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "27866",
+            "claim": "當用戶的Yahoo! 網路電子郵件有新信件，Yahoo! Messenger會出現訊號給用戶看。",
+            "justification": "Yahoo! Messenger has been discontinued, meaning it cannot send notifications for new Yahoo! Mail messages. While it may have had this capability in the past, current functionality is non-existent, rendering the claim inaccurate.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "22143",
+            "claim": "倪尚達靠自己能力去美國就讀麻省理工學院電機系，他於1924年再獲碩士學位。",
+            "justification": "While the claim correctly states that 倪尚達 studied at MIT and obtained his master's degree, it inaccurately cites the year as 1924 instead of 1923. Additionally, the assertion about his independent arrival in the U.S. lacks sufficient evidence to confirm its validity.",
+            "label": "False",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "21975",
+            "claim": "唐朝兩次在位的唐中宗母親並未稱帝過。",
+            "justification": "The claim is factually accurate in stating that Wu Zetian did not declare herself emperor during Emperor Zhongzong's reign, but it lacks contextual acknowledgment of her earlier reign as emperor and her significant influence. This leads to a slightly misleading interpretation without considering her historical significance.",
+            "label": "False",
+            "prediction": "Half-True"
+        },
+        {
+            "event_id": "10232",
+            "claim": "和平車站位於臺灣台北市萬華區，明朝時站名爲 「 馬場町 」。",
+            "justification": "The claim is half-true because it accurately states the location of Heping Station in Wanhua District, but it incorrectly asserts that '馬場町' was a name used during the Ming Dynasty. Historical evidence indicates that '馬場町' was only used during the Japanese occupation, thus making the part of the claim regarding its use in the Ming Dynasty untrue.",
+            "label": "False",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "26562",
+            "claim": "王懿德是道光五年的進士，爲清朝官員。",
+            "justification": "The claim correctly identifies Wang Yide as a Qing Dynasty official but incorrectly states the year he became a Jinshi as 1825; he became a Jinshi in 1823.",
+            "label": "False",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "6870",
+            "claim": "是臺南市8家婦女福利服務中心之一的臺中市西大墩婦女中心以設籍或居住臺中市之婦女爲服務對象，曾推出 「 女人膽識生命故事展 」。",
+            "justification": "The claim misidentifies the location of the Xidadu Women's Center by stating it is in Tainan City instead of Taichung City. However, it accurately portrays the center's involvement in the 'Women Life Stories Exhibition' and its mission to serve women in Taichung.",
+            "label": "False",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "2127",
+            "claim": "牛頓表述的經典力學藉由新的研究方法有了新的進展。",
+            "justification": "The claim acknowledges that new research methods and theories (like chaos theory) enhance our understanding of classical mechanics. However, it misleadingly suggests that these advancements significantly alter or redefine the core principles established by Newton, which remain fundamentally unchanged.",
+            "label": "True",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "22398",
+            "claim": "公埔遺址原爲中華民國內政部指定的三級古蹟，近幾年發現不是屬於新石器時代晚期的卑南文化，因此剔除古蹟行列。",
+            "justification": "The claim is substantiated by multiple pieces of evidence that align with the assertions made. Each component of the claim is supported by factual information regarding the site's designation, scholarly research on its cultural affiliation, and the status change enacted by the Ministry of the Interior. There are no contradictions found in the evidence that would disprove the major assertions of the claim.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "27718",
+            "claim": "在英國，莫莉專指替男同性戀提供性服務的男性性工作者。",
+            "justification": "雖然「莫莉」在歷史上與同性戀男性和他們聚會的場所有關，但該術語並不僅限於指代提供性服務的男性性工作者。該詞還包括對女性或其他類型男性的廣泛參考，並無直接證據表明「莫莉」專指男同性戀的性工作者。",
+            "label": "True",
+            "prediction": "半真"
+        },
+        {
+            "event_id": "21690",
+            "claim": "臺紐經濟合作協定是臺灣第一次和非邦交國簽訂政治協定，是外交大突破。",
+            "justification": "While the claim recognizes an important diplomatic development for Taiwan, its characterization as a 'political agreement' does not align accurately with the nature of the agreement, which is primarily an economic cooperation agreement. This misclassification leads to an overstated interpretation of the relationship between Taiwan and New Zealand.",
+            "label": "False",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "3332",
+            "claim": "絲綢之路在兩宋時期訂定基本方向。",
+            "justification": "The claim is half-true because, while the Silk Road played a critical role during the Song dynasties in facilitating trade and cultural exchanges, the foundational routes were established during the Tang dynasty. Therefore, the claim cannot assert that the Song dynasty solely determined the basic direction of the Silk Road.",
+            "label": "False",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "11040",
+            "claim": "位於臺灣南部的嘉義縣的縣長是由清帝乾隆下詔易名，縣內最大城市是民雄鄉。",
+            "justification": "嘉義縣的易名由清帝乾隆下詔是正確的，但民雄鄉並非最大城市，事實上是嘉義市，因此整體內容為半真。",
+            "label": "False",
+            "prediction": "半真"
+        },
+        {
+            "event_id": "19234",
+            "claim": "從羅馬帝國開始 ， 查理曼第一次統一了西歐大部分的地區，而他也在768年登上米蘭時尚雜誌。",
+            "justification": "該主張準確反映了查理曼在統一西歐的努力，並有證據支持他作為皇帝的冠冕，然而，提到他在768年出現在米蘭時尚雜誌的部分是錯誤的，並且缺乏歷史依據。",
+            "label": "False",
+            "prediction": "半真"
+        },
+        {
+            "event_id": "24245",
+            "claim": "南興村人口643人，與安朔村相隔甚遠。",
+            "justification": "The claim is substantiated by accurate population statistics but falters in its subjective judgment of distance, leading to the conclusion that it is 'half-true.' The population figure is a solid fact, while the interpretation of distance is subjective.",
+            "label": "False",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "12548",
+            "claim": "UNIX是一種電腦作業系統，由貝爾廣場開發，並因爲安全可靠、高效強大的特點在伺服器領域得到了廣泛的應用。",
+            "justification": "The claim is validated as true based on unanimous agreement from multiple fact checkers who confirmed UNIX's development at Bell Labs, its critical attributes (security, reliability, performance), and its significant application in server environments, reinforced by historical context and statistical evidence.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "6608",
+            "claim": "參加過第一次世界大戰的美國陸軍參謀長喬治·卡特萊特·馬歇爾，在第二次世界大戰中，他幫助富蘭克林 · 德拉諾 · 羅斯福出謀劃策和提拔多位將領，並在1945年退役。",
+            "justification": "After reviewing the predictions provided by the fact checkers, the majority consensus is that the claim regarding George Catlett Marshall's service in World War I and his contributions during World War II is 'half-true.' All three fact checkers arrived at the same conclusion, indicating a strong agreement on this assessment. Each fact checker acknowledged that Marshall played a significant role during World War II, aiding President Franklin D. Roosevelt and assisting in the promotion of various generals. However, the critical point of contention lies in the assertion that Marshall served as Chief of Staff during World War I, which is factually incorrect. This misinformation affects the overall integrity of the claim. The claim's omission of details regarding Marshall’s actual roles in World War I underscores a broader issue of historical representation, indicating that while accurate in some areas, it misleads readers about Marshall's historical military contributions.",
+            "label": "True",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "9949",
+            "claim": "宮前町是臺灣日治時期時的行政區之一，至今當地仍使用此名稱。",
+            "justification": "The claim is substantiated by credible evidence from historical archives documenting the Japanese administration in Taiwan, confirming the existence of Miyamae Town as an administrative district during that period. The inclusion of contemporary references to the name in administrative documents further supports its ongoing relevance.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "31950",
+            "claim": "2019冠狀病毒病疫情首次爆發於中共湖北省武漢市，之後成爲亞洲性大瘟疫。",
+            "justification": "The majority prediction from the Fact Checkers unanimously supports the claim that the COVID-19 pandemic, referred to as '2019冠狀病毒病' or COVID-19, first emerged in Wuhan, Hubei Province, China. All three Fact Checkers arrived at the same conclusion – true – with their justifications emphasizing key pieces of evidence that uphold the authenticity of the claim. These include the clear origin location and timeline of initial cases reported in December 2019, as well as the recognition of the outbreak as a global pandemic. The evidence also confirms the significant impact of the outbreak in Asia and beyond.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "18068",
+            "claim": "米利亞納人口密度爲每平方公里800多人，是阿爾及利亞的城鎮。",
+            "justification": "The claim is deemed false due to a lack of supporting evidence to verify the specific population density of Miliyana or its status as a town in Algeria. All fact checkers identified the absence of verifiable data, indicating that the claim cannot be accepted as true.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "20972",
+            "claim": "臺中郵便局位於臺中市寶町一丁目，現在是臺中市中區的中華郵政臺中民權路郵局。",
+            "justification": "The claim inaccurately states the location of the post office as '寶町一丁目', while the correct address is '臺中市中區民權路86號'. This discrepancy in location, confirmed by multiple sources, invalidates the claim.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "12832",
+            "claim": "屬於臺南市政府教育局的臺南市佳里區塭內國民小學建立於1920年。",
+            "justification": "The claim correctly identifies the school's affiliation and location, but misleadingly states the year of establishment. While 1920 may mark some initial activities, the formal recognition and establishment of the school occurred in 1921. This indicates the claim is partially accurate.",
+            "label": "True",
+            "prediction": "半真 (Half-True)"
+        },
+        {
+            "event_id": "1185",
+            "claim": "歐洲民族中各個民族基本是以民族國家劃分，同國家的使用同一語言的人群承認屬於同一族群，也有人更願意強調自己的國別而非語言。",
+            "justification": "The claim highlights a significant trend in Europe where national identity often takes precedence over linguistic identity. However, it oversimplifies the complex interplay between language, ethnicity, and identity, failing to acknowledge the legal frameworks that support linguistic diversity and rights for minority languages.",
+            "label": "True",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "24073",
+            "claim": "英國南方與法國西北方是現代蘋果酒出產地區。",
+            "justification": "考慮到事實查核者的解釋，聲明提到的‘英國南方’過於廣泛且可能誤導，而主要的蘋果酒生產區實際上位於英國的西南部。雖然這些地區確實對蘋果酒生產有重要貢獻，但聲明未能準確代表主要生產區，因此被判定為半真。",
+            "label": "False",
+            "prediction": "半真"
+        },
+        {
+            "event_id": "5990",
+            "claim": "依據性狀是否會表現出來可以將染色體分爲顯隱性。",
+            "justification": "The claim correctly identifies the basic genetic principles associated with dominant and recessive traits. However, it oversimplifies complex genetic concepts such as variable penetrance and the impact of polygenic traits, leading to a partial truth that fails to encompass the full intricacies of gene expression and inheritance.",
+            "label": "False",
+            "prediction": "半真"
+        },
+        {
+            "event_id": "2579",
+            "claim": "3T的傳記是香港歌手鄭希怡的入行作。",
+            "justification": "The claim recognizes 鄭希怡's association with 3T as a significant part of her career but oversimplifies her entry into the music industry by failing to acknowledge other early performances or contributions. The term '入行作' might imply that this was her only starting point, which is not fully accurate given potential prior engagements.",
+            "label": "True",
+            "prediction": "半真"
+        },
+        {
+            "event_id": "30577",
+            "claim": "坦克上的主要火力來源爲坦克炮，屬於加農炮。",
+            "justification": "The claim accurately identifies the tank gun as the main armament of tanks but oversimplifies its classification by calling it a 'cannon,' which does not fully capture its specific design and operational context compared to traditional artillery.",
+            "label": "True",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "20072",
+            "claim": "臺灣客家文化館在臺灣北部，館區依照丘陵的地形起伏而設計。",
+            "justification": "The majority consensus from the predictions of Fact Checkers strongly supports the claim as authentic. All three fact checkers confirmed that the Taiwan Hakka Cultural Center is located in northern Taiwan and designed according to the hilly terrain of the area. There are no opposing predictions or significant dissenting views, bolstering the reliability of the information.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "27195",
+            "claim": "第一部由臺灣人書寫的通史類著作是臺灣通史，由連戰所撰寫。",
+            "justification": "該聲明雖然正確地指出「臺灣通史」是由台灣人撰寫的第一部通史，但它錯誤地將作者的名字指認為連戰，而正確應為連橫。這一對作者的錯誤指認顯著削弱了該聲明的完整性，因此將整體歸類為半真。",
+            "label": "False",
+            "prediction": "半真"
+        },
+        {
+            "event_id": "30786",
+            "claim": "猴痘於2022年5月在寮國傳播，是首次在非洲以外地區發生廣泛社會傳播。",
+            "justification": "While it is true that monkeypox began spreading significantly outside Africa in May 2022, the claim misleadingly suggests that Laos was the first to experience widespread transmission without clear evidence to support this assertion.",
+            "label": "False",
+            "prediction": "Half-true"
+        },
+        {
+            "event_id": "20878",
+            "claim": "中國的物理學家徐至展畢業於北京大學物理系研究所。",
+            "justification": "雖然徐至展確實於1965年從北京大學物理系畢業並獲得碩士學位，但對於'研究所'的用詞可能不完全準確，因為證據中未明確證實與其稱謂一致的具體學術結構。",
+            "label": "True",
+            "prediction": "半真"
+        },
+        {
+            "event_id": "11046",
+            "claim": "嘉慶帝次子名叫旻寧，以嫡長子身分繼承皇位的皇帝后因避免避諱困難的因素從原名改名，史稱道光帝。",
+            "justification": "The claim accurately reflects the connection between 嘉庆帝 and 道光帝, including the name 绵宁 and the mother's identity. However, the assertion that he changed his name as a personal name change rather than a title confusion is misleading. While the claim has true elements, its framing introduces misleading implications regarding personal naming conventions related to taboos.",
+            "label": "True",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "11504",
+            "claim": "以尖叫劃破自己的皮膚是最常見的自我傷害方式。",
+            "justification": "該主張雖然提到的切割確實是常見的自我傷害方式，但缺乏足夠的證據將其定義為最常見的方式，且其他自我傷害形式的存在使該聲明顯得誇張，因此作為半真處理。",
+            "label": "False",
+            "prediction": "半真"
+        }
+    ]
+}

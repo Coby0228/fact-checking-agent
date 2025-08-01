@@ -13,29 +13,36 @@ from prompt.PromptH import PromptHandler
 
 load_dotenv()
 FILE = Path(__file__).resolve()
-ROOT = FILE.parents[0]
+# 將 ROOT 直接定義為當前工作目錄，以確保路徑解析的穩定性
+ROOT = Path.cwd()
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))  # add ROOT to PATH
-ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
 
 
 def extract_outermost_json(text):
-    stack = []
-    start_index = None
-    try:
-        for i, char in enumerate(text):
-            if char == '{':
-                if not stack:
-                    start_index = i
-                stack.append(char)
-            elif char == '}':
-                stack.pop()
-                if not stack:
-                    return text[start_index:i + 1]
-    except Exception as e:
-        print(e)
+    """
+    從字串中提取最外層的 JSON 物件。
+    """
+    if not isinstance(text, str):
         return None
-    return None
+        
+    # 找到第一個 '{' 和最後一個 '}'
+    start_index = text.find('{')
+    end_index = text.rfind('}')
+
+    if start_index == -1 or end_index == -1 or end_index < start_index:
+        return None
+
+    # 截取可能的 JSON 字串
+    potential_json = text[start_index : end_index + 1]
+
+    # 嘗試解析，如果成功，表示我們找到了有效的 JSON
+    try:
+        json.loads(potential_json)
+        return potential_json
+    except json.JSONDecodeError:
+        # 如果解析失敗，表示這不是一個有效的 JSON 物件
+        return None
 
 def load_data(data_dir, dataset, task=None, agent_name=None):
     base_path = Path(data_dir) / dataset
@@ -44,19 +51,27 @@ def load_data(data_dir, dataset, task=None, agent_name=None):
     # 判斷條件：當資料集為 TFC 或 CFEVER 且 agent 為 Evidence_Extractor 時，走單一檔案邏輯
     if (dataset == 'CFEVER' or dataset == 'TFC') and agent_name == 'Evidence_Extractor':
         # --- 邏輯二：處理單一彙總檔案 ---
-        file_path = base_path / f"{dataset}_data_with_labels.json"
-        if not file_path.exists():
-            print(f"Error: File not found: {file_path}")
+        # 動態尋找目錄中的第一個 JSON 檔案
+        try:
+            file_path = next(base_path.glob('*.json'))
+        except StopIteration:
+            print(f"Error: No JSON file found in directory: {base_path}")
             return []
 
-        print(f"Loading data from single file: {file_path}")
-        try:
-            with open(file_path, 'r', encoding='utf-8') as file:
-                full_data_list = json.load(file)
-                # 篩選出有 'label' 欄位的資料
-                data_list = [item for item in full_data_list if 'label' in item]
-        except json.JSONDecodeError:
-            print(f"Error: Could not decode JSON from {file_path}")
+        print(f"Found file: {file_path}")
+        confirm = input("Load this file? (y/n): ")
+
+        if confirm.lower() == 'y':
+            print(f"Loading data from single file: {file_path}")
+            try:
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    full_data_list = json.load(file)
+                    data_list = [item for item in full_data_list if 'label' in item]
+            except json.JSONDecodeError:
+                print(f"Error: Could not decode JSON from {file_path}")
+        else:
+            print("File loading cancelled by user.")
+            return []
     else:
         # --- 邏輯一：處理多檔案目錄 ---
         task_dir = base_path / task
@@ -74,7 +89,6 @@ def load_data(data_dir, dataset, task=None, agent_name=None):
                         data_list.append(data)
                 except json.JSONDecodeError:
                     print(f"Warning: Could not decode JSON from {file_path}")
-
 
     return data_list
 
@@ -170,63 +184,58 @@ def clean_json_string(json_string):
         escaped = (char == '\\')
     return cleaned_string
 
-def extract_evidence(json_string):
+def extract_from_string(text, *keys):
     """
-    Extract the value of the 'evidence' field from the JSON string using a regular expression.
+    從字串中提取指定鍵的值。
+    優先嘗試將字串解析為 JSON，如果失敗或找不到鍵，則使用正規表示式作為備案。
 
     Args:
-        json_string (str): The JSON string to be processed.
+        text (str): 要從中提取資料的輸入字串。
+        *keys (str): 一個或多個要提取的鍵。
 
     Returns:
-        str: The value of the 'evidence' field if found, otherwise None.
+        - 如果只提供一個鍵，則回傳該鍵的值 (str 或 None)。
+        - 如果提供多個鍵，則回傳一個包含所有鍵值的元組。
     """
+    if not text or not keys:
+        return None if len(keys) == 1 else (None,) * len(keys)
+
+    # 1. 嘗試 JSON 解析
     try:
-        # Define the regular expression pattern to handle different cases of quotation marks or missing quotation marks.
-        evidence_pattern = r'["\']?evidence["\']?\s*:\s*(\[[^\]]*\])\s*}'
-        # Perform the regular expression matching.
-        evidence_match = re.search(evidence_pattern, json_string)
-        # Extract the matched value, handling cases where the match might be missing.
-        evidence = evidence_match.group(1) if evidence_match else None
-    except (re.error, ValueError, TypeError) as e:
-        print(f"Error occurred: {e}")
-        evidence = None
-    return evidence
+        # 統一鍵的大小寫並清理字串
+        normalized_text = text
+        for key in keys:
+            normalized_text = normalized_text.replace(f'"{key.capitalize()}"', f'"{key.lower()}"')
+        
+        cleaned_text = clean_json_string(normalized_text)
+        data = json.loads(cleaned_text)
+        
+        if isinstance(data, dict):
+            values = [data.get(key.lower()) for key in keys]
+            # 如果所有值都成功找到，就回傳
+            if all(v is not None for v in values):
+                return values[0] if len(values) == 1 else tuple(values)
+    except (json.JSONDecodeError, AttributeError):
+        pass  # JSON 解析失敗，繼續執行正規表示式備案
 
-def extract_values(json_string):
-    """
-    Extract the value of the 'evidence' field from the JSON string, trying multiple methods to improve the robustness of parsing.
+    # 2. 正規表示式備案
+    results = []
+    for key in keys:
+        # 針對不同 key 使用不同的 pattern
+        if key == 'evidence':
+            # 匹配 "evidence": [...]
+            pattern = r'["\']?evidence["\']?\s*:\s*(\[[^\]]*\])'
+        else:
+            # 通用模式，匹配 "key": "value"
+            pattern = rf'["\']?{key}["\']?\s*:\s*["\']([^"\']+)["\']'
+        
+        try:
+            match = re.search(pattern, text, re.IGNORECASE)
+            results.append(match.group(1).strip() if match else None)
+        except (re.error, IndexError):
+            results.append(None)
 
-    Args:
-        json_string (str): The JSON string to be processed.
-
-    Returns:
-        str: The value of the 'evidence' field if found, otherwise None.
-    """
-    # Unify the case of the key names.
-    json_string = json_string.replace('Evidence', 'evidence')
-    # Clean the JSON string.
-    cleaned_string = clean_json_string(json_string)
-
-    try:
-        # Try to parse the cleaned JSON string.
-        data = json.loads(cleaned_string)
-    except json.JSONDecodeError:
-        # If parsing fails, manually extract the field value using a regular expression.
-        evidence = extract_evidence(cleaned_string)
-        if evidence is None:
-            evidence = extract_evidence(json_string)
-        return evidence
-
-    if isinstance(data, str):
-        evidence = extract_evidence(cleaned_string)
-    else:
-        # Extract the field value from the parsed JSON.
-        evidence = data.get('evidence')
-
-    if evidence is None:
-        evidence = extract_evidence(json_string)
-
-    return evidence
+    return results[0] if len(results) == 1 else tuple(results)
 
 def create_meta_message(item):
     

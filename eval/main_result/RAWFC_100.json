@@ -1,0 +1,230 @@
+{
+    "summary": {
+        "total_files_evaluated": 100,
+        "correct_predictions": 71,
+        "incorrect_predictions": 29,
+        "accuracy": "71.00%"
+    },
+    "class_metrics": {
+        "true": {
+            "precision": "88.00%",
+            "recall": "70.97%",
+            "f1_score": "0.79"
+        },
+        "false": {
+            "precision": "84.09%",
+            "recall": "74.00%",
+            "f1_score": "0.79"
+        },
+        "half": {
+            "precision": "38.71%",
+            "recall": "63.16%",
+            "f1_score": "0.48"
+        }
+    },
+    "details": [
+        {
+            "event_id": "246059",
+            "claim": "A chart accurately shows the effectiveness of wearing face masks during the COVID-19 pandemic. ",
+            "justification": "The claim is supported by multiple fact checkers who provided credible evidence linking consistent mask use to lower odds of positive SARS-CoV-2 tests, referencing reliable sources such as Germany's Federal Institute for Drugs and Medical Devices and highlighting varying effectiveness among different types of masks.",
+            "label": "false",
+            "prediction": "True"
+        },
+        {
+            "event_id": "248211",
+            "claim": "When U.S. President Donald Trump was asked what he'd say to people who lost family members to COVID-19, he replied, \"I would say this didn't hurt anyone as much as it hurt me.\"",
+            "justification": "The claim is classified as 'half-true' because while it reflects public sentiment regarding perceived insensitivity in Trump's remarks, there is no direct quote to fully validate the statement. All fact checkers noted the absence of verifiable evidence, leading to ambiguity in the exact phrasing and context. The controversy surrounding the remarks remains significant but does not substantiate the claim as fully true.",
+            "label": "false",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "259482",
+            "claim": "Some grocery store receipts contain chemicals linked to infertility and hormone-related cancers.",
+            "justification": "The claim accurately identifies the presence of harmful chemicals (BPA and BPS) in grocery store receipts and their potential health risks. However, it lacks full context regarding the accepted safety limits of exposure to these chemicals, leading to a more qualified assessment. While these chemicals are recognized as endocrine disruptors associated with health issues, health guidelines indicate that low-level exposure through casual handling of receipts is generally considered safe. This oversight in context introduces ambiguity about health risks, necessitating a cautious interpretation.",
+            "label": "true",
+            "prediction": "Half-True"
+        },
+        {
+            "event_id": "265651",
+            "claim": "A meme documents contradictory statements about the value of enhanced police presence offered by Kamala Harris.",
+            "justification": "The claim about Kamala Harris's contradictory statements on enhanced police presence has been evaluated by three different Fact Checkers, all of whom arrived at the same prediction: half-true. This consensus indicates that while there are elements of truth in the claim, it requires a deeper understanding of the context surrounding Harris's evolving perspective on police presence and community safety. The majority viewpoint across all Fact Checkers emphasizes that the claim correctly identifies a shift in Harris's statements that could be perceived as contradictory. However, a critical aspect noted by all three is that these do not represent outright contradictions without context. Instead, they point to a nuanced evolution in her views, reflecting a response to changing understandings of effective policing and community safety. The provided evidence suggests that Harris moved from advocating for an increase in police presence to emphasizing a critique of conventional policing approaches, advocating for broader community investment instead. This adaptation showcases her reassessment of the relationship between police presence and public safety rather than a straightforward contradiction. While the claim highlights the apparent discrepancies in her statements, it fails to appreciate the complexity and context of her transformation in thought. Each Fact Checker underlined that her position is dynamic and responsive to evolving discussions on policing strategies, indicating that while her earlier assertions may seem inconsistent with her current stance, this is part of a larger narrative of growth rather than a direct contradiction. In conclusion, the final determination of 'half-true' reflects the fact that while the claim captures the essence of her changing perspective, it lacks the necessary context to fully assert that her statements are simply contradictory.",
+            "label": "true",
+            "prediction": "Half-True"
+        },
+        {
+            "event_id": "253563",
+            "claim": "A map shows America's Favorite Fast Food restaurants. ",
+            "justification": "The claim is classified as 'half-true' because it contains elements of truth regarding the existence of maps showing favorites among fast food restaurants. However, due to the absence of evidence for a single definitive map as the claim suggests, it cannot be fully substantiated.",
+            "label": "false",
+            "prediction": "Half-True"
+        },
+        {
+            "event_id": "230149",
+            "claim": "In January 2020, officials in the state of South Australia announced a plan to cull around 10,000 feral camels in response to concerns over public safety and environmental resources.",
+            "justification": "The claim accurately captures the broader context and actions taken by officials, but the uncertainty surrounding the exact number of camels culling weakens its overall authenticity.",
+            "label": "true",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "217693",
+            "claim": "A C-SPAN video shows former Vice President Joe Biden confessing that he \"bribed\" Ukraine to drop the Burisma investigation.",
+            "justification": "The claim is half-true because while it accurately reflects a portion of Biden's quote and the pressure exerted to fire a prosecutor, it mischaracterizes the context and intent behind these actions. The evidence indicates that the prosecutor’s firing was aimed at resolving broader corruption issues and was part of an international consensus rather than a personal or corrupt motivation by Biden to protect Burisma.",
+            "label": "false",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "265016",
+            "claim": "A graphic shows contradictory CNN articles about hydroxychloroquine, published three months apart and co-authored by the same person.",
+            "justification": "The claim is half-true as it identifies two articles that reflect an evolving understanding of hydroxychloroquine rather than outright contradictions. The articles show a progression in scientific consensus based on new evidence.",
+            "label": "false",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "239650",
+            "claim": "U.S. President Donald Trump wrote personal checks to tornado victims in Nashville, Tennessee. ",
+            "justification": "All fact checkers reported that the claim is false, citing a lack of credible evidence or media reports supporting it. The claim originated from unverified social media posts and was not corroborated by any reliable sources. Reports from the press pool further confirmed that no checks were distributed, solidifying the assertion that the claim is unfounded.",
+            "label": "half",
+            "prediction": "false"
+        },
+        {
+            "event_id": "247366",
+            "claim": "As of April 25, 2020, the rate of people dying from the COVID-19 coronavirus disease in New York City was at least 250 times \"higher\" than Tokyo's — and growing with time.",
+            "justification": "The claim highlights a real disparity in COVID-19 death rates between NYC and Tokyo, with data indicating that NYC's rate was around 243 times higher; however, the assertion of it being 'at least 250 times' is slightly exaggerated. Additionally, there is no substantiated evidence for the claim that the difference was 'growing' over time, and complexities regarding recording methods in both cities are not addressed.",
+            "label": "true",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "219823",
+            "claim": "The Bill and Melinda Gates Foundation was kicked out of India. ",
+            "justification": "The claim is misleading; while there are restrictions on foreign funding, the foundation is still actively working in India and has not been fully expelled.",
+            "label": "false",
+            "prediction": "Half-True"
+        },
+        {
+            "event_id": "220666",
+            "claim": "Members of the Trump family were banned from running charities in New York because they reportedly stole from a children's cancer charity.",
+            "justification": "The claim is deemed half-true because there is evidence of illegal and unethical activities by the Trump family regarding charitable funds, particularly involving a children's cancer charity. However, there is no explicit confirmation of a formal ban on running charities in New York specifically due to these actions.",
+            "label": "false",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "257371",
+            "claim": "Dawn dish soap contains ammonia even though it's not listed as an ingredient, and when mixed with Clorox bleach products, the results could be lethal.",
+            "justification": "The claim that 'Dawn dish soap contains ammonia' is fundamentally unsupported by evidence, leading to the conclusion that the assertion is inaccurate. While there are dangers associated with mixing bleach and ammonia, this risk does not apply to Dawn dish soap, confirming the overall falsity of the claim.",
+            "label": "half",
+            "prediction": "false"
+        },
+        {
+            "event_id": "269059",
+            "claim": "Thirty-nine missing children were found in a double-wide trailer in the state of Georgia.",
+            "justification": "All three fact checkers concluded that the claim misrepresents facts by asserting that all 39 children were found in a single double-wide trailer. Evidence shows the children were located in various places, such as houses, hotel rooms, and streets, which fundamentally undermines the accuracy of the claim.",
+            "label": "half",
+            "prediction": "false"
+        },
+        {
+            "event_id": "246433",
+            "claim": "The Obama administration provided a $3.7 million grant to the Wuhan Institute of Virology in China.",
+            "justification": "The claim is inaccurate as it misrepresents the funding source and amount. The actual grant was $3.25 million awarded to EcoHealth Alliance, not directly to the Wuhan Institute, and only a small portion was allocated to the lab. The claim has been labeled misleading and false by multiple fact checkers.",
+            "label": "half",
+            "prediction": "false"
+        },
+        {
+            "event_id": "220348",
+            "claim": "A video shows an armed robot turning on humans.",
+            "justification": "The claim that 'a video shows an armed robot turning on humans' has been assessed by three fact checkers, all of whom arrived at the same conclusion of 'half-true.' All three fact checkers agree that while the video does show a robot displaying malfunctioning behavior, it does not support the notion that the robot is armed or intentionally targeting humans. This consensus emphasizes that the robot's behavior can be attributed to a malfunction rather than a purposeful act of aggression. Each of the fact checkers pointed out the absence of evidence indicating that the robot is armed. Furthermore, they all noted the implications of intentionality in the claim are misrepresentations of the actual circumstances, where the robot’s erratic behavior can likely be explained by technical failures instead of malicious intent. Thus, the decision of 'half-true' is upheld, accurately reflecting the video's content and the nature of the claims being made, acknowledging that while there is a basis for concern regarding malfunctioning technology, the specific details of the claim are not substantiated.",
+            "label": "false",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "216646",
+            "claim": "U.S. Rep. Adam Schiff is \"linked\" to a Ukrainian arms dealer.",
+            "justification": "Multiple fact checkers identified a connection between Schiff and an individual associated with the defense sector, established through a fundraising event. However, they unanimously concluded that the claim lacks concrete evidence of direct involvement in arms dealing or illicit arms trading. While a relationship exists, it does not substantiate the implications of serious wrongdoing suggested by the term 'arms dealer.'",
+            "label": "false",
+            "prediction": "Half-True"
+        },
+        {
+            "event_id": "261202",
+            "claim": "President Trump gave a talk during the COVID-19 pandemic in which he remonstrated about showers and dishwashers not functioning properly due to low-flow standards.",
+            "justification": "While the claim accurately reflects Trump's comments about low-flow standards, it lacks the full context of the seriousness with which these statements were made during a national health crisis. The factual content of Trump's statements is valid, yet his focus on these trivial issues amid the pandemic indicates a disconnect that merits the 'half-true' classification.",
+            "label": "true",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "250908",
+            "claim": "U.S. President Donald Trump said he \"tested very positively\" for COVID-19, meaning his test results came back negative, and he did not have the coronavirus disease.",
+            "justification": "The claim misrepresents the facts surrounding Trump’s COVID-19 test results. All fact checkers agree that he tested positive for COVID-19, contradicting the claim's assertion that he did not have the virus. Trump's statement about testing 'positively' was misleading, as it does not indicate a negative status. Therefore, the claim is false.",
+            "label": "true",
+            "prediction": "False"
+        },
+        {
+            "event_id": "271829",
+            "claim": "A video shows Fox News host Tucker Carlson saying that he was \"basically on board\" with the tenets of democratic socialism. ",
+            "justification": "While Carlson expresses agreement with the ideals of democratic socialism, particularly regarding dignity for ordinary people, he also raises significant skepticism about its practical outcomes, indicating a nuanced view rather than outright support.",
+            "label": "false",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "265305",
+            "claim": "A video shows actor Will Smith's teeth knocked out by singer Jason Derulo's errant golf swing.",
+            "justification": "After reviewing the predictions from three different fact checkers regarding the claim, the consensus is 'half-true'. There is a factual basis for the claim: Will Smith did sustain a dental injury, specifically chipped teeth, and there is evidence like a video and photographs showcasing this. However, all fact checkers expressed concerns about the possibility of the incident being staged or manipulated for entertainment purposes, indicating that while parts of the claim are verified, there are layers of interpretation that prevent it from being entirely truthful.",
+            "label": "false",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "229978",
+            "claim": "Did Mike Pompeo declare, \"We will continue to fight these battles. It is a never-ending struggle ... until the Rapture.\"",
+            "justification": "The claim is false due to the absence of evidence confirming that Mike Pompeo made the statement. Multiple Fact Checkers reached the same conclusion, stating that there are no credible sources or supporting material to verify the claim.",
+            "label": "true",
+            "prediction": "false"
+        },
+        {
+            "event_id": "265781",
+            "claim": "A Black man was charged in North Carolina in the killing of Cannon Hinnant, a 5-year-old white boy, and except for Fox News, mainstream news media outlets purposely ignored it to further a predetermined racial narrative.",
+            "justification": "After reviewing the predictions provided by the fact checkers, there is a clear and consistent agreement that the claim regarding the alleged media ignorance surrounding the murder of Cannon Hinnant is false. All three Fact Checkers concluded that there was significant coverage of the incident by various reputable mainstream news outlets, disproving the assertion of media ignorance. The family's statements reject the notion of racial motivations, further undermining the claim's narrative. The claim lacks corroborative evidence and does not hold true based on the facts available.",
+            "label": "half",
+            "prediction": "False"
+        },
+        {
+            "event_id": "253488",
+            "claim": "On June 5, 2020, U.S. President Donald Trump stated during a talk about employment numbers that it was a \"great day\" for George Floyd, a black man who was killed May 25 after a Minneapolis police officer kneeled on his neck.",
+            "justification": "The claim that U.S. President Donald Trump described June 5, 2020, as a 'great day' for George Floyd is factually accurate; Trump indeed made this statement in the context of discussing employment numbers. However, the claim is only 'half-true' because it omits critical context surrounding Floyd's tragic death and the public reaction to Trump's comments. All Fact Checkers highlighted the importance of context in interpreting the statement, emphasizing that while the actual words spoken are correct, they were perceived as insensitive due to the socio-political climate at the time. Therefore, the classification of 'half-true' underscores the necessity of considering both the factual correctness of words and the context in which they are spoken.",
+            "label": "true",
+            "prediction": "half-true"
+        },
+        {
+            "event_id": "261310",
+            "claim": "In response to a question in a July 2020 CNN interview about what would happen if a COVID-19 outbreak occurred in schools, U.S. Education Secretary Betsy DeVos said, “You can’t plan for something that hasn’t happened yet.”",
+            "justification": "While the claim captures the essence of DeVos's attitude towards planning for COVID-19 outbreaks in schools, the exact quote is not substantiated in the evidence provided, leading to a conclusion of 'half-true' across multiple fact-checkers.",
+            "label": "false",
+            "prediction": "Half-True"
+        },
+        {
+            "event_id": "247609",
+            "claim": "Right-wing commentator Bill Mitchell tweeted \"someone let me know\" when 55,000 Americans have died from COVID-19 coronavirus disease.",
+            "justification": "While Bill Mitchell did express a desire to be notified when COVID-19 deaths reached 55,000, the specific phrasing 'someone let me know' is not directly quoted from his tweet. Additionally, the context of his comment raises concerns about the seriousness of the pandemic, leading to a consensus from fact-checkers that the claim is not fully accurate due to discrepancies in wording and contextual implications.",
+            "label": "true",
+            "prediction": "Half-True"
+        },
+        {
+            "event_id": "250461",
+            "claim": "Gov. Andrew Cuomo of New York recently received a little-publicized $71,000 pay raise that made him the highest paid governor in the U.S.",
+            "justification": "After reviewing the predictions from three different fact-checkers, there is a unanimous consensus that the claim about Gov. Andrew Cuomo receiving a $71,000 pay raise, which made him the highest-paid governor in the U.S., is true. All fact-checkers confirmed the raise and its implications, supporting the claim.",
+            "label": "half",
+            "prediction": "true"
+        },
+        {
+            "event_id": "259952",
+            "claim": "Employees at a Five Guys restaurant in Daphne, Alabama, refused to serve local police officers.",
+            "justification": "After analyzing the predictions from three different fact checkers, the consensus is overwhelmingly in support of the claim that employees at a Five Guys restaurant in Daphne, Alabama, refused to serve local police officers. All three fact checkers independently corroborated the claim, leading to a majority agreement on its authenticity. The refusal was linked to a larger context regarding the enforcement of a mask policy, and disciplinary measures against the employees (termination and suspension) further confirmed the legitimacy of the incident. Specific actions by the employees, such as turning their backs on the officers and making statements of refusal, provided strong anecdotal evidence. The extensive corroboration from multiple sources and the disciplinary actions related to the incident provide a solid foundation for confirming the authenticity of the claim.",
+            "label": "half",
+            "prediction": "true"
+        },
+        {
+            "event_id": "218032",
+            "claim": "The sons of several top Democrats worked for Ukraine-linked energy companies, as part of a conspiracy involving the Clinton Foundation. ",
+            "justification": "The claim contains factual elements regarding Hunter Biden's involvement with a Ukrainian energy company, which is verifiable. However, the broader allegations of conspiracy and any misconduct related to Joe Biden and the Clinton Foundation lack credible support. Investigations have found no wrongdoing by Joe Biden, and the origins of these claims are politically motivated. Thus, the designation of 'half-true' reflects the truth of Hunter Biden's role while recognizing the significant gaps in evidence for the alleged conspiracy.",
+            "label": "false",
+            "prediction": "half-true"
+        }
+    ]
+}

@@ -29,7 +29,7 @@ def evaluate_file(file_path):
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
-            original_label = data.get('label')
+            original_label = str(data.get('label'))
             prediction = data.get('prediction')
 
             if original_label is None or prediction is None:
@@ -116,7 +116,7 @@ if __name__ == "__main__":
                 "event_id": r.get("event_id"),
                 "claim": r.get("claim"),
                 "justification": r.get("justification"),
-                "label": r.get("label"),
+                "label": str(r.get("label")),
                 "prediction": r.get("prediction")
             })
 
@@ -131,7 +131,7 @@ if __name__ == "__main__":
         "details": error_details # Use the filtered list of errors
     }
 
-    output_filename = "results/main_result/evaluation_summary.json"
+    output_filename = "eval/main_result/evaluation_summary.json"
     with open(output_filename, 'w', encoding='utf-8') as f:
         json.dump(summary, f, indent=4, ensure_ascii=False)
 

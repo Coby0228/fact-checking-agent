@@ -1,6 +1,7 @@
 import subprocess
 import sys
 import os
+import time
 
 def run_script(script_name):
     """
@@ -12,6 +13,7 @@ def run_script(script_name):
         sys.exit(1)
         
     print(f"--- Running {script_name} ---")
+    start_time = time.time()
     try:
         # Use sys.executable to ensure the script is run with the same Python interpreter.
         process = subprocess.run(
@@ -19,7 +21,8 @@ def run_script(script_name):
             check=True,          # Raise CalledProcessError if the script returns a non-zero exit code.
             text=True            # Decode stdout and stderr as text.
         )
-        print(f"--- Successfully finished {script_name} ---")
+        end_time = time.time()
+        print(f"--- Successfully finished {script_name} in {end_time - start_time:.2f} seconds ---")
         if process.stdout:
             print("Output:")
             print(process.stdout)
@@ -49,6 +52,7 @@ def main():
     """
     Main function to define and run the sequence of scripts.
     """
+    pipeline_start_time = time.time()
     # The order of scripts to be executed, as per the user's request.
     scripts_to_run = [
         "evidence_extraction.py",
@@ -59,7 +63,9 @@ def main():
     for script in scripts_to_run:
         run_script(script)
 
-    print("\n--- All scripts executed successfully. ---")
+    pipeline_end_time = time.time()
+    total_time = pipeline_end_time - pipeline_start_time
+    print(f"\n--- All scripts executed successfully. Total execution time: {total_time:.2f} seconds ---")
 
 if __name__ == "__main__":
     main()

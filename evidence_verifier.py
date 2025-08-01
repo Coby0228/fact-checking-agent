@@ -2,7 +2,10 @@ import argparse
 from pathlib import Path
 import shutil
 
-from utils import *
+from modules.utils import (
+    load_data, setup_agents, save_data_to_json, extract_from_string,
+    extract_outermost_json, create_meta_message
+)
 
 AGENT_NAME = "Evidence_Verifier"
 
@@ -32,7 +35,7 @@ def verify_evidence(item, evidence_verifier, user_proxy):
     summary = res.summary
 
     summary = extract_outermost_json(summary)
-    evidence = extract_values(summary)
+    evidence = extract_from_string(summary, 'evidence')
 
     results_data['verified_evidence'] = evidence
     return results_data

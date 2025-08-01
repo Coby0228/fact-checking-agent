@@ -4,7 +4,12 @@ from pathlib import Path
 import re
 import shutil
 
-from utils import *
+from modules.utils import (
+    ROOT,
+    load_data, 
+    save_data_to_json, 
+    setup_agents, 
+)
 from prompt.PromptH import PromptHandler
 
 AGENT_NAME = "Evidence_Extractor"
