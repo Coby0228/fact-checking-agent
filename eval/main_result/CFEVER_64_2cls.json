@@ -1,0 +1,160 @@
+{
+    "summary": {
+        "total_files_evaluated": 64,
+        "correct_predictions": 45,
+        "incorrect_predictions": 19,
+        "accuracy": "70.31%"
+    },
+    "class_metrics": {
+        "true": {
+            "precision": "73.81%",
+            "recall": "79.49%",
+            "f1_score": "0.77"
+        },
+        "false": {
+            "precision": "63.64%",
+            "recall": "56.00%",
+            "f1_score": "0.60"
+        },
+        "half": {
+            "precision": "0.00%",
+            "recall": "0.00%",
+            "f1_score": "0.00"
+        }
+    },
+    "details": [
+        {
+            "event_id": "30001",
+            "claim": "氟從化學物質分出的過程十分危險，許多實驗者在分離過程中失蹤甚至死亡。",
+            "justification": "The claim's assertion about the frequency of disappearances and deaths during the isolation of fluorine does not hold up under scrutiny, as there is no evidence supporting that many experimenters have gone missing or died in this process. While the inherent dangers of isolating fluorine are acknowledged, the specific narrative regarding fatalities is unsubstantiated.",
+            "label": "True",
+            "prediction": "False"
+        },
+        {
+            "event_id": "9442",
+            "claim": "遼朝前身爲契丹國，改名爲「遼」，與英國政權對峙，因此被稱爲「北朝」。",
+            "justification": "The claim accurately states that the Liao Dynasty originated from the Khitan, was named 'Liao', and was referred to as the 'Northern Dynasty' in its historic conflict with the Jin Dynasty, which is well-documented in historical records.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "27866",
+            "claim": "當用戶的Yahoo! 網路電子郵件有新信件，Yahoo! Messenger會出現訊號給用戶看。",
+            "justification": "Yahoo! Messenger has been discontinued, and therefore it can no longer provide notifications for new Yahoo! Mail messages, making the claim outdated and false.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "21975",
+            "claim": "唐朝兩次在位的唐中宗母親並未稱帝過。",
+            "justification": "Wu Zetian did not claim the title of emperor during Emperor Zhongzong's reign, despite her historical significance as the only officially recognized female emperor in China. The claim is accurate within the specific context of her actions during her son's reign.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "22398",
+            "claim": "公埔遺址原爲中華民國內政部指定的三級古蹟，近幾年發現不是屬於新石器時代晚期的卑南文化，因此剔除古蹟行列。",
+            "justification": "Both fact checkers confirmed that the Gongpu site was originally designated as a Grade 3 ancient monument by the Ministry of the Interior in 1988, and that recent archaeological studies suggest it may not be linked to the late Neolithic Beinan culture, resulting in its removal from the list of historical sites. This consensus, supported by evidence and official actions, validates the claim as authentic.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "27718",
+            "claim": "在英國，莫莉專指替男同性戀提供性服務的男性性工作者。",
+            "justification": "After reviewing the predictions from the fact checkers, both Fact Checker 1 and Fact Checker 2 arrived at the consensus that the claim is false. Their assessments provide a clear understanding of the term 'Molly' and its contextual associations. The majority opinion emphasizes that while 'Molly' has historical connections to homosexual men, it does not specifically refer to male sex workers who serve gay men. The term encompasses a wider spectrum of LGBTQ+ identities rather than being limited to a specific subset of sex work. The consistent emphasis from both fact checkers on the broader connotations and the absence of evidence linking 'Molly' to sex work supports this conclusion.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "3332",
+            "claim": "絲綢之路在兩宋時期訂定基本方向。",
+            "justification": "Both Fact Checkers emphasize the significant role that the Silk Road played during the Tang and Song dynasties, highlighting its cultural and economic exchanges, and unanimously agreeing on the claim's authenticity.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "24245",
+            "claim": "南興村人口643人，與安朔村相隔甚遠。",
+            "justification": "The claim is supported by evidence indicating that 南興村 has a population of 643 and is approximately 10 kilometers away from 安朔村, confirming both components of the claim.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "12548",
+            "claim": "UNIX是一種電腦作業系統，由貝爾廣場開發，並因爲安全可靠、高效強大的特點在伺服器領域得到了廣泛的應用。",
+            "justification": "The claim is supported by evidence that UNIX is an operating system developed by Bell Labs, noted for its security, reliability, and efficiency, and it is widely used in server environments.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "9949",
+            "claim": "宮前町是臺灣日治時期時的行政區之一，至今當地仍使用此名稱。",
+            "justification": "The claim regarding Miyamae Town being an administrative district during the Japanese colonial period and still in current use is supported by evidence from historical documents and local recognition, as confirmed by multiple fact checkers.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "31950",
+            "claim": "2019冠狀病毒病疫情首次爆發於中共湖北省武漢市，之後成爲亞洲性大瘟疫。",
+            "justification": "The initial outbreak of COVID-19 is well-documented as originating in Wuhan, supported by multiple sources including health reports from the local health committee and confirmations from national authorities. The connections made between early cases and the Huanan Seafood Market align with broader scientific consensus regarding the early epidemiological characteristics of the virus. Subsequent actions taken by Chinese health authorities and the eventual declarations by the WHO underscore a timeline that corroborates the claim of the virus becoming a major epidemic that spread across Asia and eventually worldwide.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "18068",
+            "claim": "米利亞納人口密度爲每平方公里800多人，是阿爾及利亞的城鎮。",
+            "justification": "The final decision is based on the majority predictions from the two fact checkers, both of whom concluded that the claim about Miliyana being a town in Algeria with a population density of over 800 people per square kilometer is false. Both fact checkers stressed that there is no verification of either the population density or the classification of Miliyana as a town, which are crucial elements of the claim. The lack of credible sources or data to back the claim further supports the decision to deem it false.",
+            "label": "True",
+            "prediction": "False"
+        },
+        {
+            "event_id": "20972",
+            "claim": "臺中郵便局位於臺中市寶町一丁目，現在是臺中市中區的中華郵政臺中民權路郵局。",
+            "justification": "Both Fact Checkers confirm that the claim regarding the location of the Taichung Post Office is incorrect, as it is located on Minquan Road in the Central District, not Baodao 1st Street.",
+            "label": "True",
+            "prediction": "False"
+        },
+        {
+            "event_id": "12832",
+            "claim": "屬於臺南市政府教育局的臺南市佳里區塭內國民小學建立於1920年。",
+            "justification": "The claim regarding the establishment year of 臺南市佳里區塭內國民小學 is false. While there were activities related to the school in 1920, the official establishment under the current name occurred later, in 1941. Evidence also indicates that the school was not fully operational until 1921, contrary to the 1920 claim.",
+            "label": "True",
+            "prediction": "False"
+        },
+        {
+            "event_id": "24073",
+            "claim": "英國南方與法國西北方是現代蘋果酒出產地區。",
+            "justification": "Both Normandy and Brittany in France are recognized for significant cider production, fulfilling the claim regarding northwestern France. Additionally, the West Country in southern England, including regions like Somerset and Herefordshire, is also prominent for cider production. Both regions are well-established as important areas for modern cider, which fully supports the claim's accuracy.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "5990",
+            "claim": "依據性狀是否會表現出來可以將染色體分爲顯隱性。",
+            "justification": "The claim is supported by the consistent evidence from genetics that classifies chromosomes based on the expression of traits as dominant or recessive. It accurately depicts how these traits function, with dominant traits overshadowing recessive traits unless certain genetic conditions are met.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "2579",
+            "claim": "3T的傳記是香港歌手鄭希怡的入行作。",
+            "justification": "The evidence does not indicate the existence of a biography about 3T or that Yumiko Cheng authored such a work. It focuses on her entry into the music industry without mentioning a biography, thus supporting that the claim is false.",
+            "label": "True",
+            "prediction": "False"
+        },
+        {
+            "event_id": "30577",
+            "claim": "坦克上的主要火力來源爲坦克炮，屬於加農炮。",
+            "justification": "While the claim accurately identifies the tank gun as the primary firepower source of a tank, it inaccurately categorizes tank guns as cannons or howitzers. This misclassification undermines the understanding of the specific design and operational capabilities of modern tank guns, which are primarily optimized for direct fire engagements in armored warfare.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "20072",
+            "claim": "臺灣客家文化館在臺灣北部，館區依照丘陵的地形起伏而設計。",
+            "justification": "The claim is supported by evidence confirming the museum's location in Northern Taiwan and its design being influenced by the hilly terrain. Both fact checkers provided consistent evaluations that affirm the authenticity of the claim.",
+            "label": "False",
+            "prediction": "True"
+        }
+    ]
+}

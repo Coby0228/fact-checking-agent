@@ -15,6 +15,8 @@ class PromptHandler:
             'Fact_Checker_M_en': self.load_prompt('Fact_Checker_M_en'),
             'Fact_Checker_N_en': self.load_prompt('Fact_Checker_N_en'),
             'Fact_Checker_P_en': self.load_prompt('Fact_Checker_P_en'),
+            'Fact_Checker_N_2c_en': self.load_prompt('Fact_Checker_N_2c_en'),
+            'Fact_Checker_P_2c_en': self.load_prompt('Fact_Checker_P_2c_en'),
             'Synthesizer_en': self.load_prompt('Synthesizer_en')
         }
 

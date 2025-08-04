@@ -1,5 +1,5 @@
 import json
-from modules.utils import extract_outermost_json, extract_from_string
+from .parsers import extract_outermost_json, extract_from_string
 
 
 class MessageGenerator:
@@ -28,11 +28,42 @@ class MessageGenerator:
 
     def create_finalizer_message(self, claim, *summaries):
         """為 Finalizer 建立訊息。"""
-        base_message = "Please make the final decision on the authenticity of the claim."
-        return self._create_fact_checker_results_message(claim, summaries, base_message)
+        base_message = "Please make the final decision on the authenticity of the claim"
+        return self._create_fact_checker_results_message(
+            claim, 
+            summaries, 
+            base_message
+        )
 
-    def create_meta_message(self, item):
-        """建立包含 Claim 和 Evidence 的元訊息。"""
+    def create_verifier_message(self, item):
+        """為 Evidence_Verifier 建立初始訊息。"""
+        evidence_header = "Evidence:\n"
+        no_evidence_text = "No evidence provided\n\n"
+        prompt = "Please analyze and verify the accuracy and completeness of the provided evidence in relation to the given claim.\n\n"
+        claim_prefix = "Claim:"
+
+        evidence = evidence_header
+        for report in item['reports']:
+            if report.get('evidence') and report['evidence'] not in ['', 'None']:
+                if isinstance(report['evidence'], list):
+                    for evidence_item in report['evidence']:
+                        evidence += f"{evidence_item}\n"
+                else:
+                    evidence += f"{report['evidence']}\n"
+
+        if evidence == evidence_header:
+            evidence += evidence_header + no_evidence_text
+
+        message = (
+            f"{prompt}"
+            f"{claim_prefix}{item['claim']}\n\n"
+            f"{evidence}\n"
+            f"Let's analyze this step by step."
+        )
+        return message
+
+    def create_prediction_message(self, item):
+        """建立包含 Claim 和 Evidence 的訊息。"""
         evidence_header = "Evidence:\n"
         no_evidence_text = "No evidence provided\n\n"
         claim_prefix = "Claim:"

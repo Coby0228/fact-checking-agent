@@ -1,7 +1,6 @@
 import json
 import sys
 import os
-from collections import defaultdict
 
 def normalize_value(value):
     """

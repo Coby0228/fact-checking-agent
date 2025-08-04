@@ -1,18 +1,18 @@
-import argparse
-import json
 from pathlib import Path
 import re
 import shutil
+import json
 
+from modules.paths import ROOT
 from modules.utils import (
-    ROOT,
     load_data, 
     save_data_to_json, 
-    setup_agents, 
+    create_argument_parser
 )
+from modules.agent_setup import setup_agents
 from prompt.PromptH import PromptHandler
 
-AGENT_NAME = "Evidence_Extractor"
+AGENT_NAME = 'Evidence_Extractor'
 
 
 class EvidenceGatherer:
@@ -57,17 +57,11 @@ class EvidenceGatherer:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Gather evidence for claims in a single session.")
-    parser.add_argument('--model_name', type=str, default='gpt4o_mini',
-                        help='Name of the model to load')
-    parser.add_argument('--data_dir', type=str, default=ROOT / 'dataset',
-                        help='Directory containing the datasets')
-    parser.add_argument('--task', type=str, choices=['train', 'val', 'test', ''], default='',
-                        help='Task type to load')
-    parser.add_argument('--dataset', type=str, choices=['CFEVER', 'RAWFC', 'TFC'], default='CFEVER',
-                        help='Name of the dataset to load')
-    parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'evidence_extraction',
-                        help='Output directory to save the gathered evidence')
+    parser = create_argument_parser()
+    parser.set_defaults(
+        data_dir=ROOT / 'dataset',
+        output_dir=ROOT / 'results' / 'evidence_extraction'
+    )
     parser.add_argument('--max_reports', type=int, default=3,
                         help='Target number of evidence reports to ask the agent to find.')
     args = parser.parse_args()

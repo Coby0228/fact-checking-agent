@@ -1,14 +1,19 @@
-import argparse
 from pathlib import Path
 import shutil
+from tqdm import tqdm
 
+from modules.paths import ROOT
 from modules.utils import (
-    load_data, setup_agents, save_data_to_json, extract_from_string,
-    extract_outermost_json, create_meta_message
+    load_data, 
+    save_data_to_json, 
+    create_argument_parser,
 )
+from modules.agent_setup import setup_agents
+from modules.parsers import extract_from_string, extract_outermost_json
+from modules.message_generator import MessageGenerator, MessageGenerator
 
 AGENT_NAME = "Evidence_Verifier"
-
+message_generator = MessageGenerator()
 
 def verify_evidence(item, evidence_verifier, user_proxy):
     """
@@ -19,10 +24,7 @@ def verify_evidence(item, evidence_verifier, user_proxy):
         'claim': item['claim'],
         'label': item['label']
     }
-    meta_message, meta_evidence = create_meta_message(item)
-
-    message = (f"{meta_message}\n"
-               f"Let's analyze this step by step.")
+    message = message_generator.create_verifier_message(item)
 
     res = user_proxy.initiate_chat(
         recipient=evidence_verifier,
@@ -42,17 +44,11 @@ def verify_evidence(item, evidence_verifier, user_proxy):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Verify evidence for claims.")
-    parser.add_argument('--model_name', type=str, default='gpt4o_mini',
-                        help='Name of the model to load (e.g., gpt4o_mini, llama)')
-    parser.add_argument('--data_dir', type=str, default=ROOT / 'results' / 'evidence_extraction',
-                        help='Directory containing the datasets with extracted evidence')
-    parser.add_argument('--task', type=str, choices=['train', 'val', 'test', ''], default='',
-                        help='Task type to load (train/val/test)')
-    parser.add_argument('--dataset', type=str, choices=['CFEVER', 'RAWFC', 'TFC'], default='CFEVER',
-                        help='Name of the dataset to load')
-    parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'evidence_verify',
-                        help='Output directory to save the verified evidence')
+    parser = create_argument_parser()
+    parser.set_defaults(
+        data_dir=ROOT / 'results' / 'evidence_extraction',
+        output_dir=ROOT / 'results' / 'evidence_verify'
+    )
     args = parser.parse_args()
 
     data = load_data(args.data_dir, args.dataset, args.task)
@@ -63,8 +59,8 @@ def main():
         shutil.rmtree(output_dir)
     output_dir.mkdir(parents=True)
 
-    for item in data:
-        event_id = item['event_id'].replace('.json', '')
+    for item in tqdm(data, desc="Verifying evidence"):
+        event_id = item['event_id']
 
         verified_data = verify_evidence(
             item=item,

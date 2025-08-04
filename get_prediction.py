@@ -1,15 +1,10 @@
 import os
 from autogen import AssistantAgent, UserProxyAgent
-import argparse
 import shutil
 
-from modules.utils import (
-    ROOT, 
-    load_data, 
-    save_data_to_json, 
-    extract_outermost_json, 
-    extract_from_string
-)
+from modules.paths import ROOT
+from modules.utils import load_data, save_data_to_json, create_argument_parser
+from modules.parsers import extract_outermost_json, extract_from_string
 from modules.message_generator import MessageGenerator
 from prompt.PromptH import PromptHandler
 
@@ -52,15 +47,22 @@ def setup_environment_and_agents(args):
         "cache_seed": 42
     }
 
-    # 載入所有 Agent 的系統提示
-    fact_checker_p_sys_message = handler.handle_prompt('Fact_Checker_P_en')
-    fact_checker_m_sys_message = handler.handle_prompt('Fact_Checker_M_en')
-    fact_checker_n_sys_message = handler.handle_prompt('Fact_Checker_N_en')
     synthesizer_sys_message = handler.handle_prompt('Synthesizer_en')
     finalizer_sys_message = handler.handle_prompt('Finalizer_en')
     
-    fact_checker_names = ["Fact_Checker_1", "Fact_Checker_2", "Fact_Checker_3"]
-    fact_checker_sys_messages = [fact_checker_p_sys_message, fact_checker_m_sys_message, fact_checker_n_sys_message]
+    if args.num_classes == 2:
+        fact_checker_names = ["Fact_Checker_1", "Fact_Checker_2"]
+        fact_checker_sys_messages = [
+            handler.handle_prompt('Fact_Checker_P_2c_en'),
+            handler.handle_prompt('Fact_Checker_N_2c_en')
+        ]
+    else: # num_classes == 3
+        fact_checker_names = ["Fact_Checker_1", "Fact_Checker_2", "Fact_Checker_3"]
+        fact_checker_sys_messages = [
+            handler.handle_prompt('Fact_Checker_P_en'),
+            handler.handle_prompt('Fact_Checker_M_en'),
+            handler.handle_prompt('Fact_Checker_N_en')
+        ]
 
     # 建立所有 Agent
     user_proxy = UserProxyAgent("user_proxy", code_execution_config=False)
@@ -70,19 +72,25 @@ def setup_environment_and_agents(args):
 
     return data, output_dir, user_proxy, fact_checkers, synthesizer, finalizer
 
-def process_item_with_agents(item, user_proxy, fact_checkers, synthesizer, finalizer):
+def process_item_with_agents(item, user_proxy, fact_checkers, synthesizer, finalizer, num_classes):
     """
     使用一組 Agent 處理單一資料項目，以生成預測。
     """
+    # 根據分類任務數，動態產生提示
+    if num_classes == 2:
+        authenticity_options = "true or false"
+    else:
+        authenticity_options = "true, half-true, or false"
+
     fact_check_prompt = (
-        f'Please carefully analyze the provided evidence in relation to the claim and then determine the overall authenticity as true, half-true, or false.\n'
+        f'Please carefully analyze the provided evidence in relation to the claim and then determine the overall authenticity as {authenticity_options}.\n'
     )
     summary_prompt = "Return review into a JSON object only:\n {'claim': '<claim>', 'prediction': '<prediction>', 'justification': '<justification>'}."
     synthesizer_summary_prompt = "Return the review as a JSON object:\n {'feedback': '<feedback>', 'suggestion': '<suggestion>', 'terminate': <true/false>}."
     max_turns = 3
 
     msg_generator = MessageGenerator()
-    meta_message = msg_generator.create_meta_message(item)
+    meta_message = msg_generator.create_prediction_message(item)
     
     # 初始化每個 fact_checker 的訊息
     fact_check_messages = [f"{fact_check_prompt}\n{meta_message}\n"] * len(fact_checkers)
@@ -136,24 +144,20 @@ def process_item_with_agents(item, user_proxy, fact_checkers, synthesizer, final
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Load different model configurations and set up agents.")
-    parser.add_argument('--model_name', type=str, default='gpt-4o-mini',
-                        help='base model(e.g., gpt-4o-mini, llama)')
-    parser.add_argument('--data_dir', type=str, default=ROOT / 'results' / 'evidence_verify',
-                        help='Directory containing the datasets')
-    parser.add_argument('--task', type=str, choices=['train', 'val', 'test', ''], default='',
-                        help='Task type to load (train/val/test)')
-    parser.add_argument('--dataset', type=str, choices=['CFEVER', 'RAWFC', 'TFC'], default='CFEVER',
-                        help='Name of the dataset to load')
-    parser.add_argument('--output_dir', type=str, default=ROOT / 'results' / 'prediction',
-                        help='Output JSON file to save the data')
+    parser = create_argument_parser()
+    parser.set_defaults(
+        data_dir=ROOT / 'results' / 'evidence_verify',
+        output_dir=ROOT / 'results' / 'prediction'
+    )
+    parser.add_argument('--num_classes', type=int, choices=[2, 3], default=2,
+                        help='Number of classification categories (2 for true/false, 3 for true/half-true/false)')
     args = parser.parse_args()
 
     data, output_dir, user_proxy, fact_checkers, synthesizer, finalizer = setup_environment_and_agents(args)
 
     for i, item in enumerate(data, 1):
         results_data = process_item_with_agents(
-            item, user_proxy, fact_checkers, synthesizer, finalizer
+            item, user_proxy, fact_checkers, synthesizer, finalizer, args.num_classes
         )
         
         json_name = results_data['event_id'].replace('.json', '')
