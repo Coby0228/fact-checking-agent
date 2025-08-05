@@ -1,0 +1,181 @@
+{
+    "summary": {
+        "total_files_evaluated": 100,
+        "correct_predictions": 78,
+        "incorrect_predictions": 22,
+        "accuracy": "78.00%"
+    },
+    "class_metrics": {
+        "true": {
+            "precision": "76.54%",
+            "recall": "95.38%",
+            "f1_score": "0.85"
+        },
+        "false": {
+            "precision": "84.21%",
+            "recall": "45.71%",
+            "f1_score": "0.59"
+        },
+        "half": {
+            "precision": "0.00%",
+            "recall": "0.00%",
+            "f1_score": "0.00"
+        }
+    },
+    "details": [
+        {
+            "event_id": "27866",
+            "claim": "當用戶的Yahoo! 網路電子郵件有新信件，Yahoo! Messenger會出現訊號給用戶看。",
+            "justification": "Yahoo Messenger was a separate application that provided instant messaging services but has been discontinued. The claim that it shows notifications for new Yahoo Mail messages is outdated since Yahoo Messenger no longer exists. Current notification options for Yahoo Mail do not involve Yahoo Messenger.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "22143",
+            "claim": "倪尚達靠自己能力去美國就讀麻省理工學院電機系，他於1924年再獲碩士學位。",
+            "justification": "倪尚達確實在1921年獲得資助赴美國就讀麻省理工學院的電機系，並於1923年獲得碩士學位，接著在哈佛大學繼續學習無線電，並於1924年再次獲得碩士學位。這些信息在維基百科中被確認，證實了該聲明的真實性。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "10232",
+            "claim": "和平車站位於臺灣台北市萬華區，明朝時站名爲 「 馬場町 」。",
+            "justification": "The claim is true as it is confirmed by multiple sources that 和平車站 (Heping Station) is located in Wanhua District, Taipei City, Taiwan, and was previously known as 馬場町 (Babachō) during the Japanese colonial period.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "17233",
+            "claim": "漫畫作品《迷糊動物醫生》於白泉社漫畫雜誌開始連載，並於2003年被改編成音樂劇。",
+            "justification": "The manga '迷糊動物醫生' (originally '動物のお医者さん') was serialized in Hakusensha's magazine '花與夢' from 1987 to 1993. It was indeed adapted into a musical in 2003, confirming both aspects of the claim.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "30166",
+            "claim": "哈佛大學的圖書館系統既是全韓國最古老，亦是全世界最具規模的私立及大學圖書館系統，館藏量超過1,600萬冊。",
+            "justification": "The claim is accurate; Harvard University indeed has the oldest library system in the United States, which is also recognized as one of the most extensive private and university library systems globally, with a collection of over 16 million volumes.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "8926",
+            "claim": "由於固安公主和嫡母不合，使唐玄宗命令固安公主與他的丈夫離境。",
+            "justification": "The claim is supported by historical accounts indicating that due to conflicts with her stepmother, who slandered her to Emperor Xuanzong, he ordered Gu'an Princess to divorce her husband, Li Lusu. The evidence from multiple sources, including Wikipedia and other historical records, confirms this narrative.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "6870",
+            "claim": "是臺南市8家婦女福利服務中心之一的臺中市西大墩婦女中心以設籍或居住臺中市之婦女爲服務對象，曾推出 「 女人膽識生命故事展 」。",
+            "justification": "The claim that the Taichung City West Dadu Women's Center, one of eight women's welfare service centers in Tainan, has launched the 'Women Courage Life Story Exhibition' is confirmed by multiple sources. The exhibition was indeed conducted by the West Dadu Women's Center in collaboration with other organizations, showcasing women's life stories.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "21690",
+            "claim": "臺紐經濟合作協定是臺灣第一次和非邦交國簽訂政治協定，是外交大突破。",
+            "justification": "The claim that the Taiwan-New Zealand Economic Cooperation Agreement is Taiwan's first political agreement with a non-diplomatic ally is supported by the evidence. Such agreements mark significant diplomatic milestones for Taiwan, as they involve deepening economic ties with nations that do not recognize Taiwan diplomatically. Additionally, reports confirm that this is indeed a notable diplomatic breakthrough for Taiwan, enhancing its international presence despite limited formal recognition.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "3332",
+            "claim": "絲綢之路在兩宋時期訂定基本方向。",
+            "justification": "The claim that the Silk Road established basic directions during the Song Dynasty is supported by historical developments in trade and the expansion of maritime routes during that period. The Song Dynasty saw significant advancements in trade, including the flourishing of the maritime Silk Road, which connected China more extensively with Southeast Asian and other regions, indicating a clear direction and expansion of trade routes.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "12548",
+            "claim": "UNIX是一種電腦作業系統，由貝爾廣場開發，並因爲安全可靠、高效強大的特點在伺服器領域得到了廣泛的應用。",
+            "justification": "The claim that UNIX is a computer operating system developed by Bell Labs is accurate. UNIX is known for its security, reliability, and efficiency, which has indeed led to its widespread use in server applications.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "9949",
+            "claim": "宮前町是臺灣日治時期時的行政區之一，至今當地仍使用此名稱。",
+            "justification": "宮前町確實是臺灣日治時期的行政區之一，並且其名稱至今仍被使用在臺北市的某一區域。多個來源確認了此名稱的歷史背景及地理位置，並指出在戰後已改劃為中山區的一部分。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "26732",
+            "claim": "主要演出者皆是女子團體成員的偶像戲劇工作團是於2017年播出的紀錄片。",
+            "justification": "The claim is confirmed as the show '偶像戲劇工作團' (Idol Drama Operation Team), which features mainly female idol group members, began airing in May 2017 on KBS, as detailed in the Wikipedia entries.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "31950",
+            "claim": "2019冠狀病毒病疫情首次爆發於中共湖北省武漢市，之後成爲亞洲性大瘟疫。",
+            "justification": "The evidence confirms that the COVID-19 outbreak first occurred in Wuhan, Hubei Province, China in December 2019. It quickly spread to become a global pandemic, significantly affecting Asia and beyond.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "28594",
+            "claim": "英國人約翰·斯皮德在世界地圖繪製上貢獻重大。",
+            "justification": "John Speed (1551/52-1629) was a significant English cartographer known for his contributions to mapmaking, particularly his 1626 world map and the series of county maps titled 'Theatre of the Empire of Great Britain'. His work, including depictions of California as an island, marks an important advancement in early modern cartography.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "30129",
+            "claim": "西螺大橋及中部橫貫公路的修築與開闢，皆是屬於1949年中華民國政府播遷後，面對海峽兩岸情勢的危機，以軍事防衛目的爲主的臺灣交通建設。",
+            "justification": "The search results confirm that after the Kuomintang government relocated to Taiwan in 1949, transportation construction in Taiwan, including the building of the Xiluo Bridge and the Central Cross-Island Highway, was primarily aimed at military defense in response to the crisis in cross-strait relations. This aligns with the claim made.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "27290",
+            "claim": "代表真善美的美惠三女神的親屬是阿佛洛狄忒。",
+            "justification": "The Graces (美惠三女神) are often depicted as daughters of Zeus and different goddesses, with some versions suggesting they could be daughters of Dionysus and Aphrodite. However, they are not described as relatives of Aphrodite in the traditional sense. They are companions or attendants of Aphrodite but not her family. Therefore, the claim that they are her relatives is not accurate.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "9992",
+            "claim": "新古王爲了穩固自己的統治，停止了緬甸暹羅兩國貿易。",
+            "justification": "The evidence confirms that during the reign of King Sinhalese, he stopped wars against Siam (Thailand) and effectively gave up territory to stabilize his rule. This implies a cessation of trade activities with Siam, but the direct link to Myanmar (Burma) is less clear. However, stopping the war with Siam indicates a focus on internal consolidation which likely involved trade relations. Therefore, the claim has a basis in historical context.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "14310",
+            "claim": "楊逵是臺灣台南人，早年以書法寫作，在日治時期曾被日警逮捕入獄十次。",
+            "justification": "The claim that 楊逵 is from Tainan, Taiwan, and that he was arrested by Japanese police ten times during the Japanese colonial period is accurate. Several sources confirm his Tainan origins and involvement in social movements that led to multiple arrests during that time.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "11897",
+            "claim": "伊利諾伊大學厄巴納香檳分校創建時間是在新千紀後。",
+            "justification": "The University of Illinois Urbana-Champaign was founded in 1867, well before the new millennium (2000). Therefore, the claim that it was established after the new millennium is incorrect.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "24073",
+            "claim": "英國南方與法國西北方是現代蘋果酒出產地區。",
+            "justification": "The claim that the southern part of England and the northwest part of France are regions where modern cider (apple wine) is produced is supported by multiple sources, including Wikipedia, which states that these areas are traditional cider production regions. Additionally, it notes that modern cider production is prominent in Western Europe, which includes these regions.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "5990",
+            "claim": "依據性狀是否會表現出來可以將染色體分爲顯隱性。",
+            "justification": "根據搜尋結果，顯性和隱性基因是根據其在表現型上的影響來區分的。顯性基因只需一個變異基因即可表現，而隱性基因則需要兩個相同的變異基因才能顯示，因此聲明是正確的。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "27195",
+            "claim": "第一部由臺灣人書寫的通史類著作是臺灣通史，由連戰所撰寫。",
+            "justification": "The claim is verified as true based on multiple sources stating that '台湾通史' is indeed the first comprehensive history written by a Taiwanese author, Lian Heng (連橫), and published in 1920. The sources confirm it emphasizes his role as the author and the historical significance of the work in Taiwanese history.",
+            "label": "False",
+            "prediction": "true"
+        }
+    ]
+}
