@@ -16,18 +16,31 @@ def load_data(data_dir, dataset, task=None, agent_name=None):
     data_list = []
 
     if (dataset == 'CFEVER' or dataset == 'TFC') and agent_name == 'Evidence_Extractor':
-        file_path = base_path / f'{dataset}_{task}.json'
-        if file_path.exists():
-            with open(file_path, 'r', encoding='utf-8') as file:
-                data_list = json.load(file)
+        try:
+            file_path = next(base_path.glob('*.json'))
+        except StopIteration:
+            print(f"Error: No JSON file found in directory: {base_path}")
+            return []
+
+        print(f"Found file: {file_path}")
+        confirm = input("Load this file? (y/n): ")
+
+        if confirm.lower() == 'y':
+            print(f"Loading data from single file: {file_path}")
+            try:
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    full_data_list = json.load(file)
+                    data_list = [item for item in full_data_list if 'label' in item]
+            except json.JSONDecodeError:
+                print(f"Error: Could not decode JSON from {file_path}")
         else:
             print(f"Warning: File not found at {file_path}")
     else:
-        task_dir = base_path / task if task else base_path
-        if not task_dir.exists():
-            print(f"Warning: Directory not found at {task_dir}")
+        task_dir = base_path / task
+        if not task_dir.is_dir():
+            print(f"Error: Directory not found: {task_dir}")
             return []
-            
+        print(f"Loading data from directory: {task_dir}")
         for file_name in os.listdir(task_dir):
             if file_name.endswith('.json'):
                 file_path = task_dir / file_name
@@ -37,6 +50,7 @@ def load_data(data_dir, dataset, task=None, agent_name=None):
                         data_list.append(data)
                 except json.JSONDecodeError:
                     print(f"Warning: Could not decode JSON from {file_path}")
+
 
     return data_list
 

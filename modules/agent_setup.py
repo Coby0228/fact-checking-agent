@@ -38,12 +38,12 @@ def setup_agents(agent_name: str, model_name: str = None):
             name="search_web",
             description="Search for information related to a claim and store results"
         )
-        register_function(
-            fetch_url,
-            caller=assistant,
-            executor=user_proxy,
-            name="fetch_url", 
-            description="Fetch content from a URL for evidence extraction"
-        )
+        # register_function(
+        #     fetch_url,
+        #     caller=assistant,
+        #     executor=user_proxy,
+        #     name="fetch_url", 
+        #     description="Fetch content from a URL for evidence extraction"
+        # )
 
     return assistant, user_proxy

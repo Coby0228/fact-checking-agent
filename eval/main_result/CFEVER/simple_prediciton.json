@@ -1,0 +1,300 @@
+{
+    "summary": {
+        "total_files_evaluated": 100,
+        "correct_predictions": 61,
+        "incorrect_predictions": 39,
+        "accuracy": "61.00%"
+    },
+    "class_metrics": {
+        "true": {
+            "precision": "75.00%",
+            "recall": "60.00%",
+            "f1_score": "0.67"
+        },
+        "false": {
+            "precision": "45.83%",
+            "recall": "62.86%",
+            "f1_score": "0.53"
+        },
+        "half": {
+            "precision": "0.00%",
+            "recall": "0.00%",
+            "f1_score": "0.00"
+        }
+    },
+    "details": [
+        {
+            "event_id": "26472",
+            "claim": "臺灣國際衝浪公開賽由臺東縣政府機構舉辦，從首屆開始的參賽選手人數就達300人。",
+            "justification": "臺灣國際衝浪公開賽是由臺東縣政府主辦，但首屆的參賽選手人數並未達到300人，通常首屆的參賽人數會較少，這一數字不符合歷史記錄。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "27866",
+            "claim": "當用戶的Yahoo! 網路電子郵件有新信件，Yahoo! Messenger會出現訊號給用戶看。",
+            "justification": "Yahoo! Messenger was discontinued in 2018, so it no longer provides notifications for new Yahoo! Mail messages. Therefore, the claim is outdated and inaccurate.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "21975",
+            "claim": "唐朝兩次在位的唐中宗母親並未稱帝過。",
+            "justification": "唐中宗的母親是武則天，她在唐朝時期曾經稱帝，建立了武周政權。因此，該聲明不正確，唐中宗的母親確實稱過帝。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "26782",
+            "claim": "屬於香港女子團體成員鍾欣桐個人歌曲的慣性冬眠於2013年發行。",
+            "justification": "鍾欣桐（Gigi Leung）的歌曲《慣性冬眠》實際上是在2010年發行的，而不是2013年。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "9679",
+            "claim": "在美國獨立戰爭後所建立的康奈爾大學是位於美國紐約州的私立大學，另有兩所分校，屬於常春藤盟校的成員。",
+            "justification": "康奈爾大學成立於1865年，並不是在美國獨立戰爭後建立的。雖然它位於紐約州，並且是常春藤盟校的成員，但其成立時間不符合該聲明的描述。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "25247",
+            "claim": "中國籍演藝人員趙燕的藝名爲沈傲君。",
+            "justification": "趙燕的藝名並不是沈傲君。沈傲君是另一位中國演藝人員的藝名，與趙燕無關。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "26562",
+            "claim": "王懿德是道光五年的進士，爲清朝官員。",
+            "justification": "王懿德确实是道光五年的进士，并且在清朝担任过官职。他在清朝的历史中有一定的影响力，因此该声明是准确的。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "15233",
+            "claim": "臺北捷運341型電聯車目前有在臺北捷運服務。",
+            "justification": "臺北捷運341型電聯車已於2017年退役，並不再在臺北捷運服務。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "11366",
+            "claim": "因爲真核生物與古菌在生化性質和基因上有些相似，在生物分類上被歸爲同一祖先。",
+            "justification": "真核生物（Eukaryotes）和古菌（Archaea）在生物分類上被認為是兩個不同的域，雖然它們在某些生化性質和基因上有相似之處，但並不被歸為同一祖先。真核生物和古菌的共同祖先是原核生物（Prokaryotes），而不是同一祖先。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "22398",
+            "claim": "公埔遺址原爲中華民國內政部指定的三級古蹟，近幾年發現不是屬於新石器時代晚期的卑南文化，因此剔除古蹟行列。",
+            "justification": "The claim states that the 公埔遺址 was originally designated as a third-level historic site by the Ministry of the Interior of the Republic of China and that recent findings have led to its reclassification away from being associated with the late Neolithic period Beinan culture, resulting in its removal from the list of historic sites. This aligns with recent archaeological findings and administrative decisions regarding the site.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "20085",
+            "claim": "上捷爾薩河爲烏克蘭的河流，河道全部長度有107公里。",
+            "justification": "上捷爾薩河（Zelva River）並不是烏克蘭的河流，而是位於白俄羅斯的河流。其長度也不符合107公里的描述。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "27718",
+            "claim": "在英國，莫莉專指替男同性戀提供性服務的男性性工作者。",
+            "justification": "在英國，'莫莉'（Molly）一詞並不專指替男同性戀提供性服務的男性性工作者。這個詞通常用來指代某些類型的性工作者，但並不局限於特定性別或性取向的客戶群體。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "3332",
+            "claim": "絲綢之路在兩宋時期訂定基本方向。",
+            "justification": "絲綢之路在兩宋時期確實發展出重要的貿易路線和文化交流，這一時期的經濟繁榮促進了東西方的聯繫，並為後來的貿易奠定了基礎。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "12548",
+            "claim": "UNIX是一種電腦作業系統，由貝爾廣場開發，並因爲安全可靠、高效強大的特點在伺服器領域得到了廣泛的應用。",
+            "justification": "UNIX is indeed a computer operating system developed at Bell Labs. It is known for its security, reliability, and efficiency, which has led to its widespread use in server environments.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "6608",
+            "claim": "參加過第一次世界大戰的美國陸軍參謀長喬治·卡特萊特·馬歇爾，在第二次世界大戰中，他幫助富蘭克林 · 德拉諾 · 羅斯福出謀劃策和提拔多位將領，並在1945年退役。",
+            "justification": "喬治·卡特萊特·馬歇爾在第二次世界大戰中確實擔任了重要角色，幫助富蘭克林·德拉諾·羅斯福，但他並沒有在1945年退役。馬歇爾於1945年被任命為美國國務卿，直到1949年才正式退休。因此，該聲明中的退役時間不正確。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "3533",
+            "claim": "日本在戒嚴時期限制言論與媒體的自由，禁止新的報紙發行。",
+            "justification": "在日本的戒嚴時期，特別是在二戰期間，政府確實實施了對言論和媒體的嚴格限制，包括禁止新的報紙發行，以控制信息流通和輿論。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "31950",
+            "claim": "2019冠狀病毒病疫情首次爆發於中共湖北省武漢市，之後成爲亞洲性大瘟疫。",
+            "justification": "The claim accurately states that the COVID-19 pandemic, caused by the novel coronavirus (2019冠狀病毒), first emerged in Wuhan, Hubei Province, China in late 2019. It subsequently spread globally, leading to widespread outbreaks and being classified as a pandemic.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "28594",
+            "claim": "英國人約翰·斯皮德在世界地圖繪製上貢獻重大。",
+            "justification": "約翰·斯皮德（John Speed）是17世紀英國著名的地圖製作人，他的作品對於世界地圖的發展有重要影響。他的地圖不僅精確，還具有藝術價值，並且在當時的地理學界受到廣泛認可。因此，該聲明是正確的。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "717",
+            "claim": "電子藝術大獎有三個級別的獎項。",
+            "justification": "電子藝術大獎通常只有兩個主要級別的獎項，而不是三個。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "9077",
+            "claim": "兒玉利國在1895年擔任日治時代的臺灣縣行政首長。",
+            "justification": "兒玉利國在1895年並未擔任臺灣縣的行政首長。事實上，他在1895年是日本政府派遣的官員，但當時的臺灣縣行政首長是其他官員。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "2369",
+            "claim": "朱塞佩·威爾第的處女作是《奧貝爾託》，而《一日國王》是他寫的第一部喜劇。",
+            "justification": "朱塞佩·威爾第的處女作是《奧貝爾託》，但《一日國王》並不是他的第一部喜劇。威爾第的第一部喜劇是《酒神的節日》（Oberto），而《一日國王》（Un giorno di regno）是他的一部較晚的作品。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "30129",
+            "claim": "西螺大橋及中部橫貫公路的修築與開闢，皆是屬於1949年中華民國政府播遷後，面對海峽兩岸情勢的危機，以軍事防衛目的爲主的臺灣交通建設。",
+            "justification": "西螺大橋和中部橫貫公路的建設確實是在1949年中華民國政府遷台後進行的，當時的交通建設主要是為了加強國防和應對海峽兩岸的緊張局勢，因此該聲明是正確的。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "27290",
+            "claim": "代表真善美的美惠三女神的親屬是阿佛洛狄忒。",
+            "justification": "美惠三女神（Charites）代表著美、善、和幸福，而阿佛洛狄忒（Aphrodite）是愛與美的女神。雖然她們在希臘神話中有關聯，但美惠三女神並不是阿佛洛狄忒的親屬。美惠三女神通常被視為獨立的神祇，與阿佛洛狄忒的關係並不構成親屬關係。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "18068",
+            "claim": "米利亞納人口密度爲每平方公里800多人，是阿爾及利亞的城鎮。",
+            "justification": "米利亞納（Miliyana）是阿爾及利亞的一個城鎮，但其人口密度並不是每平方公里800多人。根據最新的數據，米利亞納的實際人口密度低於這個數字，因此該聲明不正確。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "22049",
+            "claim": "傘形目下的傘形科植物，有5片花瓣，是繖狀花序。",
+            "justification": "傘形科植物（Apiaceae）通常具有小而多的花瓣，並且其花序為傘狀花序，但並不是所有的傘形科植物都有5片花瓣。實際上，傘形科的花瓣數量可以變化，並不固定為5片。因此，該聲明不正確。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "15187",
+            "claim": "SAS是英國陸軍的一支特種部隊單位「特種空勤團」，他們的使命是在蒐集情報、在國內與警察合作反恐和人質拯救等等行動。",
+            "justification": "SAS（Special Air Service）是英國陸軍的一支特種部隊，但其主要任務包括反恐、偵察和直接行動，而不是與警察合作進行國內行動。特種空勤團的任務範圍更廣泛，並不僅限於與警察合作。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "20972",
+            "claim": "臺中郵便局位於臺中市寶町一丁目，現在是臺中市中區的中華郵政臺中民權路郵局。",
+            "justification": "臺中郵便局的正確位置並不是在臺中市寶町一丁目，而是位於臺中市中區的民權路。該聲明混淆了郵局的具體位置和名稱。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "5441",
+            "claim": "通用電氣又稱奇異公司，是總部在波士頓的美國跨國綜合企業，業務遍及世界100多個國家。",
+            "justification": "通用電氣（General Electric, GE）並不被稱為奇異公司。奇異公司（Edison General Electric）是通用電氣的前身之一，兩者在1892年合併形成通用電氣。通用電氣的總部位於美國康涅狄格州，而非波士頓。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "15691",
+            "claim": "北京人封從德是六四天安門事件的學生運動領袖，現在已與妻子離婚，居住於美國。",
+            "justification": "封從德是六四天安門事件的學生運動領袖之一，但他並未與妻子離婚，且目前居住在台灣，而非美國。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "26467",
+            "claim": "臺灣國際衝浪公開賽由臺東縣政府舉辦，從首屆開始的參賽選手人數就達300人。",
+            "justification": "臺灣國際衝浪公開賽由臺東縣政府舉辦，但首屆的參賽選手人數並未達到300人，實際參賽人數通常較少。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "25837",
+            "claim": "英國的加迪夫中央車站於1850年開放使用。",
+            "justification": "加迪夫中央車站（Cardiff Central Station）於1887年開放，而不是1850年。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "14310",
+            "claim": "楊逵是臺灣台南人，早年以書法寫作，在日治時期曾被日警逮捕入獄十次。",
+            "justification": "楊逵確實是臺灣台南人，並且在早年以書法和文學創作聞名。他在日治時期因為參與抗日活動而多次被逮捕，據歷史記載，他曾被日警逮捕入獄十次，這些信息均可在相關歷史資料中查證。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "11897",
+            "claim": "伊利諾伊大學厄巴納香檳分校創建時間是在新千紀後。",
+            "justification": "伊利諾伊大學厄巴納香檳分校成立於1867年，早於新千紀，因此該聲明不正確。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "24073",
+            "claim": "英國南方與法國西北方是現代蘋果酒出產地區。",
+            "justification": "英國南方和法國西北方（特別是諾曼第地區）確實是現代蘋果酒的主要出產地區。這些地區以其適合蘋果生長的氣候和土壤條件而聞名，並且有著悠久的蘋果酒釀造傳統。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "5990",
+            "claim": "依據性狀是否會表現出來可以將染色體分爲顯隱性。",
+            "justification": "這個聲明是正確的。根據遺傳學，性狀的表現可以分為顯性和隱性，這是基於基因在染色體上的表現方式。顯性基因會在表現型中顯現，而隱性基因則需要兩個隱性等位基因的存在才能表現出來。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "2579",
+            "claim": "3T的傳記是香港歌手鄭希怡的入行作。",
+            "justification": "鄭希怡的入行作是她在2004年參加的選秀節目《超級巨聲》，而不是3T的傳記。3T是另一個音樂組合，與鄭希怡無關。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "20072",
+            "claim": "臺灣客家文化館在臺灣北部，館區依照丘陵的地形起伏而設計。",
+            "justification": "臺灣客家文化館位於新北市，確實位於臺灣北部，並且其設計考量了當地的丘陵地形，符合該聲明的描述。",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "20821",
+            "claim": "木衛十七於2002年10月以希臘神話河神的女兒名字來取名。",
+            "justification": "木衛十七（也稱為希波卡斯）是於2003年發現的，並於2005年正式命名，並不是在2002年取名。其名字源自希臘神話中的河神女兒，但命名時間不正確。",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "20878",
+            "claim": "中國的物理學家徐至展畢業於北京大學物理系研究所。",
+            "justification": "徐至展（Zhi-Zhan Xu）是著名的中國物理學家，但他並未畢業於北京大學物理系研究所，而是畢業於其他學校。這一信息不準確。",
+            "label": "True",
+            "prediction": "false"
+        }
+    ]
+}

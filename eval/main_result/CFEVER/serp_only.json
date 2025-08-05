@@ -1,0 +1,195 @@
+{
+    "summary": {
+        "total_files_evaluated": 100,
+        "correct_predictions": 76,
+        "incorrect_predictions": 24,
+        "accuracy": "76.00%"
+    },
+    "class_metrics": {
+        "true": {
+            "precision": "80.60%",
+            "recall": "83.08%",
+            "f1_score": "0.82"
+        },
+        "false": {
+            "precision": "70.97%",
+            "recall": "62.86%",
+            "f1_score": "0.67"
+        },
+        "half": {
+            "precision": "0.00%",
+            "recall": "0.00%",
+            "f1_score": "0.00"
+        }
+    },
+    "details": [
+        {
+            "event_id": "27866",
+            "claim": "當用戶的Yahoo! 網路電子郵件有新信件，Yahoo! Messenger會出現訊號給用戶看。",
+            "justification": "The claim is false because Yahoo! Messenger no longer provides notifications for new Yahoo! Mail messages, as this service was discontinued in July 2018. Users now receive notifications only through the Yahoo! Mail app.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "9679",
+            "claim": "在美國獨立戰爭後所建立的康奈爾大學是位於美國紐約州的私立大學，另有兩所分校，屬於常春藤盟校的成員。",
+            "justification": "The collective predictions from the two Fact Checkers both arrived at a consensus that the claim regarding Cornell University is true. Upon examining the details presented in the claim, it accurately states that Cornell University was established after the American Revolutionary War, is located in New York, operates as a private university, is a member of the Ivy League, and has multiple campuses. Both Fact Checkers assessed the core facts and determined them to be accurate, reinforcing the overall truth of the claim.",
+            "label": "True",
+            "prediction": "真實"
+        },
+        {
+            "event_id": "8926",
+            "claim": "由於固安公主和嫡母不合，使唐玄宗命令固安公主與他的丈夫離境。",
+            "justification": "The decree from Emperor Xuanzong mentioned in the evidence directly supports the claim of his order for Princess Gu'an to separate from her husband due to her conflicts with her stepmother. Additionally, the evidence elaborates on the seriousness of the familial discord and indicates the emperor's concern for royal authority and family dynamics.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "22398",
+            "claim": "公埔遺址原爲中華民國內政部指定的三級古蹟，近幾年發現不是屬於新石器時代晚期的卑南文化，因此剔除古蹟行列。",
+            "justification": "The claim is supported by evidence confirming that the Gongpu site was designated as a third-level historic site and has been removed due to recent findings that it does not belong to the Beinan culture.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "27718",
+            "claim": "在英國，莫莉專指替男同性戀提供性服務的男性性工作者。",
+            "justification": "Both Fact Checkers concluded that the claim misrepresents the term 'Molly.' It cannot be limited to male sex workers servicing gay men, as the term has a broader historical context that includes various meanings such as social gatherings and companionship. The exclusive characterization is misleading and fails to grasp the term's complexity.",
+            "label": "True",
+            "prediction": "False"
+        },
+        {
+            "event_id": "21690",
+            "claim": "臺紐經濟合作協定是臺灣第一次和非邦交國簽訂政治協定，是外交大突破。",
+            "justification": "The evidence supports the claim that Taiwan's agreement with New Zealand is its first political agreement with a non-diplomatic ally, marking it as a significant diplomatic breakthrough. It confirms this agreement's uniqueness and its implications for Taiwan's future negotiations and relations.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "24245",
+            "claim": "南興村人口643人，與安朔村相隔甚遠。",
+            "justification": "Both Fact Checkers confirmed the population of Nanxing Village and its geographical distance from Anshuo Village, indicating that the claim is accurate.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "12548",
+            "claim": "UNIX是一種電腦作業系統，由貝爾廣場開發，並因爲安全可靠、高效強大的特點在伺服器領域得到了廣泛的應用。",
+            "justification": "The evidence supports the claim by confirming that UNIX is developed by Bell Labs and is known for its stability, reliability, and security features, which are beneficial in server environments.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "9949",
+            "claim": "宮前町是臺灣日治時期時的行政區之一，至今當地仍使用此名稱。",
+            "justification": "The evidence confirms that 宮前町 was indeed an administrative district during the Japanese colonial period, with specific references to its significance and location in Taipei. Additionally, it states that the name is still recognized in present culture, supporting the continued use of the name today.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "31950",
+            "claim": "2019冠狀病毒病疫情首次爆發於中共湖北省武漢市，之後成爲亞洲性大瘟疫。",
+            "justification": "The claim that the COVID-19 pandemic began in late 2019 in Wuhan, Hubei Province, is supported by multiple pieces of evidence, including the identification of early cases, the role of the Huanan Seafood Market, and official declarations from health organizations. While the precise source of the virus remains under investigation, the claim about its emergence in Wuhan is consistent with current understanding and widely accepted facts regarding the outbreak's origins.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "28594",
+            "claim": "英國人約翰·斯皮德在世界地圖繪製上貢獻重大。",
+            "justification": "Both fact checkers agree that John Speed significantly contributed to world map-making. They highlighted his influential designs, the importance of his 1626 world map, and the lasting impact of his work on subsequent cartographers and atlases.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "12181",
+            "claim": "國立臺灣大學管理學院的前身是臺灣省立法商學院，而臺灣省立法商學院的前身是日治時期的一所學校。",
+            "justification": "Both Fact Checkers concluded that the claim is false due to a lack of supporting documentation establishing a direct lineage from the Taiwan Provincial Law and Business College to the College of Management. The historical context is acknowledged, but the specific assertions regarding institutional titles and connections are deemed unsubstantiated.",
+            "label": "True",
+            "prediction": "False"
+        },
+        {
+            "event_id": "9077",
+            "claim": "兒玉利國在1895年擔任日治時代的臺灣縣行政首長。",
+            "justification": "The final decision is based on the consensus of the fact checkers, both of whom independently arrived at the conclusion that the claim is false. The absence of evidence to support the claim indicates a lack of documentation that could substantiate it. Without supporting evidence, the claim cannot be deemed factual.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "30129",
+            "claim": "西螺大橋及中部橫貫公路的修築與開闢，皆是屬於1949年中華民國政府播遷後，面對海峽兩岸情勢的危機，以軍事防衛目的爲主的臺灣交通建設。",
+            "justification": "The construction of the Xiluo Bridge and Central Cross-Island Highway was primarily motivated by military defense needs in the context of geopolitical tensions following the ROC's relocation to Taiwan in 1949. Evidence from both fact checkers supports this assertion.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "27290",
+            "claim": "代表真善美的美惠三女神的親屬是阿佛洛狄忒。",
+            "justification": "The Graces are identified as the daughters of Zeus and Eurynome, thus they are not related to Aphrodite. Their relationship is based on being attendants of Aphrodite, not familial ties.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "12832",
+            "claim": "屬於臺南市政府教育局的臺南市佳里區塭內國民小學建立於1920年。",
+            "justification": "Both Fact Checkers identified the lack of evidence supporting or disputing the claim regarding the school's affiliation and establishment date. The absence of verifiable information renders it impossible to affirm or deny the claim's accuracy, leading to a consensus on the indeterminate outcome.",
+            "label": "True",
+            "prediction": "Indeterminate"
+        },
+        {
+            "event_id": "1185",
+            "claim": "歐洲民族中各個民族基本是以民族國家劃分，同國家的使用同一語言的人群承認屬於同一族群，也有人更願意強調自己的國別而非語言。",
+            "justification": "The claim oversimplifies the relationship between language and ethnicity in European nations. While language is tied to ethnic identity, the evidence shows many European countries are multi-ethnic and that language does not solely dictate national identity.",
+            "label": "True",
+            "prediction": "False"
+        },
+        {
+            "event_id": "14310",
+            "claim": "楊逵是臺灣台南人，早年以書法寫作，在日治時期曾被日警逮捕入獄十次。",
+            "justification": "The evidence supports that 楊逵 was from Tainan, engaged in calligraphy and writing, and was arrested ten times during the Japanese occupation due to his involvement in social movements. The details provided align with the claim, confirming its accuracy.",
+            "label": "False",
+            "prediction": "true"
+        },
+        {
+            "event_id": "11897",
+            "claim": "伊利諾伊大學厄巴納香檳分校創建時間是在新千紀後。",
+            "justification": "Both fact checkers stated that the University of Illinois at Urbana-Champaign was established in 1867, which is before the new millennium (2000), directly contradicting the claim.",
+            "label": "True",
+            "prediction": "false"
+        },
+        {
+            "event_id": "24073",
+            "claim": "英國南方與法國西北方是現代蘋果酒出產地區。",
+            "justification": "The claim accurately identifies southern England and northwestern France as significant cider-producing regions with historical importance, but it does not account for the broader range of modern cider production areas, particularly in North America. Therefore, while the claim holds validity, it is not exclusive to just these regions.",
+            "label": "False",
+            "prediction": "Partially True"
+        },
+        {
+            "event_id": "5990",
+            "claim": "依據性狀是否會表現出來可以將染色體分爲顯隱性。",
+            "justification": "The evidence outlines the essential definitions and mechanisms behind the expressions of traits linked to dominant and recessive alleles, confirming that chromosomes can be categorized based on whether traits are expressed.",
+            "label": "False",
+            "prediction": "True"
+        },
+        {
+            "event_id": "2579",
+            "claim": "3T的傳記是香港歌手鄭希怡的入行作。",
+            "justification": "The claim incorrectly equates the biography of the group 3T to an individual debut for Zheng Xiyi. A debut typically refers to an individual's first major work, and Zheng Xiyi's involvement in 3T represents a collective narrative rather than her personal entry into the music industry as a solo artist.",
+            "label": "True",
+            "prediction": "False"
+        },
+        {
+            "event_id": "30577",
+            "claim": "坦克上的主要火力來源爲坦克炮，屬於加農炮。",
+            "justification": "The claim inaccurately categorizes tank guns by oversimplifying their classification as cannons without recognizing their unique design and operational purpose. Both fact checkers agree that while tank guns are the primary armament of tanks, calling them cannons is misleading.",
+            "label": "True",
+            "prediction": "False"
+        },
+        {
+            "event_id": "20072",
+            "claim": "臺灣客家文化館在臺灣北部，館區依照丘陵的地形起伏而設計。",
+            "justification": "The evidence confirms both the location of the Taiwan Hakka Cultural Museum in northern Taiwan and its design that respects the natural hilly terrain, directly supporting the claim.",
+            "label": "False",
+            "prediction": "true"
+        }
+    ]
+}
