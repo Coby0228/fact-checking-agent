@@ -1,6 +1,18 @@
 參考 [**DelphiAgent: Multi-agent verification framework for automated fact verification**](https://github.com/zjfgh2015/DelphiAgent) 架構實作的 Multi-agent framework
 
-作者沒去實作 web search，找到的資料其實就決定了有沒有可能回答 claim，感覺加個 reasoning model 做 plan 要去甚麼網站找甚麼資料
+## CFEVER 測試結果
+
+| Model                | Label | Precision | Recall  | Accuracy |
+| :------------------- | :---- | :-------- | :------ | :------- |
+| **llm**              | true  | 75.00%    | 60.00%  | 61.00%   |
+|                      | false | 45.83%    | 62.86%  |          |
+| **llm + search**       | true  | 76.54%    | 95.38%  | **78.00%**   |
+|                      | false | 84.21%    | 45.71%  |          |
+| **framework + search** | true  | 80.60%    | 83.08%  | 76.00%   |
+|                      | false | 70.97%    | 62.86%  |          |
+
+- 本框架除了很慢還比較弱，跟問題有關?
+- [FIRE](https://arxiv.org/pdf/2411.00784) 框架成本低，像是優化的 LLM agent，更適合這種任務
 
 ## 實作
 
@@ -15,7 +27,6 @@
 
 - SERP 
   - [Serper](https://serper.dev/)
-    - 社群媒體的資訊不可靠
 - crawler
   - [linkup](https://www.linkup.so/): 要錢
   - [exa](https://exa.ai/): 要錢
